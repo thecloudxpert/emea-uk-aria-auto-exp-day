@@ -1,0 +1,31 @@
+name: Module 4 Exercise 5
+version: 1.0
+formatVersion: 1
+inputs:
+  SelectCloud:
+    type: string
+    enum:
+      - 'env:aws'
+      - 'env:azure'
+    title: Select Cloud 1
+  SelectCloud2:
+    type: string
+    enum:
+      - 'env:aws'
+      - 'env:azure'
+    title: Select Cloud 2
+resources:
+  Cloud_Machine_2:
+    type: Cloud.Machine
+    properties:
+      image: ubuntu
+      flavor: small
+      constraints:
+        - tag: '${input.SelectCloud2}'
+  Cloud_Machine_1:
+    type: Cloud.Machine
+    properties:
+      image: ubuntu
+      flavor: small
+      constraints:
+        - tag: '${input.SelectCloud}'

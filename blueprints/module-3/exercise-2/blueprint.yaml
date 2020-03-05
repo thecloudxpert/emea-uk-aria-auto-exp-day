@@ -1,4 +1,4 @@
-name: Module 4 Exercise 1
+name: Module 3 Exercise 2
 version: 1.0
 formatVersion: 1
 inputs: {}
@@ -10,5 +10,3 @@ resources:
       flavor: small
       constraints:
         - tag: 'env:azure'
-
-

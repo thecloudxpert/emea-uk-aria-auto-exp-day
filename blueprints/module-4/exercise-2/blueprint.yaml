@@ -1,4 +1,4 @@
-name: Module 4 Exercise 1
+name: Module 4 Exercise 2
 version: 1.0
 formatVersion: 1
 inputs:
@@ -8,29 +8,7 @@ inputs:
       - 'env:aws'
       - 'env:azure'
     title: Select Cloud 1
-  SelectCloud2:
-    type: string
-    enum:
-      - 'env:aws'
-      - 'env:azure'
-    title: Select Cloud 2
-  hostname:
-    type: string
-    title: Machine 1 hostname
-  hostname2:
-    type: string
-    title: Machine 2 hostname
 resources:
-  Cloud_Machine_2:
-    type: Cloud.Machine
-    properties:
-      image: ubuntu
-      flavor: small
-      constraints:
-        - tag: '${input.SelectCloud2}'
-      cloudConfig: |
-        #cloud-config
-        hostname: ${input.hostname2}
   Cloud_Machine_1:
     type: Cloud.Machine
     properties:
@@ -38,6 +16,3 @@ resources:
       flavor: small
       constraints:
         - tag: '${input.SelectCloud}'
-      cloudConfig: |
-        #cloud-config
-        hostname: ${input.hostname}
