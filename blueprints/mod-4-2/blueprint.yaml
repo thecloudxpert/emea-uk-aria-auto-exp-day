@@ -7,19 +7,19 @@ inputs:
     enum:
       - 'env:aws'
       - 'env:azure'
-    title: Select Cloud
+    title: Select Cloud 1
   SelectCloud2:
     type: string
     enum:
       - 'env:aws'
       - 'env:azure'
-    title: Select Cloud
+    title: Select Cloud 2
   hostname:
     type: string
     title: Machine 1 hostname
   hostname2:
     type: string
-    title: Machine 1 hostname
+    title: Machine 2 hostname
 resources:
   Cloud_Machine_2:
     type: Cloud.Machine
