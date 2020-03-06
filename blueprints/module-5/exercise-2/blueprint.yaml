@@ -2,7 +2,7 @@ name: Module 5 Exercise 2
 version: 1.0
 formatVersion: 1
 inputs:
-  SelectCloud:
+  SelectCloud1:
     type: string
     enum:
       - 'env:aws'
@@ -14,7 +14,7 @@ inputs:
       - 'env:aws'
       - 'env:azure'
     title: Select Cloud 2
-  hostname:
+  hostname1:
     type: string
     title: Machine 1 hostname
   hostname2:
@@ -62,10 +62,10 @@ resources:
       image: ubuntu
       flavor: small
       constraints:
-        - tag: '${input.SelectCloud}'
+        - tag: '${input.SelectCloud1}'
       cloudConfig: |
         #cloud-config
-        hostname: ${input.hostname}
+        hostname: ${input.hostname1}
         
         users:
           - name: ${input.user}

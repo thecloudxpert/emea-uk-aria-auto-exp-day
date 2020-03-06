@@ -2,7 +2,7 @@ name: Module 4 Exercise 5
 version: 1.0
 formatVersion: 1
 inputs:
-  SelectCloud:
+  SelectCloud1:
     type: string
     enum:
       - 'env:aws'
@@ -28,4 +28,4 @@ resources:
       image: ubuntu
       flavor: small
       constraints:
-        - tag: '${input.SelectCloud}'
+        - tag: '${input.SelectCloud1}'
