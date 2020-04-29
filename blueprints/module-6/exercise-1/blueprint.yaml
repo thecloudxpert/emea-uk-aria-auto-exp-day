@@ -65,7 +65,7 @@ resources:
     properties:
       image: ubuntu
       flavor: small
-      newName: '${input.hostname}'
+      newName: '${input.hostname1}'
       constraints:
         - tag: '${input.SelectCloud1}'
       cloudConfig: |
