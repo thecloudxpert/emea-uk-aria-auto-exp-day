@@ -59,7 +59,7 @@ resources:
         - echo $USER:$PASS | /usr/sbin/chpasswd
         - sed -i "s/PasswordAuthentication no/PasswordAuthentication yes/g" /etc/ssh/sshd_config
         - service ssh reload
-        - echo "This file was created by cloud-init in environment ${input.SelectCloud2} >> /tmp/environment.txt
+        - echo "This file was created by cloud-init in environment ${input.SelectCloud2}" >> /tmp/environment.txt
   Cloud_Machine_1:
     type: Cloud.Machine
     properties:
@@ -87,5 +87,4 @@ resources:
         - echo $USER:$PASS | /usr/sbin/chpasswd
         - sed -i "s/PasswordAuthentication no/PasswordAuthentication yes/g" /etc/ssh/sshd_config
         - service ssh reload
-        - echo "This file was created by cloud-init in environment ${input.SelectCloud1} >> /tmp/environment.txt
-        
+        - echo "This file was created by cloud-init in environment ${input.SelectCloud1}" >> /tmp/environment.txt
