@@ -4,7 +4,7 @@
 
 1. Click the **VMware Cloud Assembly** service.
 <figure>
-    <img src="/img/m2-img01.png" width="50%" height="50%">
+    <img src="./img/m2-img01.png" width="50%" height="50%">
 </figure>
 2. Select the **Infrastructure** tab.
 3. Select **Administration** > **Projects**.
