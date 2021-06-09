@@ -5,29 +5,116 @@
 1. Click the **VMware Cloud Assembly** service.
 
 <figure>
-    <img src="./img/m2-img01.png" width="75%" height="75%">
+    <img src="./img/m2-e1-img01.png" width="75%" height="75%">
 </figure>
 
 2. Select the **Infrastructure** tab.
+
+<figure>
+    <img src="./img/m2-e1-img02.png" width="75%" height="75%">
+</figure>
+
 3. Select **Administration** > **Projects**.
+
+<figure>
+    <img src="./img/m2-e1-img03.png" width="75%" height="75%">
+</figure>
+
 4. Click **NEW PROJECT**.
-5. At the New Project screen, enter a Name for the project.
+
+<figure>
+    <img src="./img/m2-e1-img04.png" width="75%" height="75%">
+</figure>
+
+5. At the **New Project** screen, type a name for the project.
+
+<figure>
+    <img src="./img/m2-e1-img05.png" width="75%" height="75%">
+</figure>
+
 _Note: The Project Name can be anything you like but you need to remember it as you will use this project for the rest of the day._
-6. Click Users.
-7. Click Add Users.
-8. Type your email address into the Users text field and click Enter.
-9. Select Administrator from the Assign role dropdown.
-10. Click Add.
+
+6. Click **Users**.
+
+<figure>
+    <img src="./img/m2-e1-img06.png" width="75%" height="75%">
+</figure>
+
+7. Click **+ADD USERS**.
+
+<figure>
+    <img src="./img/m2-e1-img07.png" width="75%" height="75%">
+</figure>
+
+8. Type your email address into the **Users** text field and click **Enter**.
+
+<figure>
+    <img src="./img/m2-e1-img08.png" width="75%" height="75%">
+</figure>
+
+9. Select **Administrator** from the **Assign role** dropdown.
+
+<figure>
+    <img src="./img/m2-e1-img09.png" width="75%" height="75%">
+</figure>
+
+10. Click **ADD**.
+
+<figure>
+    <img src="./img/m2-e1-img10.png" width="75%" height="75%">
+</figure>
+
 _Note: If we had integrated vRealize Automation Cloud into an Enterprise Directory (such as Active Directory) and then synchronized certain AD Users Groups, then we could have specified an AD User Group here._
-11. Click Provisioning.
-12. Click Add Zone.
-13. Click Cloud Zone.
-14. At the Add Cloud Zone dialog, click the Cloud zone search field and select Trading AWS / us-west-1 from the list.
+
+11. Click **Provisioning**.
+
+<figure>
+    <img src="./img/m2-e1-img11.png" width="75%" height="75%">
+</figure>
+
+12. Click **Add Zone**.
+
+<figure>
+    <img src="./img/m2-e1-img12.png" width="75%" height="75%">
+</figure>
+
+13. Click **Cloud Zone**.
+
+<figure>
+    <img src="./img/m2-e1-img12.png" width="75%" height="75%">
+</figure>
+
+14. At the **Add Cloud Zone** dialog, click the Cloud zone search field and select Trading AWS / us-west-1 from the list.
 _Note: If the only available AWS Cloud Zone is Trading AWS / us-east-1, then please select that Cloud Zone._
+
+<figure>
+    <img src="./img/m2-e1-img13.png" width="75%" height="75%">
+</figure>
+
 15. Leave all remaining settings as their defaults and click Add.
+
+<figure>
+    <img src="./img/m2-e1-img15.png" width="75%" height="75%">
+</figure>
+
 Now that the Trading AWS Cloud Zone has been added to the project as a provisioning resource.  This means that a user can create blueprints and provision machines and services against this project.
-16. Repeat Steps 12 to Step 15 to add also the Trading Azure Cloud Zone to the current project.
-17. Click on Summary and then click Create.
+
+<figure>
+    <img src="./img/m2-e1-img15a.png" width="75%" height="75%">
+</figure>
+
+16. Repeat Steps 12 to Step 15 to add also the **Trading Azure Cloud Zone** to the current project.
+
+<figure>
+    <img src="./img/m2-e1-img16.png" width="75%" height="75%">
+</figure>
+
+17. Click on **Summary** and then click **Create**.
+
+<figure>
+    <img src="./img/m2-e1-img17.png" width="75%" height="75%">
+</figure>
+
 You should now have a new project to start provision against!
   
 ## Exercise 2 - Create Flavor Mappings
