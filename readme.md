@@ -3,7 +3,7 @@
 ## Agenda
 
 * **Module 1** - Key Differences between vRealixe Automation and vRealize Auotmation Cloud.
-* **Module 2** - Configuring vRealize Automation 8/Cloud ([full](/module-2/m2-full-lab-guide/)) ([overview](/module-2/m2-overview-lab-guide/))
+* **Module 2** - Configuring vRealize Automation 8/Cloud ([full](/module-2/m2-full-lab-guide.md)) ([overview](/module-2/m2-overview-lab-guide.md))
 * **Module 3** - Deploying to Multiple Clouds
 * **Module 4** - Iterative Development and Infrastructure as Code
 * **Module 5** - Customising with cloudConfig
