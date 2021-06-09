@@ -1,8 +1,11 @@
-# Lab Exercise: Module 2 - Configuring vRealize Automation in Cloud Assembly
+# Lab Guide: Module 2 - Configuring vRealize Automation in Cloud Assembly
 
 ## Exercise 1 - Create a Project
 
 1. Click the **VMware Cloud Assembly** service.
+<figure>
+    <img src="/img/m2-img01.png" width="50%" height="50%">
+</figure>
 2. Select the **Infrastructure** tab.
 3. Select **Administration** > **Projects**.
 4. Click **NEW PROJECT**.
@@ -37,16 +40,39 @@ In this exercise we are going to create two new flavor mappings that could be us
 7. Click plus (+) to add a new Configuration.
 8. Repeat Step 4 to Step 6 to add an configuration for the Trading Azure / uswest Account/Region using the Standard_A2 resource type.
 9. Click Create.
-10. Repeat Step 3 to Step 9 to create another Flavor Mapping with the following information.
+10. Repeat Step 3 to Step 9 to create another **Flavor Mapping** with the following information.
 
-## Module 2 – Exercise 2
-
-Key Value
-Name large
-Account/Regions Trading AWS / us-west-1
-AWS Resource Type t2.large
-Account/Regions Trading Azure / uswest
-Azure Resource Type Standard_B4ms
+<table class="table">
+    <caption>Table: Module 2 – Exercise 2</caption>
+    <thead>
+        <tr>
+            <th class="left">Key</th>
+            <th class="left">Value</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td class="left">Name</td>
+            <td class="left">large</td>
+        </tr>
+        <tr>
+            <td class="left">Account/Regions</td>
+            <td class="left">Trading AWS / us-west-1</td>
+        </tr>
+        <tr>
+            <td class="left">Resource Type</td>
+            <td class="left">t2.large</td>
+        </tr>
+        <tr>
+            <td class="left">Account/Regions</td>
+            <td class="left">Trading Azure / uswest</td>
+        </tr>
+        <tr>
+            <td class="left">Resource Type</td>
+            <td class="left">STandard_B4ms</td>
+        </tr>
+    </tbody>
+</table>
 
 ## Exercise 3 - Create Image Mappings
 
