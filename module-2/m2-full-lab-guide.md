@@ -49,13 +49,13 @@ _Note: The Project Name can be anything you like but you need to remember it as 
 8. Type your email address into the **Users** text field and click **Enter**.
 
 <figure>
-    <img src="./img/m2-e1-img08.png" width="75%" height="75%">
+    <img src="./img/m2-e1-img08.png" width="50%" height="50%">
 </figure>
 
 9. Select **Administrator** from the **Assign role** dropdown.
 
 <figure>
-    <img src="./img/m2-e1-img09.png" width="75%" height="75%">
+    <img src="./img/m2-e1-img09.png" width="50%" height="50%">
 </figure>
 
 10. Click **ADD**.
@@ -94,7 +94,7 @@ _Note: If the only available AWS Cloud Zone is Trading AWS / us-east-1, then ple
 15. Leave all remaining settings as their defaults and click Add.
 
 <figure>
-    <img src="./img/m2-e1-img15.png" width="75%" height="75%">
+    <img src="./img/m2-e1-img15.png" width="50%" height="50%">
 </figure>
 
 Now that the Trading AWS Cloud Zone has been added to the project as a provisioning resource.  This means that a user can create blueprints and provision machines and services against this project.
