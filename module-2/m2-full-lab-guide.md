@@ -2,6 +2,13 @@
 
 ## Introduction
 
+## Lab Overview
+
+* Exercise 1 - Creating a vRealize Automation Project
+* Exercise 2 - Creating a Flavor Mapping
+* Exercise 3 - Create an Image Mapping
+* Exercise 4 - Add Networks to a Network Profile
+
 ## Exercises
 
 ### Exercise 1 - Creating a vRealize Automation Project
@@ -172,9 +179,10 @@ In this exercise we are going to create two new flavor mappings that could be us
     </tbody>
 </table>
 
-### Exercise 3 - Create Image Mappings
+### Exercise 3 - Create an Image Mapping
 
 In this exercise we are going to create a new image mapping that can be used in future Modules.
+
 1. Select the Infrastructure tab.
 2. Select Configure > Image Mappings.
 3. Click New Image Mapping.
