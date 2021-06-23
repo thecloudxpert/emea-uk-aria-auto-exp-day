@@ -4,7 +4,7 @@
 
 ## Lab Overview
 
-* [Exercise 1 - Creating a vRealize Automation Project](#exercise-1---creating-a-vrealize-automation-project)
+* [Exercise 1 - Creating a vRealize Automation Project](#exercise-1-\--creating-a-vrealize-automation-project)
 * [Exercise 2 - Creating a Flavor Mapping](#Exercise-2-Creating-a-Flavor-Mapping)
 * Exercise 3 - Create an Image Mapping
 * Exercise 4 - Add Networks to a Network Profile
