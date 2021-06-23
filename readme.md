@@ -1,9 +1,3 @@
-<link rel="stylesheet" media="screen and (max-width: 768px)" href="/css/clr-ui.min.css">
-<link rel="stylesheet" media="screen and (max-width: 768px)" href="/css/clr-ui.min.css">
-<link rel="stylesheet" media="screen and (max-width: 768px)" href="/css/clr-icons.min.css">
-<link rel="stylesheet" media="screen and (min-width: 768px)" href="/css/clr-ui.css">
-<link rel="stylesheet" media="screen and (min-width: 768px)" href="/css/clr-icons.min.css">
-
 # Welcome to the vRealize Automation Experience Day (EMEA/UK)
 
 ## Agenda
