@@ -132,6 +132,8 @@ You should now have a new project to start provision against!
     <img src="./img/m2-e1-img18.png" width="75%" height="75%">
 </figure>
 
+-----
+
 ### Exercise 2 - Creating a Flavor Mapping
 
 In this exercise we are going to create two new flavor mappings that could be used in future Modules.
@@ -139,16 +141,16 @@ In this exercise we are going to create two new flavor mappings that could be us
 1. Select the **Infrastructure** tab. (if required).
 2. Select **Configure** > **Flavor Mappings**.
 3. Click **NEW FLAVOR MAPPING**.
-4. On the New Flavor Mapping screen, enter medium as the name.
-5. Under Configuration, Select Trading AWS / us-west-1 as the Account/Region.
-6. At the value field, type t2. and select t2.medium from the list.
-7. Click plus (+) to add a new Configuration.
-8. Repeat Step 4 to Step 6 to add an configuration for the Trading Azure / uswest Account/Region using the Standard_A2 resource type.
+4. On the **New Flavor Mapping** screen, type **medium** into the **Name** field.
+5. Under Configuration, Select **Trading AWS / us-west-1** as the **Account/Region**.
+6. At the value field, type **t2.** and select **t2.medium** from the list.
+7. Click **+** to add a new Configuration.
+8. Repeat Step 4 to Step 6 to add an configuration for the **Trading Azure / uswest** Account/Region using the **Standard_A2** resource type.
 9. Click Create.
 10. Repeat Step 3 to Step 9 to create another **Flavor Mapping** with the following information.
 
 <table class="table">
-    <caption>Table: Module 2 – Exercise 2</caption>
+    <caption>Table: Module 2 - Exercise 2</caption>
     <thead>
         <tr>
             <th class="left">Key</th>
