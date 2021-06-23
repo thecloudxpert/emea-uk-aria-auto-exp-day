@@ -181,6 +181,8 @@ In this exercise we are going to create two new flavor mappings that could be us
     </tbody>
 </table>
 
+-----
+
 ### Exercise 3 - Create an Image Mapping
 
 In this exercise we are going to create a new image mapping that can be used in future Modules.
@@ -228,6 +230,8 @@ In this exercise we are going to create a new image mapping that can be used in 
 Feel free to create addition Image Mappings.
 
 _**Note:** If the exact image name does not exist, then choose the nearest option to it._
+
+-----
 
 ### Exercise 4 - Update a Network Profile
 
