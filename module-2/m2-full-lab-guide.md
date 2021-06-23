@@ -7,7 +7,7 @@
 * [Exercise 1 - Creating a vRealize Automation Project](#exercise-1-\--creating-a-vrealize-automation-project)
 * [Exercise 2 - Creating a Flavor Mapping](#exercise-2-\--creating-a-flavor-mapping)
 * [Exercise 3 - Create an Image Mapping](#exercise-3-\--create-an-image-mapping)
-* [Exercise 4 - Add Networks to a Network Profile](#exercise-4-\-- add-networks-to-a-network-profile)
+* [Exercise 4 - Update a Network Profile](#exercise-4-/--update-a-network-profile)
 
 ## Exercises
 
@@ -227,7 +227,7 @@ Feel free to create addition Image Mappings.
 
 _**Note:** If the exact image name does not exist, then choose the nearest option to it._
 
-### Exercise 4 - Add Networks to a Network Profile
+### Exercise 4 - Update a Network Profile
 
 In this Exercise we are going to add some additional networks to existing Network Profile.
 1. Select the **Infrastructure** tab (if required).
