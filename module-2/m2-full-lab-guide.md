@@ -183,17 +183,17 @@ In this exercise we are going to create two new flavor mappings that could be us
 
 In this exercise we are going to create a new image mapping that can be used in future Modules.
 
-1. Select the Infrastructure tab.
-2. Select Configure > Image Mappings.
-3. Click New Image Mapping.
-4. On the New Image Mapping screen, type Windows Server 2019 as the name.
-5. Under Configuration, select Trading AWS / us-west-1 as the Account/Region.
-6. Under Configuration, type Microsoft Windows Server 2019 into the Image field and click Show all… from the search window.
-11. At Select Image dialog, scroll down and then select the Microsoft Windows Server 2019 AMI and then click SELECT.
-12. Click plus (+) to add a new Configuration.
-13. Repeat Step 4 to Step 10 to add the Trading Azure / uswest to the Account/Region field and using the MicrosoftWindowsServer:WindowsServer:2019-Datacenter:latest as the image.
-14. Click Create.
-15. Repeat Step 3 to Step 14 to create another Image Mapping with the following information.
+1. Select the **Infrastructure** tab.
+2. Select **Configure** > **Image** Mappings.
+3. Click **NEW IMAGE MAPPING**.
+4. On the **New Image Mapping** screen, type **Windows Server 2019** as the name.
+5. Under **Configuration**, select **Trading AWS / us-west-1** as the **Account/Region**.
+6. Under **Configuration**, type **Microsoft Windows Server 2019** into the **Image** field and click **Show all** from the search window.
+11. At **Select Image** dialog, scroll down and highlight the **Microsoft Windows Server 2019 AMI** and then click **SELECT**.
+12. Click **+** to add a new Configuration.
+13. Repeat Step 4 to Step 10 to add the **Trading Azure / uswest** to the **Account/Region** field and using the **MicrosoftWindowsServer:WindowsServer:2019-Datacenter:latest** as the image.
+14. Click **CREATE**.
+15. Repeat Step 3 through Step 14 to create another **Image Mapping** with the following information.
 
 <table class="table">
     <caption>Table: Module 2 - Exercise 3</caption>
@@ -238,4 +238,6 @@ In this Exercise we are going to add some additional networks to existing Networ
 6. At the **Add Network** dialog, check the checkbox for the **appnet-public-dev** network.
 7. Click **ADD**.
 8. Click **Save**.
-9. Check the trading azure network profile to confirm that the **vNETXX-Public-SPC** included.  If it is not, then repeat Step 3 to Step 8 to add it.
+9. Check the trading azure network profile to confirm that the **vNETXX-Public-SPC** included.  
+
+_**Note:** If the vNETXX-Public-SPC is not already within the network profile, then repeat Step 3 to Step 8 to add it._
