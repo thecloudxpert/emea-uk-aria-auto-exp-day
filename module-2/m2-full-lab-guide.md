@@ -131,7 +131,7 @@ You should now have a new project to start provision against!
 <figure>
     <img src="./img/m2-e1-img18.png" width="75%" height="75%">
 </figure>
-  
+
 ### Exercise 2 - Creating a Flavor Mapping
 
 In this exercise we are going to create two new flavor mappings that could be used in future Modules.
