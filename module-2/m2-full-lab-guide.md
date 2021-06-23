@@ -7,7 +7,7 @@
 * [Exercise 1 - Creating a vRealize Automation Project](#exercise-1-\--creating-a-vrealize-automation-project)
 * [Exercise 2 - Creating a Flavor Mapping](#exercise-2-\--creating-a-flavor-mapping)
 * [Exercise 3 - Create an Image Mapping](#exercise-3-\--create-an-image-mapping)
-* [Exercise 4 - Update a Network Profile](#exercise-4-/--update-a-network-profile)
+* [Exercise 4 - Update a Network Profile](#exercise-4-\--update-a-network-profile)
 
 ## Exercises
 
