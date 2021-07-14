@@ -60,13 +60,13 @@ _Note: The Project Name can be anything you like but you need to remember it as 
 8. Type your email address into the **Users** text field and click **Enter**.
 
 <figure>
-    <img src="./img/m2-e1-img08.png" width="50%" height="50%">
+    <img src="./img/m2-e1-img08.png" width="40%" height="40%">
 </figure>
 
 9. Select **Administrator** from the **Assign role** dropdown.
 
 <figure>
-    <img src="./img/m2-e1-img09.png" width="50%" height="50%">
+    <img src="./img/m2-e1-img09.png" width="40%" height="40%">
 </figure>
 
 10. Click **ADD**.
