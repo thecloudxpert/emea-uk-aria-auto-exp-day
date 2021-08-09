@@ -14,45 +14,45 @@ Some examples of things that cloud-init can be used to customize are:
 
 ## Lab Overview
 
-* [Exercise 1 - Cloud Template Versioning](#exercise-1-\--cloud-template-versioning)
-* [Exercise 2 - Adding Input Parameters to a Cloud Template](#exercise-2-\--adding-input-parameters-to-a-cloud-template)
-* [Exercise 3 - Testing the Cloud Template](#exercise-3-\--testing-the-cloud-template)
-* [Exercise 4 - Versioning and Deploying the Cloud Template](#exercise-4-\--versioning-and-deploying-the-cloud-template)
-* [Exercise 5 - Updating an Existing Deployment](#exercise-5-\--updating-an-existing-deployment)
-* [Exercise 6 - Comparing Different Versions of a Cloud Template](#exercise-6-\--comparing-different-versions-of-a-cloud-template)
+* [Exercise 1 - Configure a Custom Hostname for the Multi-Cloud Cloud Template](#exercise-1-\--configure-a-custom-hostname-for-the-multi\-cloud-cloud-template)
+* [Exercise 2 - Adding Users to the Multi-Cloud Cloud Template](#exercise-2-\--adding-users-to-the-multi\-cloud-cloud-template)
+* [Exercise 3 - Installing Packages and Other Modifications into the Multi-Cloud Cloud Template](#exercise-3-\--installing-packages-and-other-modifications-into-the-multi\-cloud-cloud-template)
+
 
 ## Exercises
 
-### Exercise 1 - Create a Custom Hostname for the Multi-Cloud Cloud Template
+### Exercise 1 - Configure a Custom Hostname for the Multi-Cloud Cloud Template
 
-1. If not already in Cloud Assembly, Click VMware Cloud Assembly.
-2. Select the Design tab.
-3. Click Cloud Templates.
+1. If not already in Cloud Assembly, click Cloud Assembly.
+2. Select the **Design** tab.
+3. Click **Cloud Templates**.
 4. Click on the Multi-Cloud Cloud Template you have been working on during the previous modules to open it in the Design Canvas.
-5. Click on the Cloud_Machine_1 in topology view to highlight it and then shift focus to the Code panel.
+5. Click on the `Cloud_Machine_1` in topology view to highlight it and then shift focus to the Code panel.
 6. Put the cursor are the `-tag: '${input.selectCloud1}'` line and press Enter.
-7. Delete the - from the code window and make sure the cursor at the same indentation as the constraints property.
+7. Delete the `-` from the code window and make sure the cursor at the same indentation as the constraints property.
 8. Select cloudConfig from the available dropdown list.
-9. Add a pipe (|) after the cloudConfig insert and press Enter.
+9. Add a pipe (`|`) after the `cloudConfig:` insert and press Enter.
 
 > _**Note:** The pipe tells cloud-init that the parameters will be on separate lines._
 
-10. Press Escape to cancel menu.
+10. Press **Escape** to cancel menu.
 11. If the syntax is not indented, press \<space\> twice ( or \<tab\> once) and then type `#cloud-config` and press Enter.
 
-Now we are ready to add configuration commands to our cloudConfig section. In this simple example we will be modifying the hostname of Cloud_Machine_1.
-12. Type hostname: ${input.hostname1} and press Enter.
+Now we are ready to add configuration commands to our cloudConfig section. In this simple example we will be modifying the hostname of `Cloud_Machine_1`.
+
+12. Type `hostname: ${input.hostname1}` and press Enter.
 
 Hopefully you have noticed the input variable notation that we have used in other modules lab exercises.  You should also notice that Cloud Assembly is telling you that there are errors in your code section by seeing the error indicator at the top of the code section. Roll over the error indicator to see what the issue is.  
 As you can see you have included a variable in your YAML that is expecting an associated input. Now we need to add a section under our inputs to address this issue.  
 Note: We are going to use the Input Panel to achieve this.  However, if you as previously demonstrated this can also be achieved in code.  If you want to do this using code, then go ahead. The code required will be shown in Step 12 of this exercise.
+
 13. Click the Inputs Tab from the Panel.
 14. At the Cloud Template Inputs panel, click NEW.
 15. At the Create Cloud Template Input dialog, enter hostname1 as the Name of the input, enter a suitable label into the Title field and select String from the Type dropdown.
 
 > _**Note:** You could change additional properties in this dialog (such as maximum length) to enforce guardrails around what a requestor can put into the field during request time._
 
-16. Click Create.
+16. Click **CREATE**.
 
 You will see that an additional input has been created within the Inputs panel. 
   
@@ -79,11 +79,13 @@ In this is exercise we are going configure a user to be generated as part of the
 2. Click on the Multi-Cloud Cloud Template you have been working on to open it in the Design Canvas.
 3. Add the following code to each of the Cloud Machines cloudConfig section.
 
-    ```users:
+```
+    users:
     -   name: ${input.username}
         sudo: ['ALL=(ALL) NOPASSWD:ALL']
         groups: sudo
-        shell: /bin/bash```
+        shell: /bin/bash
+```
 
 The final code block for each machine should look like the following:
   
@@ -123,7 +125,7 @@ You should notice again that there are errors in your YAML code section. Given t
     </tbody>
 </table>
 
-5.	Using what you have learned so far and the information provided in the table below, add the input needed to allow a requestor to specify a password.
+5. Using what you have learned so far and the information provided in the table below, add the input needed to allow a requestor to specify a password.
 
 <table class="table">
     <caption>Table: Module 5 - Exercise 2</caption>
@@ -196,7 +198,7 @@ If you are able to SSH in using the username you entered during the deployment, 
 
 ---
 
-### Exercise 3 - Installing Packages and Other Modifications to the Multi-Cloud Cloud Template
+### Exercise 3 - Installing Packages and Other Modifications into the Multi-Cloud Cloud Template
 
 In this exercise we will add extra items to cloudConfig to install Apache and run some additional commands at build time.
 
