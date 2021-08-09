@@ -75,7 +75,7 @@
     <img src="./img/m2-e1-img10.png" width="75%" height="75%">
 </figure>
 
-_Note: If we had integrated vRealize Automation Cloud into an Enterprise Directory (such as Active Directory) and then synchronized certain AD Users Groups, then we could have specified an AD User Group here._
+> _**Note:** If we had integrated vRealize Automation Cloud into an Enterprise Directory (such as Active Directory) and then synchronized certain AD Users Groups, then we could have specified an AD User Group here._
 
 11. Click **Provisioning**.
 
@@ -96,7 +96,8 @@ _Note: If we had integrated vRealize Automation Cloud into an Enterprise Directo
 </figure>
 
 14. At the **Add Cloud Zone** dialog, click the Cloud zone search field and select Trading AWS / us-west-1 from the list.
-_Note: If the only available AWS Cloud Zone is Trading AWS / us-east-1, then please select that Cloud Zone._
+
+>_**Note:** If the only available AWS Cloud Zone is Trading AWS / us-east-1, then please select that Cloud Zone._
 
 <figure>
     <img src="./img/m2-e1-img13.png" width="75%" height="75%">
@@ -120,7 +121,7 @@ Now that the Trading AWS Cloud Zone has been added to the project as a provision
     <img src="./img/m2-e1-img16.png" width="75%" height="75%">
 </figure>
 
-17. Click on **Summary** and then click **Create**.
+17. Click on **Summary** and then click **CREATE**.
 
 <figure>
     <img src="./img/m2-e1-img17.png" width="75%" height="75%">
@@ -176,7 +177,7 @@ In this exercise we are going to create two new flavor mappings that could be us
         </tr>
         <tr>
             <td class="left">Resource Type</td>
-            <td class="left">STandard_B4ms</td>
+            <td class="left">Standard_B4ms</td>
         </tr>
     </tbody>
 </table>
@@ -229,7 +230,7 @@ In this exercise we are going to create a new image mapping that can be used in 
 
 Feel free to create addition Image Mappings.
 
-_**Note:** If the exact image name does not exist, then choose the nearest option to it._
+> _**Note:** If the exact image name does not exist, then choose the nearest option to it._
 
 -----
 
@@ -246,4 +247,4 @@ In this Exercise we are going to add some additional networks to existing Networ
 8. Click **Save**.
 9. Check the trading azure network profile to confirm that the **vNETXX-Public-SPC** included.  
 
-_**Note:** If the vNETXX-Public-SPC is not already within the network profile, then repeat Step 3 to Step 8 to add it._
+> _**Note:** If the vNETXX-Public-SPC is not already within the network profile, then repeat Step 3 to Step 8 to add it._

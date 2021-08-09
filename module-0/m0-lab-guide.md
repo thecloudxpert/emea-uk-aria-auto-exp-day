@@ -11,5 +11,3 @@ In this lab guide, we will walk through the process of logging into vRealize Aut
 ## Exercises
 
 ### Exercise 1 - Logging into VMware Cloud Services
-
-
