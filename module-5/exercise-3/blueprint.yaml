@@ -20,7 +20,7 @@ inputs:
   hostname2:
     type: string
     title: Machine 2 hostname
-  user:
+  username:
     type: string
     title: Username for SSH
     description: The username you would like to have for the installation.
@@ -44,7 +44,7 @@ resources:
         hostname: ${input.hostname2}
 
         users:
-          - name: ${input.user}
+          - name: ${input.username}
             sudo: ['ALL=(ALL) NOPASSWD:ALL']
             groups: sudo
             shell: /bin/bash
@@ -54,7 +54,7 @@ resources:
             
         runcmd:
         - PASS=${input.password}
-        - USER=${input.user}
+        - USER=${input.username}
         - echo $USER:$PASS | /usr/sbin/chpasswd
         - sed -i "s/PasswordAuthentication no/PasswordAuthentication yes/g" /etc/ssh/sshd_config
         - service ssh reload
@@ -71,7 +71,7 @@ resources:
         hostname: ${input.hostname1}
 
         users:
-          - name: ${input.user}
+          - name: ${input.username}
             sudo: ['ALL=(ALL) NOPASSWD:ALL']
             groups: sudo
             shell: /bin/bash
@@ -81,7 +81,7 @@ resources:
           
         runcmd:
         - PASS=${input.password}
-        - USER=${input.user}
+        - USER=${input.username}
         - echo $USER:$PASS | /usr/sbin/chpasswd
         - sed -i "s/PasswordAuthentication no/PasswordAuthentication yes/g" /etc/ssh/sshd_config
         - service ssh reload

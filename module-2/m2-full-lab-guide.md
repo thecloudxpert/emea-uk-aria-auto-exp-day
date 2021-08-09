@@ -31,7 +31,7 @@
     <img src="./img/m2-e1-img03.png" width="75%" height="75%">
 </figure>
 
-4. Click **NEW PROJECT**.
+4. Click **+ NEW PROJECT**.
 
 <figure>
     <img src="./img/m2-e1-img04.png" width="75%" height="75%">
@@ -43,7 +43,7 @@
     <img src="./img/m2-e1-img05.png" width="75%" height="75%">
 </figure>
 
-_Note: The Project Name can be anything you like but you need to remember it as you will use this project for the rest of the day._
+> _**Note:** The Project Name can be anything you like but you need to remember it as you will use this project for the rest of the day._
 
 6. Click **Users**.
 
