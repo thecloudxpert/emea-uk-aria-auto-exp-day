@@ -11,3 +11,7 @@ In this lab guide, we will walk through the process of logging into vRealize Aut
 ## Exercises
 
 ### Exercise 1 - Logging into VMware Cloud Services
+
+1. Open a web browser and navigate to https://console.cloud.vmware.com.
+
+

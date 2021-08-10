@@ -1,17 +1,21 @@
-# Lab Guide: Module 2 - Configuring vRealize Automation in Cloud Assembly
+# Lab Guide: Module 2 - Infrastructure Configuration in a vRealize Automation Organization (Cloud Assembly)
 
 ## Introduction
 
+Each new vRealize Automation Organization will require a number of Day 0/Day 1 infrastructure configurations to be completed to enable end users to consume the different cloud resources.  Whilst the majority of the configurations have been completed, in the following exercises we will complete some of final configuration steps.
+
 ## Lab Overview
 
-* [Exercise 1 - Creating a vRealize Automation Project](#exercise-1-\--creating-a-vrealize-automation-project)
+* [Exercise 1 - Creating a Project](#exercise-1-\--creating-a-project)
 * [Exercise 2 - Creating a Flavor Mapping](#exercise-2-\--creating-a-flavor-mapping)
 * [Exercise 3 - Create an Image Mapping](#exercise-3-\--create-an-image-mapping)
 * [Exercise 4 - Update a Network Profile](#exercise-4-\--update-a-network-profile)
 
 ## Exercises
 
-### Exercise 1 - Creating a vRealize Automation Project
+### Exercise 1 - Creating a Project
+
+In this exercise we are going to create a new Project.  A project is one of the base constructs that enables Users to be able to provision resources to different clouds.
 
 1. Click the **VMware Cloud Assembly** service.
 
@@ -60,7 +64,7 @@
 8. Type your email address into the **Users** text field and click **Enter**.
 
 <figure>
-    <a href="./img/m2-e1-img08.png"><img src="./img/m2-e1-img08.png"></a>
+    <img src="./img/m2-e1-img08.png" width="40%" height="40%">
 </figure>
 
 9. Select **Administrator** from the **Assign role** dropdown.
@@ -75,7 +79,9 @@
     <img src="./img/m2-e1-img10.png" width="75%" height="75%">
 </figure>
 
-> _**Note:** If we had integrated vRealize Automation Cloud into an Enterprise Directory (such as Active Directory) and then synchronized certain AD Users Groups, then we could have specified an AD User Group here._
+> _**Note:** As we logged in using an account that has been given both Organization Owner and Cloud Assembly Administrator Service roles, we have god-like privileges that most end users would not be given.  With this level of rights, we don't actually need to be a Project Administrator or Member deploy resources.  For more information check out [Organization and service user roles in vRealize Automation](https://docs.vmware.com/en/vRealize-Automation/8.4/Using-and-Managing-Cloud-Assembly/GUID-F5813D09-297F-4C10-9AC6-538B57F675A0.html)_
+
+> _**Note:** If we had integrated vRealize Automation Cloud into an Enterprise Directory (such as Active Directory) and then synchronized certain AD Users Groups, then we would have been able to specify an AD User or AD Group instead of an email address._
 
 11. Click **Provisioning**.
 
@@ -83,7 +89,7 @@
     <img src="./img/m2-e1-img11.png" width="75%" height="75%">
 </figure>
 
-12. Click **Add Zone**.
+12. Click **+ ADD ZONE**.
 
 <figure>
     <img src="./img/m2-e1-img12.png" width="75%" height="75%">
@@ -92,30 +98,30 @@
 13. Click **Cloud Zone**.
 
 <figure>
-    <img src="./img/m2-e1-img12.png" width="75%" height="75%">
+    <img src="./img/m2-e1-img13.png" width="75%" height="75%">
 </figure>
 
 14. At the **Add Cloud Zone** dialog, click the Cloud zone search field and select Trading AWS / us-west-1 from the list.
 
->_**Note:** If the only available AWS Cloud Zone is Trading AWS / us-east-1, then please select that Cloud Zone._
-
 <figure>
-    <img src="./img/m2-e1-img13.png" width="75%" height="75%">
+    <img src="./img/m2-e1-img14.png" width="50%" height="50%">
 </figure>
 
-15. Leave all remaining settings as their defaults and click Add.
+>_**Note:** If the only available AWS Cloud Zone is **Trading AWS / us-east-1**, then please select that Cloud Zone._
+
+15. Leave all remaining settings as their defaults and click **ADD**.
 
 <figure>
     <img src="./img/m2-e1-img15.png" width="50%" height="50%">
 </figure>
 
-Now that the Trading AWS Cloud Zone has been added to the project as a provisioning resource.  This means that a user can create blueprints and provision machines and services against this project.
+Now that the Trading AWS Cloud Zone has been added to the project as a provisioning resource.  This means that a user can create blueprints and provision machines and services against this project that deploy to the AWS Cloud Zone.
 
 <figure>
     <img src="./img/m2-e1-img15a.png" width="75%" height="75%">
 </figure>
 
-16. Repeat Steps 12 to Step 15 to add also the **Trading Azure Cloud Zone** to the current project.
+16. Repeat **Steps 12** to **Step 15** to also add the **Trading Azure Cloud Zone** to the current project.
 
 <figure>
     <img src="./img/m2-e1-img16.png" width="75%" height="75%">
@@ -137,21 +143,21 @@ You should now have a new project to start provision against!
 
 ### Exercise 2 - Creating a Flavor Mapping
 
-In this exercise we are going to create two new flavor mappings that could be used in future Modules.
+In this exercise we are going to create two new flavor mappings.
 
 1. Select the **Infrastructure** tab. (if required).
 2. Select **Configure** > **Flavor Mappings**.
 3. Click **NEW FLAVOR MAPPING**.
 4. On the **New Flavor Mapping** screen, type **medium** into the **Name** field.
 5. Under Configuration, Select **Trading AWS / us-west-1** as the **Account/Region**.
-6. At the value field, type **t2.** and select **t2.medium** from the list.
+6. At the value field, type **t3.** and select **t3.medium** from the list.
 7. Click **+** to add a new Configuration.
 8. Repeat Step 4 to Step 6 to add an configuration for the **Trading Azure / uswest** Account/Region using the **Standard_A2** resource type.
 9. Click Create.
 10. Repeat Step 3 to Step 9 to create another **Flavor Mapping** with the following information.
 
 <table class="table">
-    <caption>Table: Module 2 - Exercise 2</caption>
+    <caption>_Table: Module 2 - Exercise 2_</caption>
     <thead>
         <tr>
             <th class="left">Key</th>
@@ -169,7 +175,7 @@ In this exercise we are going to create two new flavor mappings that could be us
         </tr>
         <tr>
             <td class="left">Resource Type</td>
-            <td class="left">t2.large</td>
+            <td class="left">t3.large</td>
         </tr>
         <tr>
             <td class="left">Account/Regions</td>
@@ -193,10 +199,10 @@ In this exercise we are going to create a new image mapping that can be used in 
 3. Click **NEW IMAGE MAPPING**.
 4. On the **New Image Mapping** screen, type **Windows Server 2019** as the name.
 5. Under **Configuration**, select **Trading AWS / us-west-1** as the **Account/Region**.
-6. Under **Configuration**, type **Microsoft Windows Server 2019** into the **Image** field and click **Show all** from the search window.
-11. At **Select Image** dialog, scroll down and highlight the **Microsoft Windows Server 2019 AMI** and then click **SELECT**.
+6. Under **Configuration**, type `Microsoft Windows Server 2019` into the **Image** field and click **Show all** from the search window.
+11. At **Select Image** dialog, scroll down and highlight the **Microsoft Windows Server 2019** AMI and then click **SELECT**.
 12. Click **+** to add a new Configuration.
-13. Repeat Step 4 to Step 10 to add the **Trading Azure / uswest** to the **Account/Region** field and using the **MicrosoftWindowsServer:WindowsServer:2019-Datacenter:latest** as the image.
+13. Repeat **Step 4** to **Step 10** to add the **Trading Azure / uswest** to the **Account/Region** field and using `MicrosoftWindowsServer:WindowsServer:2019-Datacenter:latest` as the image.
 14. Click **CREATE**.
 15. Repeat Step 3 through Step 14 to create another **Image Mapping** with the following information.
 
@@ -227,8 +233,6 @@ In this exercise we are going to create a new image mapping that can be used in 
         </tr>
     </tbody>
 </table>
-
-Feel free to create addition Image Mappings.
 
 > _**Note:** If the exact image name does not exist, then choose the nearest option to it._
 
