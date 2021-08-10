@@ -43,7 +43,7 @@
     <img src="./img/m2-e1-img05.png" width="75%" height="75%">
 </figure>
 
-> _**Note:** The Project Name can be anything you like but you need to remember it as you will use this project for the rest of the day._
+> _**Note:** The **Project Name** can be anything you like but you need to remember it as you will use this project for the rest of the day!_
 
 6. Click **Users**.
 
@@ -60,7 +60,7 @@
 8. Type your email address into the **Users** text field and click **Enter**.
 
 <figure>
-    <img src="./img/m2-e1-img08.png" width="40%" height="40%">
+    <a href="./img/m2-e1-img08.png"><img src="./img/m2-e1-img08.png"></a>
 </figure>
 
 9. Select **Administrator** from the **Assign role** dropdown.

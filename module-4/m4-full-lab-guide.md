@@ -46,14 +46,18 @@ Now we are going to add to our multi-cloud Cloud Template by adding an input par
 In this exercise we are going to use the Code pane of the Design Canvas.
 1. From within Cloud Assembly, click Design.
 2. Click on the Multi-Cloud Cloud Template you have previous created to open it.
-3. Within the Code pane, add the following YAML code to the inputs: section: 
-Note: If you copy and paste the code below, make sure the code is formatted correctly.
-selectCloud1:
-title: Select a Cloud for Machine 1
-type: string
-enum:
-- env:aws
-- env:azure
+3. Within the Code pane, add the following YAML code to the inputs: section:
+
+    ```
+    selectCloud1:
+        title: Select a Cloud for Machine 1
+        type: string
+        enum:
+        - env:aws
+        - env:azure
+    ```
+
+> _**Note:** If you copy and paste the code, make sure the code is formatted correctly._
 
 The Code pane should now look like the screenshot below:
   
@@ -123,10 +127,26 @@ In this section we will be using the currently deployed Cloud Template, updating
 4. Using what you have learned in the Module 3 Lab Exercises, update the Cloud_Machine_2 properties for image and flavor. 
 
 If you need to, you can use the following information:
-Module 4 – Exercise 5
-Mapping	Value
-image	ubuntu
-flavor	small
+
+<table class="table">
+    <caption>Table: Module 4 - Exercise 5</caption>
+    <thead>
+        <tr>
+            <th class="left">Key</th>
+            <th class="left">Value</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td class="left">image</td>
+            <td class="left">ubuntu</td>
+        </tr>
+        <tr>
+            <td class="left">flavor</td>
+            <td class="left">small</td>
+        </tr>
+    </tbody>
+</table>
 
 Following the completion of Step 4, the Cloud Template code should look similar to the following:
  
@@ -134,10 +154,11 @@ Following the completion of Step 4, the Cloud Template code should look similar 
 
 Following Step 5, the Cloud Template code should look similar to the following:
 
-Question: How did you achieve the outcome required? Could you have achieved the same outcome in a different way?
+> **Question:** How did you achieve the outcome required? Could you have achieved the same outcome in a different way?
 
 6. Using what you have learned so far in this module, add the constraints to Cloud_Machine_2 in the Cloud Template so that it uses the additional input parameter during deployment.
-Note: Following Step 0, the Cloud Template code should look similar to the following:
+
+> _**Note:** Following Step 0, the Cloud Template code should look similar to the following:_
  
 7. Using what you have learned so far in this module, create a new version of the Cloud Template.
 8. Click the Deploy button on the Design Canvas.
