@@ -55,28 +55,28 @@ In this exercise we are going to create a new Project.  A project is one of the 
     <img src="./img/m2-e1-img06.png" width="75%" height="75%">
 </figure>
 
-7. Click **+ADD USERS**.
+7. Click **+ ADD USERS**.
 
 <figure>
     <img src="./img/m2-e1-img07.png" width="75%" height="75%">
 </figure>
 
-8. Type your email address into the **Users** text field and click **Enter**.
+8. In the **Add Users** dialog, at **Users** textbox, type your email address (i.e. `user@domain.com`) and press **Enter**.
 
 <figure>
-    <img src="./img/m2-e1-img08.png" width="40%" height="40%">
+    <img src="./img/m2-e1-img08.png" width="50%" height="50%">
 </figure>
 
-9. Select **Administrator** from the **Assign role** dropdown.
+9. In the **Add Users** dialog, select **Administrator** from the **Assign role** dropdown.
 
 <figure>
-    <img src="./img/m2-e1-img09.png" width="40%" height="40%">
+    <img src="./img/m2-e1-img09.png" width="50%" height="50%">
 </figure>
 
 10. Click **ADD**.
 
 <figure>
-    <img src="./img/m2-e1-img10.png" width="75%" height="75%">
+    <img src="./img/m2-e1-img10.png" width="50%" height="50%">
 </figure>
 
 > _**Note:** As we logged in using an account that has been given both Organization Owner and Cloud Assembly Administrator Service roles, we have god-like privileges that most end users would not be given.  With this level of rights, we don't actually need to be a Project Administrator or Member deploy resources.  For more information check out [Organization and service user roles in vRealize Automation](https://docs.vmware.com/en/vRealize-Automation/8.4/Using-and-Managing-Cloud-Assembly/GUID-F5813D09-297F-4C10-9AC6-538B57F675A0.html)_
@@ -101,7 +101,7 @@ In this exercise we are going to create a new Project.  A project is one of the 
     <img src="./img/m2-e1-img13.png" width="75%" height="75%">
 </figure>
 
-14. At the **Add Cloud Zone** dialog, click the Cloud zone search field and select Trading AWS / us-west-1 from the list.
+14. At the **Add Cloud Zone** dialog, click the **Cloud zone** search field and select **Trading AWS / us-west-1** from the list.
 
 <figure>
     <img src="./img/m2-e1-img14.png" width="50%" height="50%">
@@ -115,28 +115,30 @@ In this exercise we are going to create a new Project.  A project is one of the 
     <img src="./img/m2-e1-img15.png" width="50%" height="50%">
 </figure>
 
-Now that the Trading AWS Cloud Zone has been added to the project as a provisioning resource.  This means that a user can create blueprints and provision machines and services against this project that deploy to the AWS Cloud Zone.
-
-<figure>
-    <img src="./img/m2-e1-img15a.png" width="75%" height="75%">
-</figure>
-
-16. Repeat **Steps 12** to **Step 15** to also add the **Trading Azure Cloud Zone** to the current project.
+16. Repeat **Steps 12** to **Step 15** to also add the **Trading Azure** Cloud Zone to the project.
 
 <figure>
     <img src="./img/m2-e1-img16.png" width="75%" height="75%">
 </figure>
 
-17. Click on **Summary** and then click **CREATE**.
+17. Scroll down the Provisioning tab locate the **Custom Naming** template field.
 
 <figure>
     <img src="./img/m2-e1-img17.png" width="75%" height="75%">
 </figure>
 
-You should now have a new project to start provision against!
+18. Under **Custom Naming**, at the **Template** textbox, type `${resource.name}${####}`.
 
 <figure>
     <img src="./img/m2-e1-img18.png" width="75%" height="75%">
+</figure>
+
+> _**Note:** Using a basic custom naming template provides some consistency around the naming policy of deployment resources._
+
+19. Click **CREATE**.
+
+<figure>
+    <img src="./img/m2-e1-img19.png" width="75%" height="75%">
 </figure>
 
 -----
