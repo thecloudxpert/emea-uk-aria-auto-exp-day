@@ -23,7 +23,7 @@ Multi-Cloud Cloud Templates are capable of deploying to multiple environments le
 4. Locate the us-west-1x and us-west-1y compute resources in the Trading AWS / us-west-1 Account/Region and click the check boxes.
 5. Click **TAGS**.
 6. Under **Add tag**, type **env:aws** and press **enter**.
-7. Click **Save**.
+7. Click **SAVE**.
 8. Observe that the Capability Tag has been applied to the Compute Resources.
 9. Repeat the instructions from Step 3 to Step 8 to update the Azure Compute Resource using the following information:
 
