@@ -232,65 +232,15 @@ In this exercise we are going to create two new Flavor Mappings.
 In this exercise we are going to create a new image mapping that can be used in future Modules.
 
 1. Under **Configure**, click **Image Mappings**.
-
-<figure>
-    <img src="./img/m2-e3-img01.png" width="75%" height="75%">
-</figure>
-
 2. Click **+ NEW IMAGE MAPPING**.
-
-<figure>
-    <img src="./img/m2-e3-img02.png" width="75%" height="75%">
-</figure>
-
 3. On the **New Image Mapping** screen, at the **name** field, type `windows server 2019`.
-
-<figure>
-    <img src="./img/m2-e3-img03.png" width="75%" height="75%">
-</figure>
-
 4. Under **Configuration**, click on the **Account/Region** field and select **Trading AWS / us-west-1**.
-
-<figure>
-    <img src="./img/m2-e3-img04.png" width="75%" height="75%">
-</figure>
-
 5. At the the **Image** field, type `Microsoft Windows Server 2019`.
-
-<figure>
-    <img src="./img/m2-e3-img05.png" width="75%" height="75%">
-</figure>
-
 6. Click **Show all** from the search list.
-
-<figure>
-    <img src="./img/m2-e3-img06.png" width="75%" height="75%">
-</figure>
-
 7. At **Select Image** dialog, scroll down and highlight the **Microsoft Windows Server 2019** AMI and then click **SELECT**.
-
-<figure>
-    <img src="./img/m2-e3-img07.png" width="75%" height="75%">
-</figure>
-
 8. Click **+** to add a new Configuration.
-
-<figure>
-    <img src="./img/m2-e3-img08.png" width="75%" height="75%">
-</figure>
-
 9. Repeat **Step 4** to **Step 8** to add the **Trading Azure / uswest** to the **Account/Region** field and using `MicrosoftWindowsServer:WindowsServer:2019-Datacenter:latest` as the image.
-
-<figure>
-    <img src="./img/m2-e3-img09.png" width="75%" height="75%">
-</figure>
-
 10. Click **CREATE**.
-
-<figure>
-    <img src="./img/m2-e3-img10.png" width="75%" height="75%">
-</figure>
-
 11. Repeat **Step 2** through **Step 10** to create another **Image Mapping** with the following information.
 
 <table class="table">
