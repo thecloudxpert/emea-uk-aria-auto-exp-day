@@ -77,7 +77,7 @@ In this exercise we are going to create a new image mapping that can be used in 
         <tr>
             <td class="left">Name</td>
             <td class="left">Centos</td>
-            <td class="left">large</td>
+            <td class="left"></td>
         </tr>
         <tr>
             <td class="left">Account/Regions</td>
