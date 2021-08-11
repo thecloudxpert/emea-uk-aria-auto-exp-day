@@ -145,47 +145,82 @@ In this exercise we are going to create a new Project.  A project is one of the 
 
 ### Exercise 2 - Creating a Flavor Mapping
 
-In this exercise we are going to create two new flavor mappings.
+In this exercise we are going to create two new Flavor Mappings.
 
-1. Select the **Infrastructure** tab. (if required).
-2. Select **Configure** > **Flavor Mappings**.
-3. Click **NEW FLAVOR MAPPING**.
-4. On the **New Flavor Mapping** screen, type **medium** into the **Name** field.
-5. Under Configuration, Select **Trading AWS / us-west-1** as the **Account/Region**.
-6. At the value field, type **t3.** and select **t3.medium** from the list.
+1. Under **Configure**, click **Flavor Mappings**.
+
+<figure>
+    <img src="./img/m2-e2-img01.png" width="75%" height="75%">
+</figure>
+
+2. Click **+ NEW FLAVOR MAPPING**.
+
+<figure>
+    <img src="./img/m2-e2-img02.png" width="75%" height="75%">
+</figure>
+
+3. On the **New Flavor Mapping** screen, at the **Name** field, type `extra large`.
+
+<figure>
+    <img src="./img/m2-e2-img03.png" width="75%" height="75%">
+</figure>
+
+4. Under **Configuration**, click on the **Account/Region** field and select **Trading AWS / us-west-1**.
+
+<figure>
+    <img src="./img/m2-e2-img04.png" width="75%" height="75%">
+</figure>
+
+5. At the **Value** field, type `t3.xlarge` and select **t3.xlarge** from the list.
+
+<figure>
+    <img src="./img/m2-e2-img05.png" width="75%" height="75%">
+</figure>
+
+6. Select **t3.xlarge** from the list.
+
+<figure>
+    <img src="./img/m2-e2-img06.png" width="75%" height="75%">
+</figure>
+
 7. Click **+** to add a new Configuration.
-8. Repeat Step 4 to Step 6 to add an configuration for the **Trading Azure / uswest** Account/Region using the **Standard_A2** resource type.
-9. Click Create.
-10. Repeat Step 3 to Step 9 to create another **Flavor Mapping** with the following information.
+
+<figure>
+    <img src="./img/m2-e2-img07.png" width="75%" height="75%">
+</figure>
+
+8. Repeat **Step 4** to **Step 7** to add another configuration for the **Trading Azure / East US** Account/Region using the **Standard_B4ms** resource type.
+
+<figure>
+    <img src="./img/m2-e2-img08.png" width="75%" height="75%">
+</figure>
+
+9. Click **CREATE**.
+
+<figure>
+    <img src="./img/m2-e2-img09.png" width="75%" height="75%">
+</figure>
+
+10. Repeat **Step 3** to **Step 9** to create another **Flavor Mapping** with the following information.
 
 <table class="table">
-    <caption>_Table: Module 2 - Exercise 2_</caption>
+    <caption>Table: Module 2 - Exercise 2</caption>
     <thead>
         <tr>
-            <th class="left">Key</th>
-            <th class="left">Value</th>
+            <th class="left">Name</th>
+            <th class="left">Account/Region 1</th>
+            <th class="left">Resource Type</th>
+            <th class="left">Account/Region 2</th>
+            <th class="left">Resource Type</th>
         </tr>
     </thead>
     <tbody>
         <tr>
-            <td class="left">Name</td>
-            <td class="left">large</td>
-        </tr>
-        <tr>
-            <td class="left">Account/Regions</td>
+            <td class="left">tiny  </td>
             <td class="left">Trading AWS / us-west-1</td>
-        </tr>
-        <tr>
-            <td class="left">Resource Type</td>
-            <td class="left">t3.large</td>
-        </tr>
-        <tr>
-            <td class="left">Account/Regions</td>
-            <td class="left">Trading Azure / uswest</td>
-        </tr>
-        <tr>
-            <td class="left">Resource Type</td>
-            <td class="left">Standard_B4ms</td>
+            <td class="left">t3.nano</td>
+            <td class="left">Trading Azure / East US</td>
+            <td class="left">Standard_B1ls</td>
         </tr>
     </tbody>
 </table>
