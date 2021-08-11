@@ -18,128 +18,38 @@ Each new vRealize Automation Organization will require a number of Day 0/Day 1 i
 In this exercise we are going to create a new Project.  A project is one of the base constructs that enables Users to be able to provision resources to different clouds.
 
 1. Click the **VMware Cloud Assembly** service.
-
-<figure>
-    <img src="./img/m2-e1-img01.png" width="75%" height="75%">
-</figure>
-
 2. Select the **Infrastructure** tab.
-
-<figure>
-    <img src="./img/m2-e1-img02.png" width="75%" height="75%">
-</figure>
-
 3. Select **Administration** > **Projects**.
-
-<figure>
-    <img src="./img/m2-e1-img03.png" width="75%" height="75%">
-</figure>
-
 4. Click **+ NEW PROJECT**.
-
-<figure>
-    <img src="./img/m2-e1-img04.png" width="75%" height="75%">
-</figure>
-
 5. At the **New Project** screen, type a name for the project.
-
-<figure>
-    <img src="./img/m2-e1-img05.png" width="75%" height="75%">
-</figure>
 
 > _**Note:** The **Project Name** can be anything you like but you need to remember it as you will use this project for the rest of the day!_
 
 6. Click **Users**.
-
-<figure>
-    <img src="./img/m2-e1-img06.png" width="75%" height="75%">
-</figure>
-
 7. Click **+ ADD USERS**.
-
-<figure>
-    <img src="./img/m2-e1-img07.png" width="75%" height="75%">
-</figure>
-
 8. In the **Add Users** dialog, at **Users** textbox, type your email address (i.e. `user@domain.com`) and press **Enter**.
-
-<figure>
-    <img src="./img/m2-e1-img08.png" width="50%" height="50%">
-</figure>
-
 9. In the **Add Users** dialog, select **Administrator** from the **Assign role** dropdown.
-
-<figure>
-    <img src="./img/m2-e1-img09.png" width="50%" height="50%">
-</figure>
-
 10. Click **ADD**.
-
-<figure>
-    <img src="./img/m2-e1-img10.png" width="50%" height="50%">
-</figure>
 
 > _**Note:** As we logged in using an account that has been given both Organization Owner and Cloud Assembly Administrator Service roles, we have god-like privileges that most end users would not be given.  With this level of rights, we don't actually need to be a Project Administrator or Member deploy resources.  For more information check out [Organization and service user roles in vRealize Automation](https://docs.vmware.com/en/vRealize-Automation/8.4/Using-and-Managing-Cloud-Assembly/GUID-F5813D09-297F-4C10-9AC6-538B57F675A0.html)_
 
 > _**Note:** If we had integrated vRealize Automation Cloud into an Enterprise Directory (such as Active Directory) and then synchronized certain AD Users Groups, then we would have been able to specify an AD User or AD Group instead of an email address._
 
 11. Click **Provisioning**.
-
-<figure>
-    <img src="./img/m2-e1-img11.png" width="75%" height="75%">
-</figure>
-
 12. Click **+ ADD ZONE**.
-
-<figure>
-    <img src="./img/m2-e1-img12.png" width="75%" height="75%">
-</figure>
-
 13. Click **Cloud Zone**.
-
-<figure>
-    <img src="./img/m2-e1-img13.png" width="75%" height="75%">
-</figure>
-
 14. At the **Add Cloud Zone** dialog, click the **Cloud zone** search field and select **Trading AWS / us-west-1** from the list.
-
-<figure>
-    <img src="./img/m2-e1-img14.png" width="50%" height="50%">
-</figure>
 
 >_**Note:** If the only available AWS Cloud Zone is **Trading AWS / us-east-1**, then please select that Cloud Zone._
 
 15. Leave all remaining settings as their defaults and click **ADD**.
-
-<figure>
-    <img src="./img/m2-e1-img15.png" width="50%" height="50%">
-</figure>
-
 16. Repeat **Steps 12** to **Step 15** to also add the **Trading Azure** Cloud Zone to the project.
-
-<figure>
-    <img src="./img/m2-e1-img16.png" width="75%" height="75%">
-</figure>
-
 17. Scroll down the Provisioning tab locate the **Custom Naming** template field.
-
-<figure>
-    <img src="./img/m2-e1-img17.png" width="75%" height="75%">
-</figure>
-
 18. Under **Custom Naming**, at the **Template** textbox, type `${resource.name}${####}`.
-
-<figure>
-    <img src="./img/m2-e1-img18.png" width="75%" height="75%">
-</figure>
 
 > _**Note:** Using a basic custom naming template provides some consistency around the naming policy of deployment resources._
 
 19. Click **CREATE**.
-
-<figure>
-    <img src="./img/m2-e1-img19.png" width="75%" height="75%">
-</figure>
 
 -----
 
@@ -148,59 +58,14 @@ In this exercise we are going to create a new Project.  A project is one of the 
 In this exercise we are going to create two new Flavor Mappings.
 
 1. Under **Configure**, click **Flavor Mappings**.
-
-<figure>
-    <img src="./img/m2-e2-img01.png" width="75%" height="75%">
-</figure>
-
 2. Click **+ NEW FLAVOR MAPPING**.
-
-<figure>
-    <img src="./img/m2-e2-img02.png" width="75%" height="75%">
-</figure>
-
 3. On the **New Flavor Mapping** screen, at the **Name** field, type `extra large`.
-
-<figure>
-    <img src="./img/m2-e2-img03.png" width="75%" height="75%">
-</figure>
-
 4. Under **Configuration**, click on the **Account/Region** field and select **Trading AWS / us-west-1**.
-
-<figure>
-    <img src="./img/m2-e2-img04.png" width="75%" height="75%">
-</figure>
-
 5. At the **Value** field, type `t3.xlarge` and select **t3.xlarge** from the list.
-
-<figure>
-    <img src="./img/m2-e2-img05.png" width="75%" height="75%">
-</figure>
-
 6. Select **t3.xlarge** from the list.
-
-<figure>
-    <img src="./img/m2-e2-img06.png" width="75%" height="75%">
-</figure>
-
 7. Click **+** to add a new Configuration.
-
-<figure>
-    <img src="./img/m2-e2-img07.png" width="75%" height="75%">
-</figure>
-
 8. Repeat **Step 4** to **Step 6** to add another configuration for the **Trading Azure / East US** Account/Region using the **Standard_B4ms** resource type.
-
-<figure>
-    <img src="./img/m2-e2-img08.png" width="75%" height="75%">
-</figure>
-
 9. Click **CREATE**.
-
-<figure>
-    <img src="./img/m2-e2-img09.png" width="75%" height="75%">
-</figure>
-
 10. Repeat **Step 3** to **Step 9** to create another **Flavor Mapping** with the following information.
 
 <table class="table">
