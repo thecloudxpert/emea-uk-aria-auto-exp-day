@@ -18,53 +18,13 @@ Multi-Cloud Cloud Templates are capable of deploying to multiple environments le
 ### Exercise 1 - Configuring Tag Policies for Placement in Cloud Accounts
 
 1. Click **VMware Cloud Assembly**.
-
-<figure>
-    <img src="./img/m3-e1-img01.png" width="75%" height="75%">
-</figure>
-
 2. Select the **Infrastructure** tab.
-
-<figure>
-    <img src="./img/m3-e1-img02.png" width="75%" height="75%">
-</figure>
-
 3. Select **Resources** > **Compute**.
-
-<figure>
-    <img src="./img/m3-e1-img03.png" width="75%" height="75%">
-</figure>
-
 4. Locate the us-west-1x and us-west-1y compute resources in the Trading AWS / us-west-1 Account/Region and click the check boxes.
-
-<figure>
-    <img src="./img/m3-e1-img04.png" width="75%" height="75%">
-</figure>
-
 5. Click **TAGS**.
-
-<figure>
-    <img src="./img/m3-e1-img05.png" width="75%" height="75%">
-</figure>
-
 6. Under **Add tag**, type **env:aws** and press **enter**.
-
-<figure>
-    <img src="./img/m3-e1-img06.png" width="75%" height="75%">
-</figure>
-
 7. Click **Save**.
-
-<figure>
-    <img src="./img/m3-e1-img07.png" width="75%" height="75%">
-</figure>
-
 8. Observe that the Capability Tag has been applied to the Compute Resources.
-
-<figure>
-    <img src="./img/m3-e1-img08.png" width="75%" height="75%">
-</figure>
-
 9. Repeat the instructions from Step 3 to Step 8 to update the Azure Compute Resource using the following information:
 
 <table class="table">

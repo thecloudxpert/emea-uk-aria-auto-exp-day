@@ -138,10 +138,10 @@ In this exercise we are going to create a new image mapping that can be used in 
 
 In this Exercise we are going to add some additional networks to existing Network Profile.
 
-1. Select **Configure** > **Network Profiles**.
+1. Under **Configure**, click **Network Profiles**.
 2. Locate the trading aws network profile card, click Open.
 3. Click the **Networks** tab.
-4. Click **Add Network**.
+4. Click **+ ADD NETWORK**.
 5. At the **Add Network** dialog, check the checkbox for the **appnet-public-dev** network.
 6. Click **ADD**.
 7. Click **Save**.
