@@ -144,7 +144,7 @@ In this Exercise we are going to add some additional networks to existing Networ
 4. Click **+ ADD NETWORK**.
 5. At the **Add Network** dialog, check the checkbox for the **appnet-public-dev** network.
 6. Click **ADD**.
-7. Click **Save**.
+7. Click **SAVE**.
 8. Check the trading azure network profile to confirm that the **vNETXX-Public-SPC** included.  
 
 > _**Note:** If the vNETXX-Public-SPC is not already within the network profile, then repeat Step 3 to Step 8 to add it._
