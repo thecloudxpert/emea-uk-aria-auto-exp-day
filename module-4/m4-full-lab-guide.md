@@ -17,12 +17,11 @@ In this section of the training we will start iterative development of Cloud Tem
 
 ### Exercise 1 - Cloud Template Versioning
 
-1. Click **Cloud Assembly**.
-2. Select the **Design** tab.
-3. If not already on the **Cloud Templates**, click **Cloud Templates**.
-4. Click on the Multi-Cloud Cloud Template you created in Module 3 to open it in the Cloud Template Design Canvas.
-5. On the Cloud Template Design Canvas, select the **Version** button.
-6. On the Creating Version screen give this Version a name or number, a Description, and add any information about what was changed in the Change Log.
+1. Select the **Design** tab.
+2. Click **Cloud Templates** (if not already there).
+3. Click on the Multi-Cloud Cloud Template you created in **Module 3** to open it in the Cloud Template Design Canvas.
+4. On the Cloud Template Design Canvas, select the **Version** button.
+5. On the Creating Version screen give this Version a name or number, a Description, and add any information about what was changed in the Change Log.
 
 > _**Note:** It is a good practice to use numbers for version. For example, we will call this one version 1.0._
 
