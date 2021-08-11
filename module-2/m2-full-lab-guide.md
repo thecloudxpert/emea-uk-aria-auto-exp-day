@@ -136,7 +136,7 @@ In this exercise we are going to create a new image mapping that can be used in 
 
 ### Exercise 4 - Update a Network Profile
 
-In this Exercise we are going to add some additional networks to existing Network Profile.
+In this Exercise we are going to add some additional networks to our existing Network Profiles.
 
 1. Click **Infrastructure** (if not already on this menu)
 2. Under **Configure**, click **Network Profiles**.
