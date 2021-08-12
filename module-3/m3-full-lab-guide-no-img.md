@@ -19,51 +19,25 @@ Multi-Cloud Cloud Templates are capable of deploying to multiple environments le
 
 1. Click **VMware Cloud Assembly**.
 
-<figure>
-    <img src="./img/m3-e1-img01.png" width="75%" height="75%">
-</figure>
 
 2. Select the **Infrastructure** tab.
 
-<figure>
-    <img src="./img/m3-e1-img02.png" width="75%" height="75%">
-</figure>
 
 3. Select **Resources** > **Compute**.
 
-<figure>
-    <img src="./img/m3-e1-img03.png" width="75%" height="75%">
-</figure>
-
 4. Locate the us-west-1x and us-west-1y compute resources in the Trading AWS / us-west-1 Account/Region and click the check boxes.
 
-<figure>
-    <img src="./img/m3-e1-img04.png" width="75%" height="75%">
-</figure>
 
 5. Click **TAGS**.
 
-<figure>
-    <img src="./img/m3-e1-img05.png" width="75%" height="75%">
-</figure>
 
 6. Under **Add tag**, type **env:aws** and press **enter**.
 
-<figure>
-    <img src="./img/m3-e1-img06.png" width="75%" height="75%">
-</figure>
 
 7. Click **Save**.
 
-<figure>
-    <img src="./img/m3-e1-img07.png" width="75%" height="75%">
-</figure>
 
 8. Observe that the Capability Tag has been applied to the Compute Resources.
-
-<figure>
-    <img src="./img/m3-e1-img08.png" width="75%" height="75%">
-</figure>
 
 9. Repeat the instructions from Step 3 to Step 8 to update the Azure Compute Resource using the following information:
 
@@ -78,8 +52,8 @@ Multi-Cloud Cloud Templates are capable of deploying to multiple environments le
     </thead>
     <tbody>
         <tr>
-            <td class="left">West US</td>
-            <td class="left">Trading Azure / West US</td>
+            <td class="left">East US</td>
+            <td class="left">Trading Azure / East US</td>
             <td class="left">env:azure</td>
         </tr>
     </tbody>
@@ -93,7 +67,7 @@ It's a common use case for customers to separate clusters within an environment 
 
 1. Select the Infrastructure Tab.
 2. Select Configure > Network Profiles.
-3. Locate the trading aws network profile and click Open.
+3. Locate the "trading aws network profile" and click Open.
 4. Add the Capability Tag env:aws to the network profile and click Save.
 5. Repeat the instructions from Step 4. against the other Network Profiles using the following tags:
 
@@ -134,7 +108,6 @@ You will notice that the Cloud Agnostic Machine that was just dropped onto the c
 10. In the Code pane, locate the flavor: property and click between single quotes.  This should present you with the available flavor mappings to select from.
 11. Select **small**.
 
-> _**Note:** The options presented for image and flavor may be different than the screenshot depending on how you configured your environment._
 
 > _**Note:** If the options are not being presented, you may have missed adding the Cloud Zones to your Project._
 
@@ -146,7 +119,22 @@ Now that we have our basic machine blueprint, we need to tell it where we would 
 15. When the code assist window appears, select tag: from the list.
 16. Select the Tag for the cloud that you want to deploy this blueprint on (i.e. env:aws).
 
-The final Code window should look like the figure below:
+The final Code window should similar to the below example:
+
+```
+formatVersion: 1
+inputs: {}
+resources:
+  Cloud_Machine_1:
+    type: Cloud.Machine
+    properties:
+      image: ubuntu
+      flavor: small
+      constraints:
+        - tag: 'env:aws'
+      remoteAccess:
+        password: qv8Wa48FXTePwCv
+```
 
 We are now ready to deploy our Cloud Template!
 
@@ -156,7 +144,7 @@ We are now ready to deploy our Cloud Template!
 
 You are taken to the Deployments Screen where you can monitor the status of your deployment. You can also click on the name of the deployment to see more detailed information such as the topology and deployment history.  
   
-Feel free to explore this deployment and the information about the deployment. If you click on the Machine, you should see in the properties window that an AWS EC2 Virtual Machine has been deployed.  
+Feel free to explore this deployment and the information about the deployment. If you click on the Machine, you should see in the properties window that an AWS EC2 Virtual Machine has been deployed. (Or Azure VM if you decided to use env:azure as the contraint) 
  
 When you are done exploring continue with the next step.
 
@@ -172,14 +160,12 @@ Once the deployment has been deleted, continue with the Labs.
 In this exercise we will update the Cloud Agnostic Cloud Template to deploy to a different cloud.  We can do this by changing the Constraint Tag that has been applied.  You can choose to do this from within the Code pane or using the Properties pane.
 
 1. Click on the Design tab.
-If you back on the Cloud Template Design Canvas then continue to Step 2. 
+If you are back on the Cloud Template Design Canvas then continue to Step 2. 
 If you were brought back to the list of Cloud Templates, click on your Cloud Template to get to the design canvas.
 2. On the right-side of the screen, select the Properties tab.
-3. Check the box next to the Tag to be changed (env:aws) and click the edit icon.
-4. Change the value of the tag from env:aws to env:azure and click Apply.
+3. Select the Resource Object on the Canvas, and then check the box next to the Tag to be changed (env:aws) and click the edit icon.
+4. Change the value of the tag from **env:aws** to **env:azure** and click Apply. (Or vice versa if applicable).
 The updated Constraint Tag should now be displayed on both the Properties and Code Tab.
-Properties Tab
-Code Tab
 5. Click Deploy to deploy the updated Cloud Template.
 6. At the Deploy ``<Cloud Template Name>`` dialog, type a Deployment Name, select Current Draft for the Cloud Template Version.
 7. Click **DEPLOY** to start the deployment.
