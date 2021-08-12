@@ -12,6 +12,8 @@ In this portion of the training we will shift our focus to consuming Cloud Templ
 * [Exercise 4 - Updating the Subscription to change when it runs](#exercise-4-\--updating-the-subscription-to-change-when-it-runs)
 * [Exercise 5 - Testing the Action and Subscription](#exercise-5-\--testing-the-action-and-subscription)
 
+---
+
 ## Exercises
 
 ### Exercise 1 - Releasing a Cloud Template to the Service Catalog
@@ -33,6 +35,9 @@ You will see a tick by the version to indicate it was released.
 6. Click the back arrow to return to the Design Canvas.
  
 7. Click **CLOSE**.
+
+[Back to Top](#)
+
 ---
 
 ### Exercise 2 - Importing Content into Service Broker
@@ -53,6 +58,8 @@ In this section we will learn how to import our Cloud Templates into Service Bro
 11. Click **SAVE**.
 
 The multi-cloud Cloud Template is now available for consumption, but it needs to be made easier to consume by the end user. We will do this in the next Exercise using a custom form.
+
+[Back to Top](#)
 
 ---
 
@@ -81,6 +88,10 @@ You should notice that the Request form was not in any logical order and certain
 You will notice this is an identical Deployments screen to the one we have used in previous modules, but it is located within the Service Broker.
 
 5. Once the deployment has completed, use what you have learned in previous modules to delete it.
+
+[Back to Top](#)
+
+---
 
 ### Exercise 4 - Customizing a Catalog Item in Service Broker
 
@@ -154,6 +165,10 @@ We are now going to change the values in the drop down to be more end user frien
 20.	Click **ENABLE** to activate the custom form.
 21.	Click **SAVE**.
 
+[Back to Top](#)
+
+---
+
 ### Exercise 5 - Consuming the Cloud Template Through Service Broker Catalog
 
 Now that we have changed the catalog item icon and customized the form for easier consumption, let's go back and use the catalog in Service Broker to deploy the Cloud Template and check our work.
@@ -166,6 +181,8 @@ But can you spot the problem with the form?
 4. Once the deployment has completed, take a mental note of when it is due expire as you will need this information for the next exercise.
 
 > _**Hint:** It should be set to never expire._
+
+[Back to Top](#)
 
 ---
 
@@ -227,11 +244,7 @@ But can you spot the problem with the form?
 
 ---
 
-### Summary
-
-In this section we created an ABX action to rename the VMs in our Cloud Template to a name specified at deployment time by the requestor. We also setup a subscription to execute the action ONLY when the specific Cloud Template is requested. ABX actions are critical to being able to customize deployments to meet the customer demands you will face in a POC or an implementation.
-
-Exercise 7 - Configuring Service Broker Approval Policies
+### Exercise 7 - Configuring Service Broker Approval Policies
 
 1. Whilst in Service Broker, click the Content & Policies tab.
 2. Click Policies > Definitions.
@@ -293,71 +306,47 @@ Deployment.Update
 </table>
 
 6.	Click Create.
- 
 7.	Click Catalog.
- 
 8.	Locate the Multi-Cloud catalog item and click Request.
- 
 9.	Fill out the request with appropriate information and click Submit.
 10.	At the Deployment Screen, wait until your latest request stops on Create – Approval Pending stage.
- 
-Q. Did you get another email?
+
+> Q. Did you get another email?
+
 11.	Click on Approvals.
- 
 12.	At the Approvals screen, click on the pending approval item.
  
-Note: If you are using your email address, you should have also received two email notifications. The first notification is for the fact that your deployment is awaiting approval.  The second notification is asking you to approve the request.
+> _**Note:** If you are using your email address, you should have also received two email notifications. The first notification is for the fact that your deployment is awaiting approval.  The second notification is asking you to approve the request._
+
 13.	Review the Request Details and Approval Details and when you’re ready to continue click Approve.
- 
-
 14.	Enter an approval Comment and then click Approve.
- 
 15.	Click CLOSE.
-
- 
-
 16.	Click on the Deployments tab.
- 
 17.	On the Deployments screen, the previously stuck deployment should now have progressed or finished.
-
-Q. What do you think will happen if you try and Update the deployment?
-
+> Q. What do you think will happen if you try and Update the deployment?
 18.	(Optional) Using what you have learned, update the deployment by changing the cloud location for each machine.  Complete any necessary approval tasks.
 
- 
-Exercise 8: Configuring Service Broker Day 2 Action Policies
+[Back to Top](#)
 
-1.	In Service Broker, go to the Deployment tab.
+---
 
- 
-2.	Locate one of your deployments and click on the Actions menu.
- 
+## Exercise 8: Configuring Service Broker Day 2 Action Policies
+
+1. In Service Broker, go to the Deployment tab.
+2. Locate one of your deployments and click on the Actions menu.
 Notice the number of actions you can take against a deployment?
-3.	Click one of the Deployments.
- 
-4.	Click on one of the machines in the deployment and click Action.
+3. Click one of the Deployments.
+4. Click on one of the machines in the deployment and click Action.
 
- 
-
-Notice how many actions a user can take on their virtual machines?
+ Notice how many actions a user can take on their virtual machines?
 
 Now it is time to trim those actions down a bit!
 
-5.	Click the Content & Policies tab.
-
- 
-
-6.	Click Policies > Definitions.
-
- 
-
-7.	Click New Policy.
-
- 
-
-8.	Click Day 2 Action Policy.
- 
-9.	Create a new Day 2 Action policy using the information below.
+5. Click the Content & Policies tab.
+6. Click Policies > Definitions.
+7. Click New Policy.
+8. Click Day 2 Action Policy.
+9. Create a new Day 2 Action policy using the information below.
 Module 7– Exercise 8
 Item	Value
 Name	Project Level Day 2 Actions
@@ -377,23 +366,17 @@ Cloud.Azure.Machine.PowerOff
 Cloud.Azure.Machine.PowerOn
 
 10.	Click Create.
- 
 11.	Click Deployments.
-
- 
 12.	Click ACTIONS on any of the deployments listed.
  
-Have the menu options changed?
+> Have the menu options changed?
 13.	Click one of the Deployments.
 14.	Click on one of the machines in the deployment and click Action.
- 
-Note: the number of actions may differ between AWS and Azure machines because of the Day 2 Action policy we created.
-15.	Click Close.
+
+> _**Note:** the number of actions may differ between AWS and Azure machines because of the Day 2 Action policy we created._
+15.	Click **CLOSE**.
 16.	Using what you have learned previously, Delete all of the deployments.
 
-Summary
-In this Module of the training you learned how to import Cloud Templates from Cloud Assembly into Service Broker. You also learned to how to share those Cloud Templates making them available in the Service Broker catalog. You learned how to create a custom form to make consumption of the Cloud Template through the Service Broker catalog easier for the common user.  Finally, you learned about how the different Policies in Service Broker affect the way you can consume and manage the services and resources. 
+## Summary
 
-
-
-
+n this exercise you learned how to import Cloud Templates from Cloud Assembly into Service Broker. You also learned to how to share those Cloud Templates making them available in the Service Broker catalog. You learned how to create a custom form to make consumption of the Cloud Template through the Service Broker catalog easier for the common user.  Finally, you learned about how the different Policies in Service Broker affect the way you can consume and manage the services and resources. 

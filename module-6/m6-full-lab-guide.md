@@ -30,6 +30,8 @@ What we did...
 
 By using the variables `${input.hostnameX}` we are telling vRealize Automation to use the same user input parameter from the Cloud Template inputs for both the machine name and the name that will show up in the associated cloud provider.
 
+[Back to Top](#)
+
 ---
 
 ### Exercise 2 - Creating an ABX Action
@@ -64,7 +66,9 @@ Once you are ready to move on to make the changes to the Action, move to Step 9.
 10. Click **Delete** on each of the default inputs to remove them.
 11. Select **Amazon Web Services** from the FaaS provider dropdown.  
 12. Click **SAVE** to complete the Action creation.
-13. If required, Click CLOSE.
+13. If required, Click **CLOSE**.
+
+[Back to Top](#)
 
 ---
 
@@ -84,6 +88,10 @@ Once you are ready to move on to make the changes to the Action, move to Step 9.
 9. At the **Action/Workflow** window, select Rename Machine from the list of ABX Actions.
 10. Click **SELECT**.
 11. Click **SAVE**.
+
+[Back to Top](#)
+
+---
 
 ### Exercise 4 - Updating the Subscription to change when it runs
 
@@ -111,6 +119,10 @@ event.data.blueprintId == '<Cloud Template ID>'
 
 10. Click **SAVE**.
 
+[Back to Top](#)
+
+---
+
 ### Exercise 5 - Testing the Action and Subscription
 
 1. Using what you have learned so far, deploy your current Multi-Cloud Cloud Template entering the information for the inputs.
@@ -126,8 +138,10 @@ Once the deployment has started, move on to Step 2.
 
 You will should see the two runs that have completed successfully.
 
+[Back to Top](#)
+
 ---
 
-### Summary
+## Summary
 
 In this section we created an ABX action to rename the VMs in our Cloud Template to a name specified at deployment time by the requestor. We also setup a subscription to execute the action ONLY when the specific Cloud Template is requested. ABX actions are critical to being able to customize deployments to meet the customer demands you will face in a POC or an implementation.

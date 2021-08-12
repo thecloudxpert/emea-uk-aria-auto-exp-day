@@ -40,7 +40,7 @@ Here you can see several bits of information about the Cloud Template's history 
 
 8. Select the **Back to Cloud Template Editor** arrow in the top left corner to return to the Design Canvas.
 
-[Back to Overview](#)
+[Back to Top](#)
 
 ---
 
@@ -103,7 +103,7 @@ resources:
         - tag: '${input.SelectCloud1}'
 ```  
 
-[Back to Overview](#)
+[Back to Top](#)
 
 ---
 
@@ -118,7 +118,7 @@ In this exercise we are going to check that the Cloud Template code and placemen
 
 > _**Note:** You can also view the **Provisioning Diagram** to see how an actual deployment would occur and what placement decisions have been made based on tag-based palcement.  This is a very interesting diagram and we look more at these in later modules and exercises._
 
-[Back to Overview](#)
+[Back to Top](#)
 
 ---
 
@@ -145,7 +145,7 @@ We are now ready to this new Cloud Template!
 8. Click **DEPLOY**.
 9. Click **CLOSE**.
 
-[Back to Overview](#)
+[Back to Top](#)
 
 ---
 
@@ -227,7 +227,7 @@ resources:
 7. Using what you have learned so far in this module, create a new version of the Cloud Template.
 8. Click **CLOSE**.
 
-[Back to Overview](#)
+[Back to Top](#)
 
 ---
 
@@ -240,43 +240,47 @@ In this exercise we use the Cloud Agnostic Cloud Template to update an existing 
 3. Click **DEPLOY**.
 4. At the **Deploy \<Cloud Template Name>** dialog, select **Update Existing Deployment** from the dropdown.
 5. At the **Deploy \<Cloud Template Name>** dialog, ensure that **Current Draft** for the **Cloud Template Version**.
-6. Select **<Your Name> - Agnostic Deployment** from the list of existing deployments.
+6. Select **\<Your Name> - Agnostic Deployment** from the list of existing deployments.
 7. Click **NEXT**.
 8. On the Deployment Inputs screen, at the **Select a Cloud for Machine 2** dropdown, select **env:azure**.
 9. Click **NEXT**.
 10. On the Plan Screen, click **>** to see the changes that will take affect during the update to the existing deployment.
 11. Click **DEPLOY**.
 
-You should automatically be taken to the Deployments screen where you can see the status of the deployment. Feel free to explore the deployment details. Once you are done exploring, use what you have learned so far to delete the deployment.
+You should automatically be taken to the Deployments screen where you can see the status of the deployment. Feel free to explore the deployment details. 
+
+12. Using what you have learned so far, delete the **\<Your Name> - Agnostic Deployment** deployment.
 
 ### Exercise 7 - Comparing Different Versions of a Cloud Template
 
-In this Exercise we will look at the tools available within Cloud Assembly to compare different versions of Cloud Templates. This is an important aspect of iterative Cloud Template development as it provides comparison and restore capabilities.
+In this exercise we will look at the tools available within Cloud Assembly to compare different versions of Cloud Templates. This is an important aspect of iterative development as it provides comparison and restore capabilities.
 
-1. From within Cloud Assembly, click the Design tab.
-2. If required, open the Multi-Cloud Cloud Template.
-3. Click Version History.
+1. Click **Design**.
+2. Open the Cloud Agnostic Cloud Template.
+3. Click **Version History**.
   
 On the Version History screen, you can see a list of the versions, and information about the versions, for the Cloud Template. From this list you can restore a previous Cloud Template, clone, download, and deploy a specific version of the Cloud Template. The Version History screen is also another location where you could release a specific version of a Cloud Template for consumption in Service Broker, which we will do later in the training.
   
 Now let's compare different versions of the Cloud Template!
 
-4. Click the Diff tab.
+4. Click the **Diff** tab.
   
 > _**Note:** You can only compare the Current Version against a previous versions._
 
 5. Select one of the previous versions from the Diff Against dropdown.
   
 In the above example we are comparing version 1 of our multi-cloud Cloud Template to version 1.2 (Current Draft). You will see all the sections that were changed or added by colour. Red being changed and green being what was added between the two versions. You can also see the visual differences in the Cloud Template and we will be doing that next.
+
 6. Click Diff Visually.
   
 Like the code difference screen, you will get a colour-coded view of the different components and topologies of the two versions of the Cloud Template.
+
 7. Click the back arrow to return to the Design Canvas.
 
-[Back to Overview](#)
+[Back to Top](#)
 
 ---
 
-### Summary
+## Summary
 
 In this Module of the training you learned how to version Cloud Templates as a part of iterative development and then update existing deployments with new versions of the Cloud Template. You also learned how to use tools within Cloud Assembly to compare, restore, download, clone, and deploy specific version of a Cloud Template. In the next portion of the training "Curating Content" we will release a version of the multi-cloud Cloud Template for use in Service Broker and create a custom form for easy consumption.

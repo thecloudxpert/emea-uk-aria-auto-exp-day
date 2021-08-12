@@ -51,6 +51,8 @@ In this exercise we are going to create a new Project.  A project is one of the 
 
 19. Click **CREATE**.
 
+[Back to Top](#)
+
 -----
 
 ### Exercise 2 - Creating a Flavor Mapping
@@ -89,6 +91,8 @@ In this exercise we are going to create two new Flavor Mappings.
         </tr>
     </tbody>
 </table>
+
+[Back to Top](#)
 
 -----
 
@@ -132,6 +136,8 @@ In this exercise we are going to create a new image mapping that can be used in 
 
 > _**Note:** If the exact image name does not exist, then choose the nearest option to it._
 
+[Back to Top](#)
+
 -----
 
 ### Exercise 4 - Update a Network Profile
@@ -157,3 +163,9 @@ In this Exercise we are going to add some additional networks to our existing Ne
 14. Check the **vNETXX-Public-SPC** checkbox.  
 15. Click **ADD**.
 16. Click **SAVE**.
+
+[Back to Top](#)
+
+---
+
+## Summary
