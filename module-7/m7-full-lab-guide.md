@@ -1,4 +1,4 @@
-# Lab Guide: Module 7 - Curating Content
+# Module 7 - Curating Content using Service Broker
 
 ## Introduction
 

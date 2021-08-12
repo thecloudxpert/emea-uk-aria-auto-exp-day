@@ -1,4 +1,4 @@
-# Lab Guide: Module 3 - Deploying to Multiple Clouds
+# Module 3 - Deploying to Multiple Clouds
 
 ## Introduction
 
@@ -117,8 +117,6 @@ resources:
       flavor: small
       constraints:
         - tag: 'env:aws'
-      remoteAccess:
-        password: qv8Wa48FXTePwCv
 ```
 
 We are now ready to deploy our Cloud Template!

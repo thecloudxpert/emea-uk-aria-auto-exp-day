@@ -1,4 +1,4 @@
-# Lab Guide: Module 5 - Deploying to Multiple Clouds
+# Module 5 - Deploying to Multiple Clouds
 
 ## Introduction
 

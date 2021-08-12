@@ -1,4 +1,4 @@
-# Lab Guide: Module 2 - Infrastructure Configuration in a vRealize Automation Organization (Cloud Assembly)
+# Module 2 - Infrastructure Configuration in a vRealize Automation Organization (Cloud Assembly)
 
 ## Introduction
 

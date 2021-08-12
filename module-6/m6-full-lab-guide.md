@@ -1,4 +1,4 @@
-# Lab Guide: Module 6 - Using Extensibility
+# Module 6 - Using Extensibility
 
 ## Introduction
 

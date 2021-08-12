@@ -1,4 +1,4 @@
-# Lab Guide: Module 4 - Interative Development and Infrastructure-as-Code
+# Module 4 - Interative Development and Infrastructure-as-Code
 
 ## Introduction
 
