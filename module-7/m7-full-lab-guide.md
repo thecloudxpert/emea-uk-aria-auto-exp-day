@@ -95,7 +95,7 @@ You will notice this is an identical Deployments screen to the one we have used 
 
 ### Exercise 4 - Customizing a Catalog Item in Service Broker
 
-In this Exercise we are going to customize the Catalog Item that was previously created and then add a custom form to it so that it is easier to consume for the average requestor. 
+In this Exercise we are going to customize the Catalog Item that was previously created and then add a custom form to it so that it is easier to consume for the average requestor.
 For this deployment scenario we want to abstract the cloud the user requests. We only want the consumer to select whether the workload should be deployed to production or to test. This gives the infrastructure and / or cloud teams the ability to put workloads where they will run with the best performance, most efficiency, and cost effectiveness without the possibility of cloud bias from the consumer.
 
 1. Whilst in Service Broker, click the Content & Policies tab.
