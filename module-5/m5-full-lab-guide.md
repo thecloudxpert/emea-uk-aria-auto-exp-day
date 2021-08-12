@@ -18,7 +18,6 @@ Some examples of things that cloud-init can be used to customize are:
 * [Exercise 2 - Adding Users to the Multi-Cloud Cloud Template](#exercise-2-\--adding-users-to-the-multi\-cloud-cloud-template)
 * [Exercise 3 - Installing Packages and Other Modifications into the Multi-Cloud Cloud Template](#exercise-3-\--installing-packages-and-other-modifications-into-the-multi\-cloud-cloud-template)
 
-
 ## Exercises
 
 ### Exercise 1 - Configure a Custom Hostname for the Multi-Cloud Cloud Template
@@ -69,6 +68,8 @@ Once you have completed the updates to the Cloud Template, use what you have lea
 3. Delete the Deployment
 
 > _**Note:** You should be able to deploy the Cloud Template to test the deployment is successful, but you will not be able to fully test the hostname changes until we add a logon user to the machines in the next exercise._
+
+[Back to Top](#)
 
 ---
 
@@ -196,6 +197,8 @@ If you are able to SSH in using the username you entered during the deployment, 
   
 14.	Using what you have learned previously, Delete the deployment.
 
+[Back to Top](#)
+
 ---
 
 ### Exercise 3 - Installing Packages and Other Modifications into the Multi-Cloud Cloud Template
@@ -228,6 +231,8 @@ The final code block for `Cloud_Machine_1` should be:
     * Open a web browser and enter the IP address of each machine.
 8. Using what you have learned previously, delete the deployment.
 9. Assuming the deployment has been successful, create a new version of this Cloud Template.
+
+[Back to Top](#)
 
 ---
 
