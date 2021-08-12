@@ -18,27 +18,13 @@ Multi-Cloud Cloud Templates are capable of deploying to multiple environments le
 ### Exercise 1 - Configuring Tag Policies for Placement in Cloud Accounts
 
 1. Click **VMware Cloud Assembly**.
-
-
 2. Select the **Infrastructure** tab.
-
-
 3. Select **Resources** > **Compute**.
-
 4. Locate the us-west-1x and us-west-1y compute resources in the Trading AWS / us-west-1 Account/Region and click the check boxes.
-
-
 5. Click **TAGS**.
-
-
 6. Under **Add tag**, type **env:aws** and press **enter**.
-
-
 7. Click **Save**.
-
-
 8. Observe that the Capability Tag has been applied to the Compute Resources.
-
 9. Repeat the instructions from Step 3 to Step 8 to update the Azure Compute Resource using the following information:
 
 <table class="table">
@@ -97,7 +83,7 @@ In this section we will deploy a single machine Cloud Template to one of the clo
 2. If not already on Cloud Templates, click Cloud Templates.
 3. Click NEW FROM.
 4. Click Blank canvas.
-5. At the New Cloud Template dialog, type a Name and select a Project from the search list. 
+5. At the New Cloud Template dialog, type a Name and select a Project from the search list.
 6. Click CREATE.
 7. Locate the Cloud Agnostic > Machine Resource Type, then drag and drop it onto the design canvas.
 
@@ -107,7 +93,6 @@ You will notice that the Cloud Agnostic Machine that was just dropped onto the c
 9. Select the ubuntu image.
 10. In the Code pane, locate the flavor: property and click between single quotes.  This should present you with the available flavor mappings to select from.
 11. Select **small**.
-
 
 > _**Note:** If the options are not being presented, you may have missed adding the Cloud Zones to your Project._
 
@@ -121,7 +106,7 @@ Now that we have our basic machine blueprint, we need to tell it where we would 
 
 The final Code window should similar to the below example:
 
-```
+```YAML
 formatVersion: 1
 inputs: {}
 resources:
@@ -139,13 +124,13 @@ resources:
 We are now ready to deploy our Cloud Template!
 
 17. Click the **DEPLOY** button.  
-18. At the Deploy <Cloud Template name> dialog, type a Deployment Name, select Current Draft for the Cloud Template Version.
-19.	Click Deploy to start the deployment.
+18. At the Deploy "Cloud Template name" dialog, type a Deployment Name, select Current Draft for the Cloud Template Version.
+19. Click Deploy to start the deployment.
 
-You are taken to the Deployments Screen where you can monitor the status of your deployment. You can also click on the name of the deployment to see more detailed information such as the topology and deployment history.  
+You are taken to the Deployments Screen where you can monitor the status of your deployment. You can also click on the name of the deployment to see more detailed information such as the topology and deployment history.
   
-Feel free to explore this deployment and the information about the deployment. If you click on the Machine, you should see in the properties window that an AWS EC2 Virtual Machine has been deployed. (Or Azure VM if you decided to use env:azure as the contraint) 
- 
+Feel free to explore this deployment and the information about the deployment. If you click on the Machine, you should see in the properties window that an AWS EC2 Virtual Machine has been deployed. (Or Azure VM if you decided to use env:azure as the contraint)
+
 When you are done exploring continue with the next step.
 
 20. From the Deployment Screen, click Close to return to the Deployment List screen.
@@ -160,7 +145,7 @@ Once the deployment has been deleted, continue with the Labs.
 In this exercise we will update the Cloud Agnostic Cloud Template to deploy to a different cloud.  We can do this by changing the Constraint Tag that has been applied.  You can choose to do this from within the Code pane or using the Properties pane.
 
 1. Click on the Design tab.
-If you are back on the Cloud Template Design Canvas then continue to Step 2. 
+If you are back on the Cloud Template Design Canvas then continue to Step 2.
 If you were brought back to the list of Cloud Templates, click on your Cloud Template to get to the design canvas.
 2. On the right-side of the screen, select the Properties tab.
 3. Select the Resource Object on the Canvas, and then check the box next to the Tag to be changed (env:aws) and click the edit icon.
@@ -169,7 +154,7 @@ The updated Constraint Tag should now be displayed on both the Properties and Co
 5. Click Deploy to deploy the updated Cloud Template.
 6. At the Deploy ``<Cloud Template Name>`` dialog, type a Deployment Name, select Current Draft for the Cloud Template Version.
 7. Click **DEPLOY** to start the deployment.
- 
+
 Again, you are taken to the Deployments Screen where you can monitor the status of the deployment.
 
 > _**Note:** You can see the decision process Cloud Assembly made in placing the machine by clicking on the name of the deployment. On the deployment details screen, click History, select Create, and then select the Provisioning Diagram link to see the details of the decision process. This is also a great place to start troubleshooting a failed deployment._
