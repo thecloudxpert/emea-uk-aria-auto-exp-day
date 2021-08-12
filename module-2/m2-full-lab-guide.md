@@ -11,6 +11,8 @@ Each new vRealize Automation Organization will require a number of Day 0/Day 1 i
 * [Exercise 3 - Create an Image Mapping](#exercise-3-\--create-an-image-mapping)
 * [Exercise 4 - Update a Network Profile](#exercise-4-\--update-a-network-profile)
 
+---
+
 ## Exercises
 
 ### Exercise 1 - Creating a Project

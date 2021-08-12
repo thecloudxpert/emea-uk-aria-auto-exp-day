@@ -2,7 +2,7 @@
 
 ## Introduction
 
-In this section of the training we will start iterative development of Cloud Templates through version management in Cloud Assembly. We will be building off the previous multi-cloud Cloud Template by making the cloud we intend to deploy the machine to, an input parameter during deployment time. At the same time we will be versioning our Cloud Template and comparing the changes between different versions.
+In this lab exercise we will start iterative development of Cloud Templates through version management in Cloud Assembly. We will be building off the previous Cloud Agnostic Cloud Template by making the cloud we intend to deploy the machine to, an input parameter during deployment time. At the same time we will be versioning our Cloud Template and comparing the changes between different versions.
 
 ## Lab Overview
 
@@ -283,4 +283,7 @@ Like the code difference screen, you will get a colour-coded view of the differe
 
 ## Summary
 
-In this Module of the training you learned how to version Cloud Templates as a part of iterative development and then update existing deployments with new versions of the Cloud Template. You also learned how to use tools within Cloud Assembly to compare, restore, download, clone, and deploy specific version of a Cloud Template. In the next portion of the training "Curating Content" we will release a version of the multi-cloud Cloud Template for use in Service Broker and create a custom form for easy consumption.
+In this exercise you learned the following:
+* How to version a Cloud Template during the process of iterative development.
+* How to update an existing deployments with a new version of the Cloud Template.
+* How to use tools within Cloud Assembly to compare different versions of a Cloud Template.
