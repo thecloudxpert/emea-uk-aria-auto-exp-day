@@ -50,7 +50,7 @@ In this exercise we are going to update our Cloud Agnostic Cloud Template by add
 
 1. Within the **Code** pane, add the following YAML code to the `inputs:` section of the cloud template:
 
-    ```
+    ```yaml
     selectCloud1:
         type: string
         title: Select a Cloud for Machine 1
@@ -83,7 +83,7 @@ Now that we have defined our `input` we need to modify our **Constraints Tag** o
 
 Now we have added our first input and updated our constraint tag, the YAML code in the **Code** pane should be:
 
-```
+```yaml
 formatVersion: 1
 inputs:
   SelectCloud1:
@@ -191,7 +191,7 @@ You can use the following information to help:
 
 The final Agnostic Cloud Template code should look similar to the following:
 
-```
+```yaml
 formatVersion: 1
 inputs:
   SelectCloud1:
