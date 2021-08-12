@@ -18,13 +18,13 @@ In this portion of the training we will shift our focus to consuming Cloud Templ
 
 ### Exercise 1 - Releasing a Cloud Template to the Service Catalog
 
-To start having users consume Cloud Templates from Cloud Assembly you first need to release a version of a Cloud Template for consumption. 
+To start having users consume Cloud Templates from Cloud Assembly you first need to release a version of a Cloud Template for consumption.
 
 1. From within Cloud Assembly select the Design tab to get to the list of Cloud Templates.
  
-> _**Note:** you may not be in exactly the same place in the UI, but still need to click Extensibility.
+> _**Note:** you may not be in exactly the same place in the UI, but still need to click Extensibility._
 
-2. Click on the Multi-Cloud Cloud Template you have been working on during the previous modules to open it in the Design Canvas.
+2. Click on the Cloud Agnnostic Cloud Template you have been working on during the previous modules to open it in the Design Canvas.
 3. At the Design Canvas screen, click Version History.
 4. Locate the latest version of the Cloud Template (this is the one before the Current Draft) and click Release.
 5. At the Release Version dialog, click Release.
@@ -33,7 +33,6 @@ The Cloud Template has now been released so it can be consumed by the Service Br
 You will see a tick by the version to indicate it was released.
 
 6. Click the back arrow to return to the Design Canvas.
- 
 7. Click **CLOSE**.
 
 [Back to Top](#)
@@ -57,7 +56,7 @@ In this section we will learn how to import our Cloud Templates into Service Bro
 10. Check the checkbox next to the Content Source created in Step 6.
 11. Click **SAVE**.
 
-The multi-cloud Cloud Template is now available for consumption, but it needs to be made easier to consume by the end user. We will do this in the next Exercise using a custom form.
+The Cloud Agnostic Cloud Template is now available for consumption, but it needs to be made easier to consume by the end user. We will do this in the next Exercise using a custom form.
 
 [Back to Top](#)
 
