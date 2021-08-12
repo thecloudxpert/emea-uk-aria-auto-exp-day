@@ -43,7 +43,7 @@ In this exercise we are going to create a new Project.  A project is one of the 
 >_**Note:** If the only available AWS Cloud Zone is **Trading AWS / us-east-1**, then please select that Cloud Zone._
 
 15. Leave all remaining settings as their defaults and click **ADD**.
-16. Repeat **Steps 12** to **Step 15** to also add the **Trading Azure** Cloud Zone to the project.
+16. Repeat **Step 12** to **Step 15** to also add the **Trading Azure** Cloud Zone to the project.
 17. Scroll down the Provisioning tab locate the **Custom Naming** template field.
 18. Under **Custom Naming**, at the **Template** textbox, type `${resource.name}${####}`.
 
