@@ -15,7 +15,7 @@ Each new vRealize Automation Organization will require a number of Day 0/Day 1 i
 
 ### Exercise 1 - Creating a Project
 
-In this exercise we are going to create a new Project.  A project is one of the base constructs that enables Users to be able to provision resources to different clouds.
+In this exercise we are going to create a new **Project**.  A Project is one of the base constructs that enables vRealize Automation users to provision resources to different clouds (Cloud Zones).
 
 1. Click the **VMware Cloud Assembly** service.
 2. Select the **Infrastructure** tab.
