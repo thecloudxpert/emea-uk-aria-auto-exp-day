@@ -8,37 +8,29 @@ Each new vRealize Automation Organization will require a number of Day 0/Day 1 i
 
 ## Lab Overview
 
-* [Exercise 1 - Creating a Project](#exercise-1-\--creating-a-project)
-* [Exercise 2 - Creating a Flavor Mapping](#exercise-2-\--creating-a-flavor-mapping)
-* [Exercise 3 - Create an Image Mapping](#exercise-3-\--create-an-image-mapping)
-* [Exercise 4 - Update a Network Profile](#exercise-4-\--update-a-network-profile)
+* [Exercise 1 - Creating Projects](#exercise-1-\--creating-projects)
+* [Exercise 2 - Creating Flavor Mappings](#exercise-2-\--creating-flavor-mappings)
+* [Exercise 3 - Creating Image Mappings](#exercise-3-\--creating-image-mappings)
+* [Exercise 4 - Updating Network Profiles](#exercise-4-\--updating-network-profiles)
 
 ## Exercises
 
-### Exercise 1 - Creating a New Project
+### Exercise 1 - Creating Projects
 
 In this exercise we are going to create a new **Project**.  A Project is one of the base constructs that enables vRealize Automation users to provision resources to different clouds (Cloud Zones).
 
 1. Click the **VMware Cloud Assembly** service.
-
 2. Select the **Infrastructure** tab.
-
 3. Select **Administration** > **Projects**.
-
 4. Click **+ NEW PROJECT**.
-
 5. At the **New Project** screen, type a name for the project.
 
 > _**Note:** The **Project Name** can be anything you like but you need to remember it as you will use this project for the rest of the day!_
 
 6. Click **Users**.
-
 7. Click **+ ADD USERS**.
-
 8. In the **Add Users** dialog, at **Users** textbox, type your email address (i.e. `user@domain.com`) and press **Enter**.
-
 9. At **Assign role**, check the **Administrator** checkbox.
-
 10. Click **ADD**.
 
 > _**Note:** When logged into an account that has been given both Organization Owner and Cloud Assembly Administrator Service roles, we have alot more privileges and access than most end users would be given.  With this level of rights, we don't actually need to be a Project Administrator or Member to deploy resources.  For more information check out [Organization and service user roles in vRealize Automation](https://docs.vmware.com/en/vRealize-Automation/8.6/Using-and-Managing-Cloud-Assembly/GUID-F5813D09-297F-4C10-9AC6-538B57F675A0.html)_
@@ -46,11 +38,8 @@ In this exercise we are going to create a new **Project**.  A Project is one of 
 > _**Note:** If the Cloud Service Portal for you Organization had been integrated with an Enterprise Directory (such as Active Directory), we would be able to specify both AD users and Groups when creating a project._
 
 11. Click **Provisioning**.
-
 12. Click **+ ADD ZONE**.
-
 13. Click **Cloud Zone**.
-
 14. At the **Add Cloud Zone** dialog, click the **Cloud zone** search field and select **Trading AWS / us-west-1** from the list.
 
 >_**Note:** If the only available AWS Cloud Zone is **Trading AWS / us-east-1**, then please select that Cloud Zone._
@@ -79,25 +68,17 @@ In this exercise we are going to create a new **Project**.  A Project is one of 
 In this exercise we are going to create two new Flavor Mappings.
 
 1. Under **Configure**, click **Flavor Mappings**.
-
 2. Click **+ NEW FLAVOR MAPPING**.
-
 3. On the **New Flavor Mapping** screen, at the **Name** field, type `extra large`.
 
 > _**Note:** The names of Flavor Mapping are case sensitive within a Cloud Template._
 
 4. Under **Configuration**, click on the **Account/Region** field and select **Trading AWS / us-west-1**.
-
 5. At the **Value** field, type `t2.xlarge` and select **t3.xlarge** from the list.
-
 6. Select **t3.xlarge** from the list.
-
 7. Click **+** to add a new Configuration.
-
 8. Repeat **Step 4** to **Step 6** to add another configuration for the **Trading Azure / East US** Account/Region using the **Standard_B4ms** resource type.
-
 9. Click **CREATE**.
-
 10. Repeat **Step 3** to **Step 9** to create another **Flavor Mapping** with the following information.
 
 <table class="table">
@@ -126,7 +107,7 @@ In this exercise we are going to create two new Flavor Mappings.
 
 -----
 
-### Exercise 3 - Create an Image Mapping
+### Exercise 3 - Creating Image Mappings
 
 In this exercise we are going to create a new image mapping that can be used in future Modules.
 
@@ -170,7 +151,7 @@ In this exercise we are going to create a new image mapping that can be used in 
 
 -----
 
-### Exercise 4 - Update a Network Profile
+### Exercise 4 - Updating Network Profiles
 
 In this Exercise we are going to add some additional networks to our existing Network Profiles.
 
@@ -199,3 +180,7 @@ In this Exercise we are going to add some additional networks to our existing Ne
 ---
 
 ## Summary
+
+In Lab Module 2 we have covered some basic configurations that will need to occur within a vRealize Automation Organization/Tenant.
+
+[Back to Top](#)

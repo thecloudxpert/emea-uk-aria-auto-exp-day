@@ -9,9 +9,10 @@ Multi-Cloud Cloud Templates are capable of deploying to multiple environments le
 * [Exercise 1 - Configuring Tag Policies for Placement in Cloud Accounts](#exercise-1-\--configuring-tag-policies-for-placement-in-cloud-accounts)
 * [Exercise 2 - Configuring Tag Policies for Placement in Network Profiles](#exercise-2-\--configuring-tag-policies-for-placement-in-network-profiles)
 * [Exercise 3 - Creating a Single Machine Cloud Template](#exercise-3-\--creating-a-single-machine-cloud-template)
-* [Exercise 4 - Updating the Single Machine Cloud Template](#exercise-4-\--updating-the-single-machine-cloud-template)
-* [Exercise 5 - Creating a Single Machine AWS Cloud Template](#exercise-5-\--creating-a-single-machine-aws-cloud-template)
-* [Exercise 6 - Creating a Single Machine Azure Cloud Template](#exercise-6-\--creating-a-single-machine-azure-cloud-template)
+* [Exercise 4 - Creating a Single Machine Cloud Template](#exercise-4-\--deploying-a-single-machine-cloud-template)
+* [Exercise 5 - Updating the Single Machine Cloud Template](#exercise-5-\--updating-the-single-machine-cloud-template)
+* [Exercise 6 - Creating a Single Machine AWS Cloud Template](#exercise-6-\--creating-a-single-machine-aws-cloud-template)
+* [Exercise 7 - Creating a Single Machine Azure Cloud Template](#exercise-7-\--creating-a-single-machine-azure-cloud-template)
 
 ## Exercises
 
@@ -20,7 +21,7 @@ Multi-Cloud Cloud Templates are capable of deploying to multiple environments le
 1. Click **VMware Cloud Assembly**.
 2. Select the **Infrastructure** tab.
 3. Select **Resources** > **Compute**.
-4. Locate the us-west-1x and us-west-1y compute resources in the Trading AWS / us-west-1 Account/Region and click the check boxes.
+4. Locate the two us-west-1 resources in the Trading AWS / us-west-1 Account/Region and click their repsective check boxes.
 5. Click **TAGS**.
 6. Under **Add tag**, type **env:aws** and press **enter**.
 7. Click **Save**.
@@ -45,17 +46,22 @@ Multi-Cloud Cloud Templates are capable of deploying to multiple environments le
     </tbody>
 </table>
 
-It is a common use case for customers to separate clusters within an environment based on use case. An abstract version of this concept exists in public cloud as well (people may use different regions/zones for different use cases). We might tag a cluster designed for Oracle workloads to leverage the "app:oracle" tag, allowing us to place these workloads on this cluster via the placement engine. Another use case is for compliance reasons - users may tag clusters based on compliance capabilities on specific environments to ensure workloads land in an environment that will help them pass audits.
+> _**Note:** Whilst the `env:aws` tag existed, the `env:azure` tag does not and will be created by this process._
+
+> It is a common use case for customers to separate clusters within an environment based on use case. An abstract version of this concept exists in public cloud as well (people may use different regions/zones for different use cases). We might tag a cluster designed for Oracle workloads to leverage the `app:oracle` tag, allowing us to place these workloads on this cluster via the placement engine. Another use case is for compliance reasons - users may tag clusters based on compliance capabilities on specific environments to ensure workloads land in an environment that will help them pass audits.
+
+[Back to Top](#)
 
 ---
 
 ### Exercise 2 - Configuring Tag Policies for Placement in Network Profiles
 
-1. Select the Infrastructure Tab.
-2. Select Configure > Network Profiles.
-3. Locate the "trading aws network profile" and click Open.
-4. Add the Capability Tag env:aws to the network profile and click Save.
-5. Repeat the instructions from Step 4. against the other Network Profiles using the following tags:
+1. Select the **Infrastructure** Tab.
+2. Select **Configure** > **Network Profiles**.
+3. Locate the **trading aws network profile** and click **OPEN**.
+4. Under **Capabilities**, click on the **Capability Tag** text field and type `env:aws` and press **enter**.
+5. Click **SAVE**.
+6. Repeat the instructions from **Step 3** to **Step 5** against the Azure Network Profile using the following information:
 
 <table class="table">
     <caption>Table: Module 3 - Exercise 2</caption>
@@ -73,36 +79,64 @@ It is a common use case for customers to separate clusters within an environment
     </tbody>
 </table>
 
+[Back to Top](#)
+
 ---
 
 ### Exercise 3 - Creating a Single Machine Cloud Template
 
 In this section we will deploy a single machine Cloud Template to one of the clouds we have configured in Cloud Assembly.
 
-1. Select the Design tab.
-2. If not already on Cloud Templates, click Cloud Templates.
-3. Click NEW FROM.
-4. Click Blank canvas.
-5. At the New Cloud Template dialog, type a Name and select a Project from the search list.
-6. Click CREATE.
-7. Locate the Cloud Agnostic > Machine Resource Type, then drag and drop it onto the design canvas.
+1. Select the **Design** tab.
+2. Click **Cloud Templates**.
+3. Click **NEW FROM**.
+4. Click **Blank canvas**.
+5. At the **New Cloud Template** dialog, type a name for you new cloud template in the **Name** field.
 
-You will notice that the Cloud Agnostic Machine that was just dropped onto the canvas is highlighted red. This is because we need to fill out some missing information.  You will then notice that YAML code has been automatically populated in the right-hand pane. This is where we will begin to configure this Cloud Template using Infrastructure-as-Code.
+> _**Note:** The **Name** can be anything you like!_
 
-8. In the Code pane, locate the image: property and click in between the single quotes.  This should present you with the available image mappings to select from.
-9. Select the ubuntu image.
-10. In the Code pane, locate the flavor: property and click between single quotes.  This should present you with the available flavor mappings to select from.
-11. Select **small**.
+6. At the **New Cloud Template** dialog, select the only available project from the **Project** search list.
+7. ENsure that the **Share only with this project** option is selected.
+8. Click **CREATE**.
+
+> Welcome to the Cloud Template Canvas!
+
+9. Locate the **Cloud Agnostic** > **Machine** Resource Type from the pallete and drag and drop it onto the design canvas.
+
+> You will notice that the Cloud Agnostic Machine that was just dropped onto the canvas is highlighted red. This is because we need to fill out some missing information.  You will then notice that YAML code has been automatically populated in the right-hand pane. This is where we will begin to configure this Cloud Template using Infrastructure-as-Code.
+
+The following syntax should be displayed in the Code pane.
+
+```YAML
+formatVersion: 1
+inputs: {}
+resources:
+  Cloud_Machine_1:
+    type: Cloud.Machine
+    properties:
+      image: ''
+      flavor: ''
+```
+
+10. In the **Code** pane, locate the **image:** property and click inbetween the single quotes.  This should present you with the available image mappings to select from.
+11. Select the **ubuntu** image from the list.
+12. In the **Code** pane, locate the **flavor:** property and click inbetween the single quotes.  This should present you with the available flavor mappings to select from.
+13. Select the **small** flavor from the list.
 
 > _**Note:** If the options are not being presented, you may have missed adding the Cloud Zones to your Project._
 
-Now that we have our basic machine blueprint, we need to tell it where we would like it deployed. We do this by using the tags that we assigned in the previous steps.
+Now that we have our basic machine blueprint, we now need to contrain the deployment to a particular cloud. We do this by using the tags that we assigned in the previous steps.
 
-12. Place your cursor to the right of the flavor:small and then press Enter.
-13. When the code assist window appears, scroll down and select constraints: from the list
-14. Press Enter.
-15. When the code assist window appears, select tag: from the list.
-16. Select the Tag for the cloud that you want to deploy this blueprint on (i.e. env:aws).
+12. Click on **Cloud_Machine_1** resource in the canvas.
+13. Click on the **Properties** pane.
+14. Click on the **Show all properties** toggle.
+15. Scroll down to the **Constraints** property and click **+**.
+
+> _**Note:** There are a number of Constraint properties, including Storage Constraints and Network Constraints. The Contraints property we are looking for is (as of writing this guide, located under the Cloud Config section._
+
+16. At the **Constraints** dialog, type `env:aws` into the **Tag** field.
+17. Click **APPLY**. 
+18. Click the **Code** pane to view the results of the update.
 
 The final Code window should similar to the below example:
 
@@ -121,24 +155,32 @@ resources:
 
 We are now ready to deploy our Cloud Template!
 
-17. Click the **DEPLOY** button.  
-18. At the Deploy "Cloud Template name" dialog, type a Deployment Name, select Current Draft for the Cloud Template Version.
-19. Click Deploy to start the deployment.
+### Exercise 4 - Deploying a Single Machine Cloud Template
 
-You are taken to the Deployments Screen where you can monitor the status of your deployment. You can also click on the name of the deployment to see more detailed information such as the topology and deployment history.
+1. Click the **DEPLOY** button.  
+2. At the **Deploy <Cloud Template name>** dialog, type a Deployment Name into the **Deployment Name** field.
+
+> _**Note:** The **Deployment Name** can be anything you like!_
+
+3. At the **Deploy <Cloud Template name>** dialog, select **Current Draft** for the Cloud Template Version search field.
+4. Click **DEPLOY** to start the deployment.
+
+You are taken to the **Resources** > **Deployments** Screen where you can monitor the status of your deployment. You can also click on the name of the deployment to see more detailed information such as the topology and deployment history.
   
-Feel free to explore this deployment and the information about the deployment. If you click on the Machine, you should see in the properties window that an AWS EC2 Virtual Machine has been deployed. (Or Azure VM if you decided to use env:azure as the contraint)
+Feel free to explore the deployment and the information about the deployment. If you click on the Machine resource in the canvas, the properties window should show that an AWS EC2 Virtual Machine has been deployed.
 
 When you are done exploring continue with the next step.
 
-20. From the Deployment Screen, click Close to return to the Deployment List screen.
-21. At the Deployment List screen, locate your deployment, click on the Actions menu and click Delete to remove the deployment.
+5. Click **CLOSE**.
+6. At the **Deployments** screen, locate your deployment, click on the **Actions** menu (vertical elipsis) and click **Delete** to remove the deployment.
 
 Once the deployment has been deleted, continue with the Labs.
 
+[Back to Top](#)
+
 ---
 
-### Exercise 4 - Updating the Single Machine Cloud Template
+### Exercise 5 - Updating the Single Machine Cloud Template
 
 In this exercise we will update the Cloud Agnostic Cloud Template to deploy to a different cloud.  We can do this by changing the Constraint Tag that has been applied.  You can choose to do this from within the Code pane or using the Properties pane.
 
@@ -150,7 +192,7 @@ If you were brought back to the list of Cloud Templates, click on your Cloud Tem
 4. Change the value of the tag from **env:aws** to **env:azure** and click Apply. (Or vice versa if applicable).
 The updated Constraint Tag should now be displayed on both the Properties and Code Tab.
 5. Click Deploy to deploy the updated Cloud Template.
-6. At the Deploy ``<Cloud Template Name>`` dialog, type a Deployment Name, select Current Draft for the Cloud Template Version.
+6. At the **Deploy `<Cloud Template Name>`** dialog, type a Deployment Name, select Current Draft for the Cloud Template Version.
 7. Click **DEPLOY** to start the deployment.
 
 Again, you are taken to the Deployments Screen where you can monitor the status of the deployment.
@@ -163,18 +205,28 @@ When you have finished exploring continue with the instructions.
 8. From the Deployment Screen, click Close to return to the Deployment List screen
 9. At the Deployment List screen, locate your deployment, click on the Actions menu and click Delete to remove the deployment.
 
+[Back to Top](#)
+
 ---
 
 ### Exercise 5 - Creating a Single Machine AWS Cloud Template
 
 Using what you have learned within this module, create a VMware Cloud Template to deploy a single AWS machine.
 
+[Back to Top](#)
+
+---
+
 ### Exercise 6 - Creating a Single Machine Azure Cloud Template
 
 Using what you have learned within this module, create a VMware Cloud Template to deploy a single Azure machine.
+
+[Back to Top](#)
 
 ---
 
 ### Summary
 
 In this section we walked through the process of creating a blueprint that is deployable to multiple clouds that have been setup in your Cloud Assembly environment. We tagged our cloud zones and used tag-based placement to achieve building machines in the cloud zone of our choice. In the next section "Iterative Development" we will build on this blueprint by adding selectable options during deployment and versioning of our blueprint through its development lifecycle.
+
+[Back to Top](#)
