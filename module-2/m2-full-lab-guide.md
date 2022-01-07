@@ -4,6 +4,8 @@
 
 Each new vRealize Automation Organization will require a number of Day 0/Day 1 infrastructure configurations to be completed to enable end users to consume the different cloud resources.  Whilst the majority of the configurations have been completed, in the following exercises we will complete some of final configuration steps.
 
+> _**Note:** The necessary Cloud Accounts for AWS and Azure and their corresponding Cloud Zones have been pre-configured for your environment._
+
 ## Lab Overview
 
 * [Exercise 1 - Creating a Project](#exercise-1-\--creating-a-project)
@@ -13,37 +15,54 @@ Each new vRealize Automation Organization will require a number of Day 0/Day 1 i
 
 ## Exercises
 
-### Exercise 1 - Creating a Project
+### Exercise 1 - Creating a New Project
 
 In this exercise we are going to create a new **Project**.  A Project is one of the base constructs that enables vRealize Automation users to provision resources to different clouds (Cloud Zones).
 
 1. Click the **VMware Cloud Assembly** service.
+
 2. Select the **Infrastructure** tab.
+
 3. Select **Administration** > **Projects**.
+
 4. Click **+ NEW PROJECT**.
+
 5. At the **New Project** screen, type a name for the project.
 
 > _**Note:** The **Project Name** can be anything you like but you need to remember it as you will use this project for the rest of the day!_
 
 6. Click **Users**.
+
 7. Click **+ ADD USERS**.
+
 8. In the **Add Users** dialog, at **Users** textbox, type your email address (i.e. `user@domain.com`) and press **Enter**.
-9. In the **Add Users** dialog, select **Administrator** from the **Assign role** dropdown.
+
+9. At **Assign role**, check the **Administrator** checkbox.
+
 10. Click **ADD**.
 
-> _**Note:** As we logged in using an account that has been given both Organization Owner and Cloud Assembly Administrator Service roles, we have god-like privileges that most end users would not be given.  With this level of rights, we don't actually need to be a Project Administrator or Member deploy resources.  For more information check out [Organization and service user roles in vRealize Automation](https://docs.vmware.com/en/vRealize-Automation/8.4/Using-and-Managing-Cloud-Assembly/GUID-F5813D09-297F-4C10-9AC6-538B57F675A0.html)_
+> _**Note:** When logged into an account that has been given both Organization Owner and Cloud Assembly Administrator Service roles, we have alot more privileges and access than most end users would be given.  With this level of rights, we don't actually need to be a Project Administrator or Member to deploy resources.  For more information check out [Organization and service user roles in vRealize Automation](https://docs.vmware.com/en/vRealize-Automation/8.6/Using-and-Managing-Cloud-Assembly/GUID-F5813D09-297F-4C10-9AC6-538B57F675A0.html)_
 
-> _**Note:** If we had integrated vRealize Automation Cloud into an Enterprise Directory (such as Active Directory) and then synchronized certain AD Users Groups, then we would have been able to specify an AD User or AD Group instead of an email address._
+> _**Note:** If the Cloud Service Portal for you Organization had been integrated with an Enterprise Directory (such as Active Directory), we would be able to specify both AD users and Groups when creating a project._
 
 11. Click **Provisioning**.
+
 12. Click **+ ADD ZONE**.
+
 13. Click **Cloud Zone**.
+
 14. At the **Add Cloud Zone** dialog, click the **Cloud zone** search field and select **Trading AWS / us-west-1** from the list.
 
 >_**Note:** If the only available AWS Cloud Zone is **Trading AWS / us-east-1**, then please select that Cloud Zone._
 
 15. Leave all remaining settings as their defaults and click **ADD**.
-16. Repeat **Step 12** to **Step 15** to also add the **Trading Azure** Cloud Zone to the project.
+
+>_**Note:** At this point we can limit the number of cloud machines/instances and how much memory or cpu can be consumed for this project on the Cloud Zone._
+
+16. Repeat **Step 12** to **Step 15** to also add the **Trading Azure / East US** Cloud Zone to the project.
+
+>_**Note:** If the only available AWS Cloud Zone is **Trading Azure / West US**, then please select that Cloud Zone._
+
 17. Scroll down the Provisioning tab locate the **Custom Naming** template field.
 18. Under **Custom Naming**, at the **Template** textbox, type `${resource.name}${####}`.
 
@@ -55,19 +74,30 @@ In this exercise we are going to create a new **Project**.  A Project is one of 
 
 -----
 
-### Exercise 2 - Creating a Flavor Mapping
+### Exercise 2 - Creating Flavor Mappings
 
 In this exercise we are going to create two new Flavor Mappings.
 
 1. Under **Configure**, click **Flavor Mappings**.
+
 2. Click **+ NEW FLAVOR MAPPING**.
+
 3. On the **New Flavor Mapping** screen, at the **Name** field, type `extra large`.
+
+> _**Note:** The names of Flavor Mapping are case sensitive within a Cloud Template._
+
 4. Under **Configuration**, click on the **Account/Region** field and select **Trading AWS / us-west-1**.
-5. At the **Value** field, type `t3.xlarge` and select **t3.xlarge** from the list.
+
+5. At the **Value** field, type `t2.xlarge` and select **t3.xlarge** from the list.
+
 6. Select **t3.xlarge** from the list.
+
 7. Click **+** to add a new Configuration.
+
 8. Repeat **Step 4** to **Step 6** to add another configuration for the **Trading Azure / East US** Account/Region using the **Standard_B4ms** resource type.
+
 9. Click **CREATE**.
+
 10. Repeat **Step 3** to **Step 9** to create another **Flavor Mapping** with the following information.
 
 <table class="table">
