@@ -4,7 +4,7 @@
 
 Multi-Cloud Cloud Templates are capable of deploying to multiple environments leveraging tags to dictate their desired location via the Policy Based Placement Engine. In this exercise we will create a Cloud Template that is able to deploy to multiple cloud environments.
 
-
+**Expected Time:** 25 minutes
 
 ## Lab Overview
 
@@ -13,8 +13,9 @@ Multi-Cloud Cloud Templates are capable of deploying to multiple environments le
 * [Exercise 3 - Creating a Single Machine Cloud Template](#exercise-3-\--creating-a-single-machine-cloud-template)
 * [Exercise 4 - Deploying a Single Machine Cloud Template](#exercise-4-\--deploying-a-single-machine-cloud-template)
 * [Exercise 5 - Updating the Single Machine Cloud Template](#exercise-5-\--updating-the-single-machine-cloud-template)
-* [Exercise 6 - Creating a Single Machine AWS Cloud Template (OPTIONAL)](#exercise-6-\--creating-a-single-machine-aws-cloud-template))
-* [Exercise 7 - Creating a Single Machine Azure Cloud Template (OPTIONAL)](#exercise-6---creating-a-single-machine-azure-cloud-template)
+* [Exercise 6 - Creating a Single Machine AWS Cloud Template](#exercise-6-\--creating-a-single-machine-aws-cloud-template) (OPTIONAL)
+* [Exercise 7 - Creating a Single Machine Azure Cloud Template](#exercise-7-\--creating-a-single-machine-azure-cloud-template) (OPTIONAL)
+
 ## Exercises
 
 ### Exercise 1 - Configuring Tag Policies for Placement in Cloud Accounts
@@ -49,7 +50,7 @@ Multi-Cloud Cloud Templates are capable of deploying to multiple environments le
 
 > _**Note:** Whilst the `env:aws` tag existed, the `env:azure` tag does not and will be created by this process._
 
-> It is a common use case for customers to separate clusters within an environment based on use case. An abstract version of this concept exists in public cloud as well (people may use different regions/zones for different use cases). We might tag a cluster designed for Oracle workloads to leverage the `app:oracle` tag, allowing us to place these workloads on this cluster via the placement engine. Another use case is for compliance reasons - users may tag clusters based on compliance capabilities on specific environments to ensure workloads land in an environment that will help them pass audits.
+It is a common use case for customers to separate clusters within an environment based on use case. An abstract version of this concept exists in public cloud as well (people may use different regions/zones for different use cases). We might tag a cluster designed for Oracle workloads to leverage the `app:oracle` tag, allowing us to place these workloads on this cluster via the placement engine. Another use case is for compliance reasons - users may tag clusters based on compliance capabilities on specific environments to ensure workloads land in an environment that will help them pass audits.
 
 [Back to Top](#)
 
@@ -136,23 +137,10 @@ Now that we have our basic machine blueprint, we now need to contrain the deploy
 > _**Note:** There are a number of Constraint properties, including Storage Constraints and Network Constraints. The Contraints property we are looking for is (as of writing this guide, located under the Cloud Config section._
 
 16. At the **Constraints** dialog, type `env:aws` into the **Tag** field.
-17. Click **APPLY**. 
+17. Click **APPLY**.
 18. Click the **Code** pane to view the results of the update.
 
-The final Code window should similar to the below example:
-
-```YAML
-formatVersion: 1
-inputs: {}
-resources:
-  Cloud_Machine_1:
-    type: Cloud.Machine
-    properties:
-      image: ubuntu
-      flavor: small
-      constraints:
-        - tag: 'env:aws'
-```
+The final Cloud Template code for **Module 3 - Exercise 3** can be found [here](/module-3/exercise-3/blueprint.yaml).
 
 We are now ready to deploy our first Cloud Template!
 
@@ -189,36 +177,20 @@ In this exercise we will update the Cloud Agnostic Cloud Template to deploy to a
     * If you are back on the Cloud Template Design Canvas then continue to **Step 2**.
     * If you were brought back to the **Cloud Templates** screen, click on your Cloud Template to get to the design canvas.
 2. Select the **Code** pane.
-
-The code displayed should be:
-
-```YAML
-formatVersion: 1
-inputs: {}
-resources:
-  Cloud_Machine_1:
-    type: Cloud.Machine
-    properties:
-      image: ubuntu
-      flavor: small
-      constraints:
-        - tag: 'env:aws'
-```
-
-4. In the Code pane, change the value of the `constraints` tag (line 10) from **env:aws** to **env:azure**.
+3. In the Code pane, change the value of the `constraints` tag (line 10) from **env:aws** to **env:azure**.
 
 > _**Note:** The updated Constraints Tag should now be displayed on both the Properties and Code Tab._
 
-5. Using what you learned so far in this module, deploy the updated Cloud Template.
+4. Using what you learned so far in this module, deploy the updated Cloud Template.
 
 We can see the decision process that Cloud Assembly has made during the allocation phase of the deployment.
 
-6. On the deployment details screen, click **History**.
-7. Click the **CREATE** task to view the stages the deploymnet has gone through.
+5. On the deployment details screen, click **History**.
+6. Click the **CREATE** task to view the stages the deploymnet has gone through.
 
 > _**Note:** We can see that the time, date and user who created the task is recorded._
 
-8. Click the **Provisioning Diagram** link to see the details of the decision process. 
+7. Click the **Provisioning Diagram** link to see the details of the decision process. 
 
 > _**Note:** This is also a great place to start troubleshooting a failed deployment._
 
@@ -228,11 +200,14 @@ When you have finished exploring continue with the instructions.
 
 8. Using what you have learned so far in this module, delete the deployment.
 
+The final Cloud Template code for **Module 3 - Exercise 4** can be found [here](/module-3/exercise-4/blueprint.yaml).
+
+
 [Back to Top](#)
 
 ---
 
-### Exercise 5 - Creating a Single Machine AWS Cloud Template
+### Exercise 6 - Creating a Single Machine AWS Cloud Template
 
 Using what you have learned within this module, create a VMware Cloud Template to deploy a single AWS machine.
 
@@ -240,7 +215,7 @@ Using what you have learned within this module, create a VMware Cloud Template t
 
 ---
 
-### Exercise 6 - Creating a Single Machine Azure Cloud Template
+### Exercise 7 - Creating a Single Machine Azure Cloud Template
 
 Using what you have learned within this module, create a VMware Cloud Template to deploy a single Azure machine.
 

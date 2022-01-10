@@ -1,8 +1,8 @@
-# Module 5 - Deploying to Multiple Clouds
+# Module 5 - Customising with cloudConfig
 
 ## Introduction
 
-CloudConfig is VMware's implementation of cloud-init (Linux) or cloudbase-init (Windows). Cloud-Init is an industry standard opensource platform for deploying customizations to cloud images. It gained quite a bit of popularity in openstack and has since spread to be included in most AWS AMI's as well as many Azure and GCP images. In Private Cloud, it's an easy to install the binary via APT and YUM or via the installer for Windows. We leverage the cloudConfig property within Cloud Assembly to push "user data" (cloudConfig specifications) into the deployment for execution.
+cloudConfig is VMware's way of supporting the implementation of the opensource projects for cloud-init (Linux) or cloudbase-init (Windows). Cloud-init is an industry standard opensource platform for deploying customizations to cloud images. It gained quite a bit of popularity in openstack and has since spread to be included in most AWS AMI's as well as many Azure and GCP images. In Private Cloud, it's an easy to install the binary via APT and YUM or via the installer for Windows. We leverage the cloudConfig property within Cloud Assembly to push "user data" (cloudConfig specifications) into the deployment for execution.
 
 Some examples of things that cloud-init can be used to customize are:
 
@@ -12,62 +12,84 @@ Some examples of things that cloud-init can be used to customize are:
 * Adding/Removing packages
 * Power State settings after completion
 
+**Expected Time:** 25 minutes
+
 ## Lab Overview
 
-* [Exercise 1 - Configure a Custom Hostname for the Multi-Cloud Cloud Template](#exercise-1-\--configure-a-custom-hostname-for-the-multi\-cloud-cloud-template)
+* [Exercise 1 - Configuring a Custom Hostname using CloudConfig](#exercise-1-\--configuring-a-custom-hostname-using-cloudconfig)
 * [Exercise 2 - Adding Users to the Multi-Cloud Cloud Template](#exercise-2-\--adding-users-to-the-multi\-cloud-cloud-template)
 * [Exercise 3 - Installing Packages and Other Modifications into the Multi-Cloud Cloud Template](#exercise-3-\--installing-packages-and-other-modifications-into-the-multi\-cloud-cloud-template)
 
 ## Exercises
 
-### Exercise 1 - Configure a Custom Hostname for the Multi-Cloud Cloud Template
+### Exercise 1 - Configuring a Custom Hostname using CloudConfig
 
 1. If not already in Cloud Assembly, click Cloud Assembly.
 2. Select the **Design** tab.
 3. Click **Cloud Templates**.
-4. Click on the Multi-Cloud Cloud Template you have been working on during the previous modules to open it in the Design Canvas.
-5. Click on the `Cloud_Machine_1` in topology view to highlight it and then shift focus to the Code panel.
-6. Put the cursor are the `-tag: '${input.selectCloud1}'` line and press Enter.
-7. Delete the `-` from the code window and make sure the cursor at the same indentation as the constraints property.
-8. Select cloudConfig from the available dropdown list.
-9. Add a pipe (`|`) after the `cloudConfig:` insert and press Enter.
+4. Open the Cloud Template you have been working on during the previous modules in the Cloud Template Design Canvas.
+5. Click on the `Cloud_Machine_1` in topology view to highlight it and then shift focus to the **Code** panel.
+6. Add the following `cloudConfig` code for `Cloud_Machine_1` after the `constraints` property.
 
-> _**Note:** The pipe tells cloud-init that the parameters will be on separate lines._
+```yaml
+  cloudConfig: |
+    #cloud-config
+    hostname: ${input.hostname1}
+```
 
-10. Press **Escape** to cancel menu.
-11. If the syntax is not indented, press \<space\> twice ( or \<tab\> once) and then type `#cloud-config` and press Enter.
+> _**Note:** The pipe (|) tells cloud-init that the parameters will start on next line._
 
-Now we are ready to add configuration commands to our cloudConfig section. In this simple example we will be modifying the hostname of `Cloud_Machine_1`.
+> **Question:** What do you notice about the YAML we just added into the Cloud Template?
 
-12. Type `hostname: ${input.hostname1}` and press Enter.
+Hopefully you have noticed the vaiable notation that we have used in other modules lab exercises. This means that we can use different variable or constants we have defined at a system level within our `cloudConfig`.
 
-Hopefully you have noticed the input variable notation that we have used in other modules lab exercises.  You should also notice that Cloud Assembly is telling you that there are errors in your code section by seeing the error indicator at the top of the code section. Roll over the error indicator to see what the issue is.  
+> **Question:** Did you notice the ! mark that appeared once you have cadded the text?
+
+This is Cloud Assembly's low-code interface telling you that there are errors in your code section.
+
+7. Roll over the error indicator to see what the issue is.
+
 As you can see you have included a variable in your YAML that is expecting an associated input. Now we need to add a section under our inputs to address this issue.  
-Note: We are going to use the Input Panel to achieve this.  However, if you as previously demonstrated this can also be achieved in code.  If you want to do this using code, then go ahead. The code required will be shown in Step 12 of this exercise.
 
-13. Click the Inputs Tab from the Panel.
-14. At the Cloud Template Inputs panel, click NEW.
-15. At the Create Cloud Template Input dialog, enter hostname1 as the Name of the input, enter a suitable label into the Title field and select String from the Type dropdown.
+8. Click the **Inputs** Tab.
+9. At the **Cloud Template Inputs** panel, click **+ NEW CLOUD TEMPLATE INPUT**.
+10. At the **New Cloud Template Input** dialog:
+    * At the **Name** field type `hostname1`.
+    * At the **Display Name** field type `Machine 1 hostname`.
+    * At the **Type** options, select **STRING**.
 
 > _**Note:** You could change additional properties in this dialog (such as maximum length) to enforce guardrails around what a requestor can put into the field during request time._
 
-16. Click **CREATE**.
+11. Click **CREATE**.
 
-You will see that an additional input has been created within the Inputs panel. 
+We will see that an additional input has been created within the Inputs panel. 
   
 Let us now take a look at what code has been generated for it.
 
-17. At the Inputs Panel, click on the Code tab.
-18. View the inputs section of the Cloud Template.
-19. Using what you have learned in previous Modules, create a new version of this Cloud Template.
-20. Using what you have learned in this Lab Exercise, update the Cloud Template so that the requestor can input a hostname for Cloud_Machine_2.
-HINT: You should use a different input name other than hostname.
+12. Click on the **Code** tab.
+
+We should notice some new code has been added to the `inputs:` section of our YAML file.
+
+```yaml
+  hostname1:
+    type: string
+    title: Machine 1 hostname
+```
+
+13. Using what you have learned in previous Modules, create a new version of this Cloud Template.
+14. Using what you have learned in this Module, update the Cloud Template so that the requestor can deinfe a hostname for Cloud_Machine_2.
+
+> **HINT:** You should use a different input name for the other hostname.
+
 Once you have completed the updates to the Cloud Template, use what you have learned so far in this and the previous Modules to complete the following tasks:
-1. Test the Cloud Template deployment.
-2. Deploy the new Cloud Template
-3. Delete the Deployment
+
+15. Test the Cloud Template deployment.
+16. Deploy the new Cloud Template
+17. Delete the Deployment
 
 > _**Note:** You should be able to deploy the Cloud Template to test the deployment is successful, but you will not be able to fully test the hostname changes until we add a logon user to the machines in the next exercise._
+
+The final Cloud Template code for **Module 5 - Exercise 1** can be found [here](/module-5/exercise-1/blueprint.yaml).
 
 [Back to Top](#)
 

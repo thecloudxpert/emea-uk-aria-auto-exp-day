@@ -4,6 +4,8 @@
 
 In this portion of the training we will shift our focus to consuming Cloud Templates created in Cloud Assembly. We will use the multi-cloud Cloud Template that we created in previous sections and make it easily consumable through Service Broker using a Custom Form. At the completion of this section you should have knowledge on how to publish content into Service Broker and the basics for using custom forms to make decisions for consumers and to add metadata to a deployment.
 
+**Expected Time:** 20 minutes
+
 ## Lab Overview
 
 * [Exercise 1 - Releasing a Cloud Template to the Service Catalog](#exercise-1-\--releasing-a-cloud-template-to-the-service-catalog)

@@ -1,6 +1,5 @@
-# name: Module 4 Exercise 2
-# version: 1.0
-
+name: Module 4 Exercise 2
+version: 1.0
 formatVersion: 1
 inputs:
   SelectCloud1:

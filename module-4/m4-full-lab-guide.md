@@ -2,7 +2,9 @@
 
 ## Introduction
 
-In this lab exercise we will start iterative development of Cloud Templates through version management in Cloud Assembly. We will be building off the previous Cloud Agnostic Cloud Template by making the cloud we intend to deploy the machine to, an input parameter during deployment time. At the same time we will be versioning our Cloud Template and comparing the changes between different versions.
+In this lab exercise we will start iterative development of Cloud Templates through version management in Cloud Assembly. We will be building off the previous Cloud Agnostic Cloud Template from Module 3 by adding inputs to allow the end user to select which cloud to deploy to at request time. At the same time we will be versioning our Cloud Template and comparing the changes between different versions.
+
+**Expected Time:** 20 minutes
 
 ## Lab Overview
 
@@ -20,19 +22,19 @@ In this lab exercise we will start iterative development of Cloud Templates thro
 
 1. Select the **Design** tab.
 2. Click **Cloud Templates** (if not already there).
-3. Click on the Agnostic Cloud Template you created in **Module 3** to open it in the Cloud Template Design Canvas.
-4. On the Cloud Template Design Canvas, click **VERSION**.
+3. Click on the Cloud Template you created in **Module 3** to open it in the Cloud Template Design Canvas.
+4. On the Cloud Template Design Canvas screen, click **VERSION**.
 5. On the **Creating Version** screen:
     * At the **Version** textbox, type `1.0`.
     * At the **Description** text field, type `Cloud Agnostic Cloud Template - Single Machine`.
     * At the **Change Log** text field, type `initial template version`.
 
-> _**Note:** It is a good practice to use numbers for version._
+> _**Note:** Whilst alphanumeric characters are supported, it is considered a good practice to use numbers for version._
+> _**Note:** We could release this version to the Service Broker Catalog from version creation dialog as well.  We'll cover more on that topic shortly._
 
-> _**Note:** You can release this version to the Service Broker Catalog from version creation window as well.  We'll cover more on that topic shortly._
 6. Click **CREATE**.
 
-We have now created the first version of our Cloud Template!
+We have now created a new version of our Cloud Template!
 
 7. Click **VERSION HISTORY** to see the version history of a Cloud Template.
 
@@ -50,14 +52,14 @@ In this exercise we are going to update our Cloud Agnostic Cloud Template by add
 
 1. Within the **Code** pane, add the following YAML code to the `inputs:` section of the cloud template:
 
-    ```yaml
-    selectCloud1:
-        type: string
-        title: Select a Cloud for Machine 1
-        enum:
-        - 'env:aws'
-        - 'env:azure'
-    ```
+ ```yaml
+  selectCloud1:
+      type: string
+      title: Select a Cloud for Machine 1
+      enum:
+      - 'env:aws'
+      - 'env:azure'
+```
 
 The following provides a brief description of each part of this code block:
 
@@ -73,35 +75,9 @@ The following provides a brief description of each part of this code block:
 
 Now that we have defined our `input` we need to modify our **Constraints Tag** on the Cloud Machine so that it will read the value selected at request time for the deployment.
 
-2. Within the **Code** pane, locate the `Cloud_Machine_1` resource and complete the following:
-    * Remove the `'env:azure'` from `constraints` > `tag:` section.
-    * Type `'${` and select **input** from the code assist window.
-    * Type `.` and then select `SelectCloud1` from the code assist window.
-    * Type `}` to close the statement.
+2. Within the **Code** pane, on replace the current value (`env:azure`) of the Constraints Tag for `Cloud_Machine_1` (line 10) with `${input.SelectCloud1}`.
 
-> _**Note:** the code line underneath `constraint:` tag should now match `- tag: '${input.SelectCloud1}'`._
-
-Now we have added our first input and updated our constraint tag, the YAML code in the **Code** pane should be:
-
-```yaml
-formatVersion: 1
-inputs:
-  SelectCloud1:
-    type: string
-    title: Select a Cloud for Machine 1
-    enum:
-      - 'env:aws'
-      - 'env:azure'
-
-resources:
-  Cloud_Machine_1:
-    type: Cloud.Machine
-    properties:
-      image: ubuntu
-      flavor: small
-      constraints:
-        - tag: '${input.SelectCloud1}'
-```  
+The final Cloud Template code for **Module 4 - Exercise 2** can be found [here](/module-4/exercise-2/blueprint.yaml).
 
 [Back to Top](#)
 
@@ -112,11 +88,11 @@ resources:
 In this exercise we are going to check that the Cloud Template code and placement choices are valid, including the inputs you just added.
 
 1. Click the **TEST** button on the Design Canvas.
-2. At the **Testing \<Your Cloud Template Name>** dialog, select **env:aws** from the **Select a Cloud for Machine 1** dropdown.
+2. At the **Testing \<Your Cloud Template Name\>** dialog, select **env:aws** from the **Select a Cloud for Machine 1** dropdown.
 3. Click **TEST**.
 4. Assuming the Test is **Successful** you can close the Test Result screen by clicking **X**.
 
-> _**Note:** You can also view the **Provisioning Diagram** to see how an actual deployment would occur and what placement decisions have been made based on tag-based palcement.  This is a very interesting diagram and we look more at these in later modules and exercises._
+> _**Note:** You can also view the **Provisioning Diagram** to see how an actual deployment would occur and what placement decisions have been made based on tag-based palcement.  This is a very interesting diagram to help ensure that the tags are working as expected._
 
 [Back to Top](#)
 
@@ -124,9 +100,9 @@ In this exercise we are going to check that the Cloud Template code and placemen
 
 ### Exercise 4 - Versioning and Deploying the Cloud Template
 
-In this exercise, we are going to be deploying the Agnostic Cloud Template we have created.  However before we do that, adn as we have made some significant changes, we are going to create a new version first.  
+In this exercise, we are going to be deploying the Agnostic Cloud Template we have created.  However before we do that, and as we have made some significant changes, we are going to create another version first.  
 
-1. On the Cloud Template Design Canvas, click **VERSION**.
+1. On the Cloud Template Design Canvas screen, click **VERSION**.
 2. On the **Creating Version** screen:
     * At the **Version** textbox, type `2.0`.
     * At the **Description** text field, type `Cloud Agnostic Cloud Template - Single Machine`.
@@ -136,7 +112,7 @@ In this exercise, we are going to be deploying the Agnostic Cloud Template we ha
 We are now ready to this new Cloud Template!
 
 4. Click **DEPLOY**.
-5. At the **Deploy \<Your Cloud Template Name>** dialog, at the **Deployment Name** field, type `<Your Name> - Agnostic Deployment`.
+5. At the **Deploy \<Your Cloud Template Name>** dialog, at the **Deployment Name** field, type a name for your deployment.
 6. Click **NEXT**.
 
 > _**Note:** The **Deployment Inputs** tab appears because the Cloud Template now has inputs for the user to select._
@@ -151,10 +127,10 @@ We are now ready to this new Cloud Template!
 
 ### Exercise 5 - Updating the Cloud Template
 
-In this exercise we will make some changes to the Agnostic Cloud Template and then create a new version.
+In this exercise we will make some more changes to the Agnostic Cloud Template by adding an additional machine and then create a new version.
 
 1. Click **Design**.
-2. Open your Cloud Agnostic Cloud Template.
+2. Open your Cloud Template.
 3. Under **Cloud Agnostic** Resource Types, locate the **Machine** resource type and drag and drop it on to the canvas.
 
 > _**Note:** You will hopefully notice that the YAML (in the Code pane) has been modified to include the code for the new machine._
@@ -189,39 +165,8 @@ You can use the following information to help:
 
 6. Using what you have learned so far in this module, add the constraints to **Cloud_Machine_2** in the Cloud Template so that it uses the additional input parameter during deployment.
 
-The final Agnostic Cloud Template code should look similar to the following:
+The final Cloud Template code for **Module 4 - Exercise 5** can be found [here](/module-4/exercise-5/blueprint.yaml).
 
-```yaml
-formatVersion: 1
-inputs:
-  SelectCloud1:
-    type: string
-    title: Select a Cloud for Machine 1
-    enum:
-      - 'env:aws'
-      - 'env:azure'
-  SelectCloud2:
-    type: string
-    title: Select a Cloud for Machine 2
-    enum:
-      - 'env:aws'
-      - 'env:azure'
-resources:
-  Cloud_Machine_1:
-    type: Cloud.Machine
-    properties:
-      image: ubuntu
-      flavor: small
-      constraints:
-        - tag: '${input.SelectCloud1}'
-  Cloud_Machine_2:
-    type: Cloud.Machine
-    properties:
-      image: ubuntu
-      flavor: small
-      constraints:
-        - tag: '${input.SelectCloud2}'
-```
 > _**Note:** The order of the Cloud Machines may differ in you example, which is fine!_
 
 7. Using what you have learned so far in this module, create a new version of the Cloud Template.
@@ -242,24 +187,28 @@ In this exercise we use the Cloud Agnostic Cloud Template to update an existing 
 5. At the **Deploy \<Cloud Template Name>** dialog, ensure that **Current Draft** for the **Cloud Template Version**.
 6. Select **\<Your Name> - Agnostic Deployment** from the list of existing deployments.
 7. Click **NEXT**.
-8. On the Deployment Inputs screen, at the **Select a Cloud for Machine 2** dropdown, select **env:azure**.
+8. On the **Deployment Inputs** screen, at the **Select a Cloud for Machine 2** dropdown, select **env:azure**.
 9. Click **NEXT**.
-10. On the Plan Screen, click **>** to see the changes that will take affect during the update to the existing deployment.
+10. On the **Plan** Screen, click **>** to see the changes that will take affect during the update to the existing deployment.
+
+> **Question:** Are the changes being made what you expected to happen?
+
 11. Click **DEPLOY**.
 
-You should automatically be taken to the Deployments screen where you can see the status of the deployment. Feel free to explore the deployment details. 
+You should automatically be taken to the Deployments screen where you can see the status of the deployment. Feel free to explore the deployment details.
 
-12. Using what you have learned so far, delete the **\<Your Name> - Agnostic Deployment** deployment.
+12. Once the deployment is complete, using what you have learned so far, delete the deployment.
 
 ### Exercise 7 - Comparing Different Versions of a Cloud Template
 
 In this exercise we will look at the tools available within Cloud Assembly to compare different versions of Cloud Templates. This is an important aspect of iterative development as it provides comparison and restore capabilities.
 
 1. Click **Design**.
-2. Open the Cloud Agnostic Cloud Template.
-3. Click **Version History**.
+2. Click **Cloud Templates**.
+3. Open the Cloud Template.
+4. Click **VERSION HISTORY**.
   
-On the Version History screen, you can see a list of the versions, and information about the versions, for the Cloud Template. From this list you can restore a previous Cloud Template, clone, download, and deploy a specific version of the Cloud Template. The Version History screen is also another location where you could release a specific version of a Cloud Template for consumption in Service Broker, which we will do later in the training.
+On the **Version History** screen, you can see a list of the versions, and information about the versions, for the Cloud Template. From this list you can restore a previous Cloud Template, clone, download, and deploy a specific version of the Cloud Template. The Version History screen is also another location where you could release a specific version of a Cloud Template for consumption in Service Broker, which we will do later in the training.
   
 Now let's compare different versions of the Cloud Template!
 
@@ -267,15 +216,15 @@ Now let's compare different versions of the Cloud Template!
   
 > _**Note:** You can only compare the Current Version against a previous versions._
 
-5. Select one of the previous versions from the Diff Against dropdown.
+5. Select one of the previous versions from the **Diff Against** dropdown.
   
-In the above example we are comparing version 1 of our multi-cloud Cloud Template to version 1.2 (Current Draft). You will see all the sections that were changed or added by colour. Red being changed and green being what was added between the two versions. You can also see the visual differences in the Cloud Template and we will be doing that next.
+In the above example we are comparing version 1 of our multi-cloud Cloud Template to version 2.0 (Current Draft). You will see all the sections that were changed or added by colour. Red being changed and green being what was added between the two versions. You can also see the visual differences in the Cloud Template and we will be doing that next.
 
-6. Click Diff Visually.
+6. Click **DIFF VISUALLY**.
   
 Like the code difference screen, you will get a colour-coded view of the different components and topologies of the two versions of the Cloud Template.
 
-7. Click the back arrow to return to the Design Canvas.
+7. Click the back arrow (next the Cloud Template name) to return to the Design Canvas.
 
 [Back to Top](#)
 
