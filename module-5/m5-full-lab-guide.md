@@ -77,15 +77,13 @@ We should notice some new code has been added to the `inputs:` section of our YA
 ```
 
 13. Using what you have learned in previous Modules, create a new version of this Cloud Template.
-14. Using what you have learned in this Module, update the Cloud Template so that the requestor can deinfe a hostname for Cloud_Machine_2.
+14. Using what you have learned in this Module, update the Cloud Template so that the requestor can deinfe a hostname for `Cloud_Machine_2`.
 
 > **HINT:** You should use a different input name for the other hostname.
 
-Once you have completed the updates to the Cloud Template, use what you have learned so far in this and the previous Modules to complete the following tasks:
-
-15. Test the Cloud Template deployment.
-16. Deploy the new Cloud Template
-17. Delete the Deployment
+15. Using what we have learned so far, test the Cloud Template deployment to make sure it will be successful.
+16. Using what we have learned so far, deploy the updated Cloud Template.
+17. Once the deployment has completed successfully, delete the Deployment.
 
 > _**Note:** You should be able to deploy the Cloud Template to test the deployment is successful, but you will not be able to fully test the hostname changes until we add a logon user to the machines in the next exercise._
 
@@ -97,12 +95,14 @@ The final Cloud Template code for **Module 5 - Exercise 1** can be found [here](
 
 ### Exercise 2 - Adding Users to the Multi-Cloud Cloud Template
 
-In this is exercise we are going configure a user to be generated as part of the cloud configuration.
-1. From within Cloud Assembly select the Design tab to get to the list of Cloud Templates.
-2. Click on the Multi-Cloud Cloud Template you have been working on to open it in the Design Canvas.
-3. Add the following code to each of the Cloud Machines cloudConfig section.
+In this is exercise we are going configure a user to be generated as part of the cloud configuration.  We are going to use a Cloud Assembly secret to set the password for that user.
 
-```
+1. From within Cloud Assembly, click the Design tab.
+2. Click on Cloud Templates.
+3. Open the Cloud Template we have been working on to open it in the Design Canvas.
+4. Use what you have learned to add the following code to each of the Cloud Machines cloudConfig section.
+
+```yaml
     users:
     -   name: ${input.username}
         sudo: ['ALL=(ALL) NOPASSWD:ALL']
@@ -110,11 +110,7 @@ In this is exercise we are going configure a user to be generated as part of the
         shell: /bin/bash
 ```
 
-The final code block for each machine should look like the following:
-  
-You should notice again that there are errors in your YAML code section. Given the previous tasks, why do you think that is?
-
-4. Using what you have learned so far and the information provided in the table below, add the input needed to correct the errors in the Cloud Template.
+5. Using what you have learned so far, along with the information provided in the table below, add the input required to correct the errors in the Cloud Template.
 
 <table class="table">
     <caption>Table: Module 5 - Exercise 2</caption>
@@ -186,38 +182,36 @@ You should notice again that there are errors in your YAML code section. Given t
     </tbody>
 </table>
 
-> _**Note:** You will notice that for the password field, we have created a secure text field with complexity requirements. We will use the password input in the next step. Now we need to add a last section in the <code>CloudConfig</code> to allow the user to log in using a password. (By default, cloud images only allow for login using SSH key.)_
+> _**Note:** You will notice that for the password field, we have created a secure text field with complexity requirements. We will use the password input in the next step. Now we need to add a last section in the `cloudConfig` to allow the user to log in using a password. (By default, cloud images only allow for login using SSH key.)_
 
-6. Add the following code section to the cloudConfig section of each machine.
+6. Add the following code section to the cloudConfig section of **each** machine.
 
+```yaml
+  runcmd:
+  - PASS=${input.password}     
+  - USER=${input.username}
+  - echo $USER:$PASS | /usr/sbin/chpasswd
+  - sed -i "s/PasswordAuthentication no/PasswordAuthentication yes/g" /etc/ssh/sshd_config
+  - service ssh reload
 ```
-runcmd:
-- PASS=${input.password}     
-- USER=${input.username}
-- echo $USER:$PASS | /usr/sbin/chpasswd
-- sed -i "s/PasswordAuthentication no/PasswordAuthentication yes/g" /etc/ssh/sshd_config
-- service ssh reload
-```
 
-The YAML code for each Cloud Machine should resemble the following:
+If needed, the final Cloud Template YAML code for **Module 5 - Exercise 2** can be found [here](/module-5/exercise-2/blueprint.yaml).
 
-7. Using what you have learned in previous Modules, create a new version of this Cloud Template.
-8. Click the Deploy button.
-9. At the Deploy ```<Cloud Template Name>``` dialog, type a Deployment Name, select Current Draft for the Cloud Template Version.
-10.	Click **NEXT**.
-11.	Fill out the inputs (selecting Cloud, hostname, username and password).
-12.	Click **DEPLOY**.
-13.	Once the deployment is complete you should be able to SSH (using putty or terminal) to the server using the following command:
+7. Using what you have learned previously, create a new version of this Cloud Template.
+8. Using what you have learned previously, deploy the current version of the Cloud Template.
+9.	Once the deployment is complete you should be able to SSH (using putty or terminal) to the server using the following command:
 
-```
+```bash
 ssh <username>@<Machine-IP>
 ```
 
 > _**Note:** The value of Machine-IP can be taken from the deployment._
 
-If you are able to SSH in using the username you entered during the deployment, then cloudConfig correctly added the user to the system. Now check that the hostname for the machines are set to what you entered for them during deployment. It should look similar to the below image:
+If you are able to SSH in using the username you entered during the deployment, then cloudConfig correctly added the user to the system. Now check that the hostname for the machines are set to what you entered for them during deployment. 
   
 14.	Using what you have learned previously, Delete the deployment.
+
+If required, the final Cloud Template code for **Module 5 - Exercise 2** can be found [here](/module-5/exercise-2/blueprint.yaml).
 
 [Back to Top](#)
 
@@ -227,35 +221,36 @@ If you are able to SSH in using the username you entered during the deployment, 
 
 In this exercise we will add extra items to cloudConfig to install Apache and run some additional commands at build time.
 
-1. From within Cloud Assembly select the Design tab to get to the list of Cloud Templates.
-2. Click on the Multi-Cloud Cloud Template you have been working on to open it in the Design Canvas.
-3. Add the following code to `Cloud_Machine_1`'s cloudConfig section:
-
-```
-packages:
-- apache2
-```
-
-4. Append the following code to `Cloud_Machine_1`'s cloudConfig section under runcmd:.
-
-```
-- echo "This file was created by cloud-init in environment ${input.selectCloud1} >> /tmp/environment.txt
-```
-
-The final code block for `Cloud_Machine_1` should be:
-
-5. Using what you have learnt in Steps 3 and Step 4, add the following to `Cloud_Machine_2`'s cloudConfig section:
+1. Using what you have learned, add the following to the `Cloud_Machine_1`'s `cloudConfig` section:
+    * Install apache web services onto the Cloud Machine using the following code:
+    ```yaml
+        packages:
+        - apache2
+    ```
+    * Run the following command after the ssh service has restarted:
+    ```yaml
+        - echo "This file was created by cloud-init in environment ${input.selectCloud1} >> /tmp/environment.txt
+    ```
+2. Using what you have learned, add the following to `Cloud_Machine_2`'s `cloudConfig` section:
     * Install the `ngnix` package.
-    * Add the text `This file was created by cloud-init in environment ${input.selectCloud2}` to a new file called `/tmp/environment.txt`.
-6. Once all updates have been completed, click the Deploy button and enter the information required to deploy the Cloud Template.
-7. Once the deployed, test the deployment was successful in two ways:
+    * Run the following command after the ssh service has restarted:
+    ```yaml
+        - echo "This file was created by cloud-init in environment ${input.selectCloud2} >> /tmp/environment.txt
+    ```
+
+3. Once all updates have been completed, deploy the latest version of the CLoud Template.
+4. Once the deployed, test the deployment was successful in two ways:
     * Connect to each machine using SSH.
     * Open a web browser and enter the IP address of each machine.
-8. Using what you have learned previously, delete the deployment.
-9. Assuming the deployment has been successful, create a new version of this Cloud Template.
+5. Using what you have learned previously, delete the deployment.
+5. Assuming the deployment has been successful, create a new version of this Cloud Template.
+
+If required, the final Cloud Template code for **Module 5 - Exercise 3** can be found [here](/module-5/exercise-3/blueprint.yaml).
 
 [Back to Top](#)
 
 ---
 
 ### Summary
+
+In this Module we have looked at one way we can use `cloudConfig` to configure the machines within a deployment at the deployment phase.  Unlike vSphere Customization Specs, this configuration can be applied across multi-clouds assuming the template we are using has been configured with cloud-init or cloudbase-init.
