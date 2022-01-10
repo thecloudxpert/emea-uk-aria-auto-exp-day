@@ -4,16 +4,17 @@
 
 Multi-Cloud Cloud Templates are capable of deploying to multiple environments leveraging tags to dictate their desired location via the Policy Based Placement Engine. In this exercise we will create a Cloud Template that is able to deploy to multiple cloud environments.
 
+
+
 ## Lab Overview
 
 * [Exercise 1 - Configuring Tag Policies for Placement in Cloud Accounts](#exercise-1-\--configuring-tag-policies-for-placement-in-cloud-accounts)
 * [Exercise 2 - Configuring Tag Policies for Placement in Network Profiles](#exercise-2-\--configuring-tag-policies-for-placement-in-network-profiles)
 * [Exercise 3 - Creating a Single Machine Cloud Template](#exercise-3-\--creating-a-single-machine-cloud-template)
-* [Exercise 4 - Creating a Single Machine Cloud Template](#exercise-4-\--deploying-a-single-machine-cloud-template)
+* [Exercise 4 - Deploying a Single Machine Cloud Template](#exercise-4-\--deploying-a-single-machine-cloud-template)
 * [Exercise 5 - Updating the Single Machine Cloud Template](#exercise-5-\--updating-the-single-machine-cloud-template)
-* [Exercise 6 - Creating a Single Machine AWS Cloud Template](#exercise-6-\--creating-a-single-machine-aws-cloud-template)
-* [Exercise 7 - Creating a Single Machine Azure Cloud Template](#exercise-7-\--creating-a-single-machine-azure-cloud-template)
-
+* [Exercise 6 - Creating a Single Machine AWS Cloud Template (OPTIONAL)](#exercise-6-\--creating-a-single-machine-aws-cloud-template))
+* [Exercise 7 - Creating a Single Machine Azure Cloud Template (OPTIONAL)](#exercise-6---creating-a-single-machine-azure-cloud-template)
 ## Exercises
 
 ### Exercise 1 - Configuring Tag Policies for Placement in Cloud Accounts
@@ -153,12 +154,12 @@ resources:
         - tag: 'env:aws'
 ```
 
-We are now ready to deploy our Cloud Template!
+We are now ready to deploy our first Cloud Template!
 
 ### Exercise 4 - Deploying a Single Machine Cloud Template
 
 1. Click the **DEPLOY** button.  
-2. At the **Deploy <Cloud Template name>** dialog, type a Deployment Name into the **Deployment Name** field.
+2. At the **Deploy <Cloud Template name>** dialog, type a name for this deployment into the **Deployment Name** field.
 
 > _**Note:** The **Deployment Name** can be anything you like!_
 
@@ -184,26 +185,48 @@ Once the deployment has been deleted, continue with the Labs.
 
 In this exercise we will update the Cloud Agnostic Cloud Template to deploy to a different cloud.  We can do this by changing the Constraint Tag that has been applied.  You can choose to do this from within the Code pane or using the Properties pane.
 
-1. Click on the Design tab.
-If you are back on the Cloud Template Design Canvas then continue to Step 2.
-If you were brought back to the list of Cloud Templates, click on your Cloud Template to get to the design canvas.
-2. On the right-side of the screen, select the Properties tab.
-3. Select the Resource Object on the Canvas, and then check the box next to the Tag to be changed (env:aws) and click the edit icon.
-4. Change the value of the tag from **env:aws** to **env:azure** and click Apply. (Or vice versa if applicable).
-The updated Constraint Tag should now be displayed on both the Properties and Code Tab.
-5. Click Deploy to deploy the updated Cloud Template.
-6. At the **Deploy `<Cloud Template Name>`** dialog, type a Deployment Name, select Current Draft for the Cloud Template Version.
-7. Click **DEPLOY** to start the deployment.
+1. Click the **Design** tab.
+    * If you are back on the Cloud Template Design Canvas then continue to **Step 2**.
+    * If you were brought back to the **Cloud Templates** screen, click on your Cloud Template to get to the design canvas.
+2. Select the **Code** pane.
 
-Again, you are taken to the Deployments Screen where you can monitor the status of the deployment.
+The code displayed should be:
 
-> _**Note:** You can see the decision process Cloud Assembly made in placing the machine by clicking on the name of the deployment. On the deployment details screen, click History, select Create, and then select the Provisioning Diagram link to see the details of the decision process. This is also a great place to start troubleshooting a failed deployment._
+```YAML
+formatVersion: 1
+inputs: {}
+resources:
+  Cloud_Machine_1:
+    type: Cloud.Machine
+    properties:
+      image: ubuntu
+      flavor: small
+      constraints:
+        - tag: 'env:aws'
+```
+
+4. In the Code pane, change the value of the `constraints` tag (line 10) from **env:aws** to **env:azure**.
+
+> _**Note:** The updated Constraints Tag should now be displayed on both the Properties and Code Tab._
+
+5. Using what you learned so far in this module, deploy the updated Cloud Template.
+
+We can see the decision process that Cloud Assembly has made during the allocation phase of the deployment.
+
+6. On the deployment details screen, click **History**.
+7. Click the **CREATE** task to view the stages the deploymnet has gone through.
+
+> _**Note:** We can see that the time, date and user who created the task is recorded._
+
+8. Click the **Provisioning Diagram** link to see the details of the decision process. 
+
+> _**Note:** This is also a great place to start troubleshooting a failed deployment._
 
 Feel free to explore this deployment and the information about the deployment. If you click on the Machine, you should see in the properties window that an Azure Virtual Machine has been deployed.  
 
 When you have finished exploring continue with the instructions.
-8. From the Deployment Screen, click Close to return to the Deployment List screen
-9. At the Deployment List screen, locate your deployment, click on the Actions menu and click Delete to remove the deployment.
+
+8. Using what you have learned so far in this module, delete the deployment.
 
 [Back to Top](#)
 
