@@ -48,7 +48,8 @@ Multi-Cloud Cloud Templates are capable of deploying to multiple environments le
     </tbody>
 </table>
 
-> _**Note:** Whilst the `env:aws` tag existed, the `env:azure` tag does not and will be created by this process._
+> _**Note:** \
+Whilst the `env:aws` tag existed, the `env:azure` tag does not and will be created by this process._
 
 It is a common use case for customers to separate clusters within an environment based on use case. An abstract version of this concept exists in public cloud as well (people may use different regions/zones for different use cases). We might tag a cluster designed for Oracle workloads to leverage the `app:oracle` tag, allowing us to place these workloads on this cluster via the placement engine. Another use case is for compliance reasons - users may tag clusters based on compliance capabilities on specific environments to ensure workloads land in an environment that will help them pass audits.
 
@@ -95,17 +96,18 @@ In this section we will deploy a single machine Cloud Template to one of the clo
 4. Click **Blank canvas**.
 5. At the **New Cloud Template** dialog, type a name for you new cloud template in the **Name** field.
 
-> _**Note:** The **Name** can be anything you like!_
+> _**Note:**_ \
+_The **Name** can be anything you like!_
 
 6. At the **New Cloud Template** dialog, select the only available project from the **Project** search list.
 7. ENsure that the **Share only with this project** option is selected.
 8. Click **CREATE**.
 
-> Welcome to the Cloud Template Canvas!
+Welcome to the Cloud Template Canvas!
 
 9. Locate the **Cloud Agnostic** > **Machine** Resource Type from the pallete and drag and drop it onto the design canvas.
 
-> You will notice that the Cloud Agnostic Machine that was just dropped onto the canvas is highlighted red. This is because we need to fill out some missing information.  You will then notice that YAML code has been automatically populated in the right-hand pane. This is where we will begin to configure this Cloud Template using Infrastructure-as-Code.
+You will notice that the Cloud Agnostic Machine that was just dropped onto the canvas is highlighted red. This is because we need to fill out some missing information.  You will then notice that YAML code has been automatically populated in the right-hand pane. This is where we will begin to configure this Cloud Template using Infrastructure-as-Code.
 
 The following syntax should be displayed in the Code pane.
 
@@ -125,7 +127,8 @@ resources:
 12. In the **Code** pane, locate the **flavor:** property and click inbetween the single quotes.  This should present you with the available flavor mappings to select from.
 13. Select the **small** flavor from the list.
 
-> _**Note:** If the options are not being presented, you may have missed adding the Cloud Zones to your Project._
+> _**Note:**_ \
+_If the options are not being presented, you may have missed adding the Cloud Zones to your Project._
 
 Now that we have our basic machine blueprint, we now need to contrain the deployment to a particular cloud. We do this by using the tags that we assigned in the previous steps.
 
@@ -134,13 +137,15 @@ Now that we have our basic machine blueprint, we now need to contrain the deploy
 14. Click on the **Show all properties** toggle.
 15. Scroll down to the **Constraints** property and click **+**.
 
-> _**Note:** There are a number of Constraint properties, including Storage Constraints and Network Constraints. The Contraints property we are looking for is (as of writing this guide, located under the Cloud Config section._
+> _**Note:**_ \
+_There are a number of Constraint properties, including Storage Constraints and Network Constraints. The Contraints property we are looking for is (as of writing this guide, located under the Cloud Config section._
 
 16. At the **Constraints** dialog, type `env:aws` into the **Tag** field.
 17. Click **APPLY**.
 18. Click the **Code** pane to view the results of the update.
 
-The final Cloud Template code for **Module 3 - Exercise 3** can be found [here](/module-3/exercise-3/blueprint.yaml).
+> **SPOILER ALERT**: \
+The Cloud Template code for **Module 3 - Exercise 3** can be found [here](/module-3/exercise-3/blueprint.yaml).
 
 We are now ready to deploy our first Cloud Template!
 
@@ -179,7 +184,8 @@ In this exercise we will update the Cloud Agnostic Cloud Template to deploy to a
 2. Select the **Code** pane.
 3. In the Code pane, change the value of the `constraints` tag (line 10) from **env:aws** to **env:azure**.
 
-> _**Note:** The updated Constraints Tag should now be displayed on both the Properties and Code Tab._
+> _**Note:**_ \
+_The updated Constraints Tag should now be displayed on both the Properties and Code Tab._
 
 4. Using what you learned so far in this module, deploy the updated Cloud Template.
 
@@ -188,11 +194,13 @@ We can see the decision process that Cloud Assembly has made during the allocati
 5. On the deployment details screen, click **History**.
 6. Click the **CREATE** task to view the stages the deploymnet has gone through.
 
-> _**Note:** We can see that the time, date and user who created the task is recorded._
+> _**Note:**_ \
+_We can see that the time, date and user who created the task is recorded._
 
 7. Click the **Provisioning Diagram** link to see the details of the decision process. 
 
-> _**Note:** This is also a great place to start troubleshooting a failed deployment._
+> _**Note:**_\
+_This is also a great place to start troubleshooting a failed deployment._
 
 Feel free to explore this deployment and the information about the deployment. If you click on the Machine, you should see in the properties window that an Azure Virtual Machine has been deployed.  
 
@@ -200,7 +208,8 @@ When you have finished exploring continue with the instructions.
 
 8. Using what you have learned so far in this module, delete the deployment.
 
-The final Cloud Template code for **Module 3 - Exercise 4** can be found [here](/module-3/exercise-4/blueprint.yaml).
+> **SPOILER ALERT**: \
+The Cloud Template code for **Module 3 - Exercise 4** can be found [here](/module-3/exercise-4/blueprint.yaml).
 
 
 [Back to Top](#)
@@ -209,7 +218,7 @@ The final Cloud Template code for **Module 3 - Exercise 4** can be found [here](
 
 ### Exercise 6 - Creating a Single Machine AWS Cloud Template
 
-Using what you have learned within this module, create a VMware Cloud Template to deploy a single AWS machine.
+Using what you have learned within this module, create a new VMware Cloud Template to deploy a single AWS machine.
 
 [Back to Top](#)
 
@@ -217,7 +226,7 @@ Using what you have learned within this module, create a VMware Cloud Template t
 
 ### Exercise 7 - Creating a Single Machine Azure Cloud Template
 
-Using what you have learned within this module, create a VMware Cloud Template to deploy a single Azure machine.
+Using what you have learned within this module, create a new VMware Cloud Template to deploy a single Azure machine.
 
 [Back to Top](#)
 

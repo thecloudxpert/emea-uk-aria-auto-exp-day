@@ -22,14 +22,16 @@ In this portion of the training we will shift our focus to consuming Cloud Templ
 
 To start having users consume Cloud Templates from Cloud Assembly you first need to release a version of a Cloud Template for consumption.
 
-1. From within Cloud Assembly select the Design tab to get to the list of Cloud Templates.
+1. Navigate to **Cloud Assembly**.
+2. Click the **Design** tab.
  
-> _**Note:** you may not be in exactly the same place in the UI, but still need to click Extensibility._
+> _**Note:**_ \
+_You may not be in exactly the same place in the UI, but still need to click Design._
 
-2. Click on the Cloud Agnnostic Cloud Template you have been working on during the previous modules to open it in the Design Canvas.
-3. At the Design Canvas screen, click Version History.
-4. Locate the latest version of the Cloud Template (this is the one before the Current Draft) and click Release.
-5. At the Release Version dialog, click Release.
+2. Click on the Cloud Template you have been working on during the previous modules to open it in the Design Canvas.
+3. At the Design Canvas screen, click **VERSION HISTORY**.
+4. Locate the latest version of the Cloud Template (this is the one before the Current Draft) and click **RELEASE**.
+5. At the **Release Version** dialog, click **RELEASE****.
   
 The Cloud Template has now been released so it can be consumed by the Service Broker.  You can see which versions have been released from the Version History window.  
 You will see a tick by the version to indicate it was released.
@@ -44,21 +46,23 @@ You will see a tick by the version to indicate it was released.
 ### Exercise 2 - Importing Content into Service Broker
 
 In this section we will learn how to import our Cloud Templates into Service Broker from Cloud Assembly.  VMware Service Broker is the Self-Service Portal that you will use to enable your users to request services.
-1. Open Service Broker by clicking on the 9 dots in the top righthand side and selecting VMware Service Broker.
-2. Click the Content & Policies tab.
-3. Under Content Sources, click New.
-4. On the Content Sources page, click VMware Cloud Template.
-5. On the New Content Source screen, complete the following: 
-    * Enter a Name for the content source - This can be any name you would like to use.
-    * Select a Source Project (only for Cloud Assembly Cloud Templates) - Select your Cloud Assembly project
+
+1. Navigate to **Service Broker** by clicking on the 9 dots in the top righthand side and selecting **VMware Service Broker**.
+2. Click the **Content & Policies** tab.
+3. Click **Content Sources**
+4. Click **+ NEW**.
+5. On the **Content Sources** page, click **VMware Cloud Template**.
+6. On the **New Content Source** page, at the **Name** field, type `<Project Name> Templates`.
+7. On the **New Content Source** page, at the **Source Project** field, select your **\<Project Name>**.
 6. Click **VALIDATE**.
 7. Click **CREATE & IMPORT**.
 8. Click **Content Sharing**.
-9. On the Content Sharing screen, select your Project and then click ADD ITEMS.
-10. Check the checkbox next to the Content Source created in Step 6.
+9. On the **Content Sharing** page, at the **Project** field, select your \<Project Name> from the list.
+10. Click **+ ADD ITEMS**.
+10. Check the checkbox next to the **\<Project Name> Templates**.
 11. Click **SAVE**.
 
-The Cloud Agnostic Cloud Template is now available for consumption, but it needs to be made easier to consume by the end user. We will do this in the next Exercise using a custom form.
+The Cloud Template is now available for consumption through the Service Catalog, but it needs to be made easier to consume by the end user. We will do this in the next Exercise using a custom form.
 
 [Back to Top](#)
 
@@ -66,7 +70,7 @@ The Cloud Agnostic Cloud Template is now available for consumption, but it needs
 
 ### Exercise 3 - Requesting a Catalog Item through the Service Catalog
 
-1. From within Service Broker, click on the Catalog tab.
+1. From within **Service Broker**, click on the **Catalog** tab.
   
 You should now have a single Catalog Item listed within the Service Broker Catalog.
 

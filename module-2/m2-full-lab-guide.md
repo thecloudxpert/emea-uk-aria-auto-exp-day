@@ -25,7 +25,8 @@ In this exercise we are going to create a new **Project**.  A Project is one of 
 4. Click **+ NEW PROJECT**.
 5. At the **New Project** screen, type a name for the project.
 
-> _**Note:** The **Project Name** can be anything you like but you need to remember it as you will use this project for the rest of the day!_
+> _**Note:**_ \
+_The **Project Name** can be anything you like but you need to remember it as you will use this project for the rest of the day!_
 
 6. Click **Users**.
 7. Click **+ ADD USERS**.
@@ -33,29 +34,35 @@ In this exercise we are going to create a new **Project**.  A Project is one of 
 9. At **Assign role**, check the **Administrator** checkbox.
 10. Click **ADD**.
 
-> _**Note:** When logged into an account that has been given both Organization Owner and Cloud Assembly Administrator Service roles, we have alot more privileges and access than most end users would be given.  With this level of rights, we don't actually need to be a Project Administrator or Member to deploy resources.  For more information check out [Organization and service user roles in vRealize Automation](https://docs.vmware.com/en/vRealize-Automation/8.6/Using-and-Managing-Cloud-Assembly/GUID-F5813D09-297F-4C10-9AC6-538B57F675A0.html)_
+> _**Note:**_ \
+_When logged into an account that has been given both Organization Owner and Cloud Assembly Administrator Service roles, we have alot more privileges and access than most end users would be given.  With this level of rights, we don't actually need to be a Project Administrator or Member to deploy resources.  For more information check out [Organization and service user roles in vRealize Automation](https://docs.vmware.com/en/vRealize-Automation/8.6/Using-and-Managing-Cloud-Assembly/GUID-F5813D09-297F-4C10-9AC6-538B57F675A0.html)_
 
-> _**Note:** If the Cloud Service Portal for you Organization had been integrated with an Enterprise Directory (such as Active Directory), we would be able to specify both AD users and Groups when creating a project._
+> _**Note:**_ \
+_If the Cloud Service Portal for you Organization had been integrated with an Enterprise Directory (such as Active Directory), we would be able to specify both AD users and Groups when creating a project._
 
 11. Click **Provisioning**.
 12. Click **+ ADD ZONE**.
 13. Click **Cloud Zone**.
 14. At the **Add Cloud Zone** dialog, click the **Cloud zone** search field and select **Trading AWS / us-west-1** from the list.
 
->_**Note:** If the only available AWS Cloud Zone is **Trading AWS / us-east-1**, then please select that Cloud Zone._
+>_**Note:**_ \
+_If the only available AWS Cloud Zone is **Trading AWS / us-east-1**, then please select that Cloud Zone._
 
 15. Leave all remaining settings as their defaults and click **ADD**.
 
->_**Note:** At this point we can limit the number of cloud machines/instances and how much memory or cpu can be consumed for this project on the Cloud Zone._
+>_**Note:**_ \
+_At this point we can limit the number of cloud machines/instances and how much memory or cpu can be consumed for this project on the Cloud Zone._
 
 16. Repeat **Step 12** to **Step 15** to also add the **Trading Azure / East US** Cloud Zone to the project.
 
->_**Note:** If the only available AWS Cloud Zone is **Trading Azure / West US**, then please select that Cloud Zone._
+>_**Note:**_ \
+_If the only available AWS Cloud Zone is **Trading Azure / West US**, then please select that Cloud Zone._
 
 17. Scroll down the Provisioning tab locate the **Custom Naming** template field.
 18. Under **Custom Naming**, at the **Template** textbox, type `${resource.name}${####}`.
 
-> _**Note:** Using a basic custom naming template provides some consistency around the naming policy of deployment resources._
+> _**Note:**_ \
+_Using a basic custom naming template provides some consistency around the naming policy of deployment resources._
 
 19. Click **CREATE**.
 
@@ -145,7 +152,8 @@ In this exercise we are going to create a new image mapping that can be used in 
     </tbody>
 </table>
 
-> _**Note:** If the exact image name does not exist, then choose the nearest option to it._
+> _**Note:**_ \
+_If the exact image name does not exist, then choose the nearest option to it._
 
 [Back to Top](#)
 
@@ -169,7 +177,8 @@ In this Exercise we are going to add some additional networks to our existing Ne
 12. Click **+ ADD NETWORK**.
 13. At the **Add Network** dialog, locate the **vNETXX-Public-SPC** network.
 
-> _**Note:** Where XX is a number, such as vNET45-Public-SPC._
+> _**Note:**_ \
+_Where XX is a number, such as vNET45-Public-SPC._
 
 14. Check the **vNETXX-Public-SPC** checkbox.  
 15. Click **ADD**.

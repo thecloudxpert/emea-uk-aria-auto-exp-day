@@ -29,8 +29,11 @@ In this lab exercise we will start iterative development of Cloud Templates thro
     * At the **Description** text field, type `Cloud Agnostic Cloud Template - Single Machine`.
     * At the **Change Log** text field, type `initial template version`.
 
-> _**Note:** Whilst alphanumeric characters are supported, it is considered a good practice to use numbers for version._
-> _**Note:** We could release this version to the Service Broker Catalog from version creation dialog as well.  We'll cover more on that topic shortly._
+> _**Note:** \
+Whilst alphanumeric characters are supported, it is considered a good practice to use numbers for version._ 
+
+> _**Note:** \
+We could release this version to the Service Broker Catalog from version creation dialog as well.  We'll cover more on that topic shortly._
 
 6. Click **CREATE**.
 
@@ -71,13 +74,15 @@ The following provides a brief description of each part of this code block:
 * `- env:aws` - the first option in the list
 * `- env:azure`	- the second option in the list
 
-> _**Note:** If you copy and paste the code, make sure the code is formatted correctly._
+> _**Note:** \
+If you copy and paste the code, make sure the code is formatted correctly._
 
 Now that we have defined our `input` we need to modify our **Constraints Tag** on the Cloud Machine so that it will read the value selected at request time for the deployment.
 
 2. Within the **Code** pane, on replace the current value (`env:azure`) of the Constraints Tag for `Cloud_Machine_1` (line 10) with `${input.SelectCloud1}`.
 
-The final Cloud Template code for **Module 4 - Exercise 2** can be found [here](/module-4/exercise-2/blueprint.yaml).
+> **SPOILER ALERT**: \
+The Cloud Template code for **Module 4 - Exercise 2** can be found [here](/module-4/exercise-2/blueprint.yaml).
 
 [Back to Top](#)
 
@@ -92,7 +97,8 @@ In this exercise we are going to check that the Cloud Template code and placemen
 3. Click **TEST**.
 4. Assuming the Test is **Successful** you can close the Test Result screen by clicking **X**.
 
-> _**Note:** You can also view the **Provisioning Diagram** to see how an actual deployment would occur and what placement decisions have been made based on tag-based palcement.  This is a very interesting diagram to help ensure that the tags are working as expected._
+> _**Note:** \
+You can also view the **Provisioning Diagram** to see how an actual deployment would occur and what placement decisions have been made based on tag-based palcement.  This is a very interesting diagram to help ensure that the tags are working as expected._
 
 [Back to Top](#)
 
@@ -165,9 +171,11 @@ You can use the following information to help:
 
 6. Using what you have learned so far in this module, add the constraints to **Cloud_Machine_2** in the Cloud Template so that it uses the additional input parameter during deployment.
 
-The final Cloud Template code for **Module 4 - Exercise 5** can be found [here](/module-4/exercise-5/blueprint.yaml).
+> **SPOILER ALERT**: \
+The Cloud Template code for **Module 4 - Exercise 5** can be found [here](/module-4/exercise-5/blueprint.yaml).
 
-> _**Note:** The order of the Cloud Machines may differ in you example, which is fine!_
+> _**Note:** \
+    The order of the Cloud Machines may differ in your example!_
 
 7. Using what you have learned so far in this module, create a new version of the Cloud Template.
 8. Click **CLOSE**.
@@ -191,7 +199,8 @@ In this exercise we use the Cloud Agnostic Cloud Template to update an existing 
 9. Click **NEXT**.
 10. On the **Plan** Screen, click **>** to see the changes that will take affect during the update to the existing deployment.
 
-> **Question:** Are the changes being made what you expected to happen?
+> **Question:** \
+Are the changes being made what you expected to happen?
 
 11. Click **DEPLOY**.
 
@@ -214,7 +223,8 @@ Now let's compare different versions of the Cloud Template!
 
 4. Click the **Diff** tab.
   
-> _**Note:** You can only compare the Current Version against a previous versions._
+> _**Note:** \
+You can only compare the Current Version against a previous versions._
 
 5. Select one of the previous versions from the **Diff Against** dropdown.
   

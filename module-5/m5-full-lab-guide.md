@@ -87,7 +87,8 @@ We should notice some new code has been added to the `inputs:` section of our YA
 
 > _**Note:** You should be able to deploy the Cloud Template to test the deployment is successful, but you will not be able to fully test the hostname changes until we add a logon user to the machines in the next exercise._
 
-The final Cloud Template code for **Module 5 - Exercise 1** can be found [here](/module-5/exercise-1/blueprint.yaml).
+> **SPOILER ALERT**: \
+The Cloud Template code for **Module 5 - Exercise 1** can be found [here](/module-5/exercise-1/blueprint.yaml).
 
 [Back to Top](#)
 
@@ -211,7 +212,8 @@ If you are able to SSH in using the username you entered during the deployment, 
   
 14.	Using what you have learned previously, Delete the deployment.
 
-If required, the final Cloud Template code for **Module 5 - Exercise 2** can be found [here](/module-5/exercise-2/blueprint.yaml).
+> **SPOILER ALERT**: \
+The Cloud Template code for **Module 5 - Exercise 2** can be found [here](/module-5/exercise-2/blueprint.yaml).
 
 [Back to Top](#)
 
@@ -243,9 +245,10 @@ In this exercise we will add extra items to cloudConfig to install Apache and ru
     * Connect to each machine using SSH.
     * Open a web browser and enter the IP address of each machine.
 5. Using what you have learned previously, delete the deployment.
-5. Assuming the deployment has been successful, create a new version of this Cloud Template.
+6. Assuming the deployment has been successful, create a new version of this Cloud Template.
 
-If required, the final Cloud Template code for **Module 5 - Exercise 3** can be found [here](/module-5/exercise-3/blueprint.yaml).
+> **SPOILER ALERT**: \
+ The Cloud Template code for **Module 5 - Exercise 3** can be found [here](/module-5/exercise-3/blueprint.yaml).
 
 [Back to Top](#)
 
