@@ -254,6 +254,16 @@ In this exercise we will add extra items to cloudConfig to install Apache and ru
 
 ---
 
+### Additional Resources
+
+  - [Cloudinit (Linux)](https://cloudinit.readthedocs.io/en/latest/topics/examples.html)
+  - [Cloudbase-init (Windows)](https://cloudbase-init.readthedocs.io/en/latest/)
+  - vRA Documentation - [Configuration commands in vRealize Automation Cloud Assembly templates](https://docs.vmware.com/en/vRealize-Automation/8.6/Using-and-Managing-Cloud-Assembly/GUID-70EA052D-FABF-4CE5-875D-9B52FED08AA3.html)
+  - [Installing Cloudbase-Init on Windows for vRA Customisation](https://blog.v12n.io/installing-cloudbase-init-on-windows-for-vra-customisation/)
+  - [Automating the installation of Cloudbase-Init in Windows templates using Packer](https://blog.v12n.io/automating-the-installation-of-cloudbase-init-in-windows-templates-using-packer/)
+
+---
+
 ### Summary
 
 In this Module we have looked at one way we can use `cloudConfig` to configure the machines within a deployment at the deployment phase.  Unlike vSphere Customization Specs, this configuration can be applied across multi-clouds assuming the template we are using has been configured with cloud-init or cloudbase-init.
