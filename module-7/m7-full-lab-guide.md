@@ -14,7 +14,7 @@ In this portion of the training we will shift our focus to consuming Cloud Templ
 * [Exercise 4 - Updating the Subscription to change when it runs](#exercise-4-\--updating-the-subscription-to-change-when-it-runs)
 * [Exercise 5 - Testing the Action and Subscription](#exercise-5-\--testing-the-action-and-subscription)
 * [Exercise 6 - Configuring Service Broker Lease Policies](#exercise-6-\--configuring-service-broker-lease-policies)
-* [Exercise 9 - Configuring Service Broker Approval Policies](#exercise-8-\--configuring-service-broker-approval-policies)
+* [Exercise 7 - Configuring Service Broker Approval Policies](#exercise-7-\--configuring-service-broker-approval-policies)
 * [Exercise 8 - Configuring Service Broker Day 2 Action Policies](#exercise-8-\--configuring-service-broker-day-2-action-policies)
 
 ---
@@ -338,7 +338,7 @@ Deployment.Update
 
 ---
 
-## Exercise 8: Configuring Service Broker Day 2 Action Policies
+## Exercise 8 - Configuring Service Broker Day 2 Action Policies
 
 1. In Service Broker, go to the Deployment tab.
 2. Locate one of your deployments and click on the Actions menu.
