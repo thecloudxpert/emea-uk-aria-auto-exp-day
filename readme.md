@@ -11,4 +11,4 @@
 * **Module 6** - Extensibility ([normal](/module-6/m6-full-lab-guide.md))
 * **Module 7** - Curating Content in the Service Broker ([normal](/module-7/m7-full-lab-guide.md))
 * **Module 8** - Operationalising and Onboarding
-* **Module 9** - What's New in vRealize Automation 8.4 / Cloud
+* **Module 9** - What's New in vRealize Automation / Cloud
