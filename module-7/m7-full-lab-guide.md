@@ -13,6 +13,9 @@ In this portion of the training we will shift our focus to consuming Cloud Templ
 * [Exercise 3 - Requesting a Catalog Item through the Service Catalog](#exercise-3-\--requesting-a-catalog-item-through-the-service-catalog)
 * [Exercise 4 - Updating the Subscription to change when it runs](#exercise-4-\--updating-the-subscription-to-change-when-it-runs)
 * [Exercise 5 - Testing the Action and Subscription](#exercise-5-\--testing-the-action-and-subscription)
+* [Exercise 6 - Configuring Service Broker Lease Policies](#exercise-6-\--configuring-service-broker-lease-policies)
+* [Exercise 9 - Configuring Service Broker Approval Policies](#exercise-8-\--configuring-service-broker-approval-policies)
+* [Exercise 8 - Configuring Service Broker Day 2 Action Policies](#exercise-8-\--configuring-service-broker-day-2-action-policies)
 
 ---
 
@@ -70,12 +73,12 @@ The Cloud Template is now available for consumption through the Service Catalog,
 
 ### Exercise 3 - Requesting a Catalog Item through the Service Catalog
 
-1. From within **Service Broker**, click on the **Catalog** tab.
+1. From within **VMware Service Broker**, click on the **Catalog** tab.
   
 You should now have a single Catalog Item listed within the Service Broker Catalog.
 
-2. On the Catalog screen, locate your Cloud Template and click Request.
-3. At the New Request screen, fill out the request providing the following:
+2. On the **Catalog** screen, locate your Cloud Template and click **Request**.
+3. At the **New Request** screen, fill out the request providing the following:
 
     * Deployment Name
     * Project
@@ -88,7 +91,7 @@ You should now have a single Catalog Item listed within the Service Broker Catal
 
 You should notice that the Request form was not in any logical order and certainly not something that would be easy for a user to fill out.  Have no fear, we will resolve that in the next Exercise!
 
-4. Click Submit to start the deployment.
+4. Click **SUBMIT** to start the deployment.
 
 You will notice this is an identical Deployments screen to the one we have used in previous modules, but it is located within the Service Broker.
 
@@ -103,45 +106,44 @@ You will notice this is an identical Deployments screen to the one we have used 
 In this Exercise we are going to customize the Catalog Item that was previously created and then add a custom form to it so that it is easier to consume for the average requestor.
 For this deployment scenario we want to abstract the cloud the user requests. We only want the consumer to select whether the workload should be deployed to production or to test. This gives the infrastructure and / or cloud teams the ability to put workloads where they will run with the best performance, most efficiency, and cost effectiveness without the possibility of cloud bias from the consumer.
 
-1. Whilst in Service Broker, click the Content & Policies tab.
-2. Click Content.
+1. Navigate to the **VMware Service Broker**.
+2. Click the **Content & Policies** tab.
+3. Click **Content**.
 
-The Content screen will list all the Cloud Templates that have been shared. You will see your Cloud Template that you shared in the previous section listed. 
+The Content screen will list all the Cloud Templates that belong to all Content Sources that have been Shared. You will see the Cloud Template that you shared in the previous section listed.
 
-3. On the Content screen, locate the Cloud Template to be configured and click on the three dot button. 
-4. Click the Configure Item option.
+4. On the **Content** screen, locate the Cloud Template to be configured and click on the vertical ellipsis.
+5. Click the **Configure Item** option.
 
 You are now in the Configure Item screen.  Here you can change the icon of the content item so that your content can easily be differentiated.  In addition, you change the number of instances of the Cloud Template that can be deployed in one request (the Default value is 1, maximum is 10).  Changing away from the default value automatically adds an addition field to a catalog item call Deployment Count.
 
-5. At the Configure Item screen, click Change Icon.
-6. Select a suitable icon from your device.
-7. Click Save.
+6. At the **Configure Item** screen, click **CHANGE ICON**.
+7. Select a suitable icon from your device.
+8. Click **SAVE**.
   
 Your new icon should now be present on the Content screen.
 
-8. On the Content screen, locate the Cloud Template to be configured and click on the three dot button.
-
-9. Click on the Customize Form option.
+9. On the **Content** screen, locate the Cloud Template to be configured and click on the vertical ellipsis.
+10. Click on the **Customize form** option.
   
-You are now in the Custom Form designer. This is where you can create robust request forms for your Cloud Templates. First let's start by making the Select Cloud control on the form more intuitive by giving it a better label.
+You are now in the Custom Form Designer. This is where you can create robust request forms for your Cloud Templates. First let's start by making the Select Cloud control on the form more intuitive by giving it a better label.
 
-10.	Click on the Machine 1 Hostname control.
-  
-Note: This action populates the Properties configuration pane to the right of the form.
-
-11. Update the Label to be more descriptive using Hostname for Machine 1.
-  
-12. Repeat Step 10 to Step 11 for the Machine 2 Hostname control using Hostname for Machine 2 for the label.
-13. Repeat Step 10 to Step 11 for the Select Cloud 1 control using Select Select Cloud for Machine 1 for the label.
+11.	Click on the **Machine 1 Hostname** control.
+12. In the **Properties** pane, at the Label field, type `Hostname for Machine 1`.
+13.	Click on the **Machine 2 Hostname** control.
+14. In the **Properties** pane, at the Label field, type `Hostname for Machine 2`.
+13. Using what you have learned, update the label for the **Select Cloud 1** form elements to `Select Cloud for Machine 1`.
 
 We are now going to change the values in the drop down to be more end user friendly than just using the Capability Tags.
 
-14. With the Select Cloud for Machine 1  control selected, click on the Values tab within the Properties pane.
-15.	Enter Production into the Default Value field.
-16. Click on the Value options to expand the option.
-17. Update the text in the textbox to read `env:azure|Production,env:aws|Test`.
-18. Repeat Step 13 to Step 17 to modify the Label and Values for Select Cloud 2 using the following details:
+14. With the **Select Cloud for Machine 1** form element selected, click on the **Values** tab within the **Properties** pane.
+15.	Click on the **Default value** field, to expand it.
+16. At the **Value** field, type `Production`.
+17. Click on the **Value options** field to expand the option.
+18. Ensure that the **Value source** dropdown is set to **Constant**.
+19. Update the text in the **Vaue source** textbox to read `env:azure|Production,env:aws|Test`.
 
+18. Using what you have learned, as well as the information provided in the table below, update the **Select Cloud 2** form element to match the configuration of **Select Cloud 1** form element.
 <table class="table">
     <caption>Table: Module 7 - Exercise 4</caption>
     <thead>
@@ -161,7 +163,7 @@ We are now going to change the values in the drop down to be more end user frien
         </tr>
         <tr>
             <td class="left">Dropdown value</td>
-            <td class="left">env:azure|Production,env:aws|Test</td>
+            <td class="left">env:azure|Test,env:aws|Production</td>
         </tr>
     </tbody>
 </table>
@@ -185,7 +187,8 @@ You will notice that the consumer only sees Production and Test and deployment o
 But can you spot the problem with the form?
 4. Once the deployment has completed, take a mental note of when it is due expire as you will need this information for the next exercise.
 
-> _**Hint:** It should be set to never expire._
+> _**Hint:**_ \
+_The policy should be set to never expire._
 
 [Back to Top](#)
 
