@@ -15,6 +15,7 @@ Multi-Cloud Cloud Templates are capable of deploying to multiple environments le
 * [Exercise 5 - Updating the Single Machine Cloud Template](#exercise-5-\--updating-the-single-machine-cloud-template)
 * [Exercise 6 - Creating a Single Machine AWS Cloud Template](#exercise-6-\--creating-a-single-machine-aws-cloud-template) (OPTIONAL)
 * [Exercise 7 - Creating a Single Machine Azure Cloud Template](#exercise-7-\--creating-a-single-machine-azure-cloud-template) (OPTIONAL)
+* [Additional Resources](#additional-resources)
 
 ## Exercises
 
@@ -230,6 +231,13 @@ Using what you have learned within this module, create a new VMware Cloud Templa
 
 [Back to Top](#)
 
+---
+
+### Additional Resources
+
+* [vRealize Automation 8.6 Cloud Assembly expression syntax](https://docs.vmware.com/en/vRealize-Automation/8.6/Using-and-Managing-Cloud-Assembly/GUID-12F0BC64-6391-4E5F-AA48-C5959024F3EB.html)
+* [vRealize Automation 8.5 Cloud Template Schema](https://vdc-download.vmware.com/vmwb-repository/dcr-public/5b7b4a20-eea3-4fbf-954f-defad0f6c17f/b96a570e-6e96-48e7-b721-0f5db8108c66/vra85-resource-type-schema-open-api.json)
+    
 ---
 
 ### Summary
