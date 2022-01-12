@@ -179,16 +179,19 @@ We are now going to change the values in the drop down to be more end user frien
 ### Exercise 5 - Consuming the Cloud Template Through Service Broker Catalog
 
 Now that we have changed the catalog item icon and customized the form for easier consumption, let's go back and use the catalog in Service Broker to deploy the Cloud Template and check our work.
-1. In Service Broker, select the Catalog tab.
-2. Locate your Cloud Template in the catalog and click Request.
-You will now see the custom form that you created for this Cloud Template. 
+
+1. In **VMware Service Broker**, select the **Catalog** tab.
+2. Locate your Cloud Template in the catalog and click **REQUEST**.
 3. Fill in the information required and select the environments you would like each machine to deploy in to.
-You will notice that the consumer only sees Production and Test and deployment options instead of env:azure or env:aws and the image you added is also visible on the form.
-But can you spot the problem with the form?
+
+> _**Note:**_ \
+The consumer now only sees Production and Test and deployment options instead of env:azure or env:aws and the image you added is also visible on the form.
+
+> **Question:** Can you spot the problem with the form?
+
 4. Once the deployment has completed, take a mental note of when it is due expire as you will need this information for the next exercise.
 
-> _**Hint:**_ \
-_The policy should be set to never expire._
+> _**Hint:** The deployment should be set to never expire._
 
 [Back to Top](#)
 
@@ -196,11 +199,11 @@ _The policy should be set to never expire._
 
 ### Exercise 6 - Configuring Service Broker Lease Policies
 
-1. Whilst in Service Broker, click the Content & Policies tab.
-2. Click Policies > Definitions.
-3. Click New Policy.
-4. Click Lease Policy.
-5. At the New Policy screen, use the following information to complete the policy details:
+1. In **VMware Service Broker**, click the **Content & Policies** tab.
+2. Click **Policies** > **Definitions**.
+3. Click **+ NEW POLICY**.
+4. Click **Lease Policy**.
+5. At the **New Policy** screen, use the following information to complete the policy details:
 
 <table class="table">
     <caption>Table: Module 7 - Exercise 6</caption>
@@ -238,15 +241,19 @@ _The policy should be set to never expire._
     </tbody>
 </table>
 
-6. Click Preview to see the impact of enforcing the policy.
-  
-7. Once you have reviewed the impact of the policy, click the X to close the dialog.
-8. Click Create.
+6. Click **PREVIEW** to see the impact of enforcing the policy.
+
+> **Question:** Will any existing deployments be impacted?
+
+7. Click the **X** to close the dialog.
+8. Click **CREATE**.
 9. Go back to your Deployment and look at the Deployment List, find your last deployment.
 
 > **Question:** When does the deployment now expire?
 
-10. Create a new deployment and make sure it also has the same expiry date.
+10. Deploy the catalog item again.
+
+> **Question:** Is the expiry date set correctly?
 
 > **Question:** Did you get an email notification?
 
@@ -254,21 +261,11 @@ _The policy should be set to never expire._
 
 ### Exercise 7 - Configuring Service Broker Approval Policies
 
-1. Whilst in Service Broker, click the Content & Policies tab.
-2. Click Policies > Definitions.
-3. Click New Policy.
-4. Click Approval Policy
-5.	At the New Policy screen, use the following information to complete the policy details:
-Module 7– Exercise 7
-Item	Value
-Name	Deployment Level Approvals
-Scope	<Project>
-Approver mode	Any
-Approvers	<add your email>
-Auto Expiry decision	Approve
-Auto Expiry trigger	1 day
-Actions	Deployment.Create
-Deployment.Update
+1. In **VMware Service Broker**, click the **Content & Policies** tab.
+2. Click **Policies** > **Definitions**.
+3. Click **+ NEW POLICY**.
+4. Click **Approval Policy**.
+5. At the **New Policy** screen, use the following information to complete the policy details:
 
 <table class="table">
     <caption>Table: Module 7 - Exercise 7</caption>
@@ -306,32 +303,35 @@ Deployment.Update
         <tr>
             <td class="left">Actions</td>
             <td class="left">
-                Deployment.Create
-                Deployment your Name
+                Deployment.Create <br />
+                Deployment.Update
             </td>
         </tr>
     </tbody>
 </table>
 
-6.	Click Create.
-7.	Click Catalog.
-8.	Locate the Multi-Cloud catalog item and click Request.
-9.	Fill out the request with appropriate information and click Submit.
-10.	At the Deployment Screen, wait until your latest request stops on Create – Approval Pending stage.
+6.	Click **CREATE**.
+7.	Click the **Catalog** tab.
+8.	Locate the catalog item and click **REQUEST**.
+9.	Fill out the request with appropriate information and click **SUBMIT**.
+10.	At the Deployment Screen, wait until your latest request stops on **Create – Approval Pending stage**.
 
-> Q. Did you get another email?
+> **Question:** Did you get another email?
 
-11.	Click on Approvals.
-12.	At the Approvals screen, click on the pending approval item.
+11.	Click on the **Approvals** tab.
+12.	At the **Approvals** screen, click on the pending approval item.
  
-> _**Note:** If you are using your email address, you should have also received two email notifications. The first notification is for the fact that your deployment is awaiting approval.  The second notification is asking you to approve the request._
+> _**Note:**_ \
+_If you are using your email address, you should have also received two email notifications. The first notification is for the fact that your deployment is awaiting approval.  The second notification is asking you to approve the request._
 
-13.	Review the Request Details and Approval Details and when you’re ready to continue click Approve.
-14.	Enter an approval Comment and then click Approve.
-15.	Click CLOSE.
-16.	Click on the Deployments tab.
-17.	On the Deployments screen, the previously stuck deployment should now have progressed or finished.
-> Q. What do you think will happen if you try and Update the deployment?
+13.	Review the Request Details and Approval Details and when you're ready to continue click **APPROVE**.
+14.	Enter an approval Comment and then click **APPROVE**.
+15.	Click **CLOSE**.
+16.	Click on the **Deployments** tab.
+17.	On the **Deployments** screen, the previously stuck deployment should now have progressed or finished.
+
+> **Question:** What do you think will happen if you try and Update the deployment?
+
 18.	(Optional) Using what you have learned, update the deployment by changing the cloud location for each machine.  Complete any necessary approval tasks.
 
 [Back to Top](#)
@@ -342,49 +342,81 @@ Deployment.Update
 
 1. In Service Broker, go to the Deployment tab.
 2. Locate one of your deployments and click on the Actions menu.
-Notice the number of actions you can take against a deployment?
-3. Click one of the Deployments.
+
+> **Question:** Do you see the number of actions you can take against a deployment?
+
+3. Click one of the deployments.
 4. Click on one of the machines in the deployment and click Action.
 
- Notice how many actions a user can take on their virtual machines?
+> **Question:** Do you see how many actions a user can take on their virtual machines?
 
 Now it is time to trim those actions down a bit!
 
-5. Click the Content & Policies tab.
-6. Click Policies > Definitions.
-7. Click New Policy.
-8. Click Day 2 Action Policy.
+5. Click the **Content & Policies** tab.
+6. Click **Policies** > **Definitions**.
+7. Click **+ NEW POLICY**.
+8. Click **Day 2 Action Policy**.
 9. Create a new Day 2 Action policy using the information below.
-Module 7– Exercise 8
-Item	Value
-Name	Project Level Day 2 Actions
-Scope	<Project>
-Enforcement type	Hard
-Role	Member
-Action(s)	Deployment.PowerOn
-Deployment.PowerOff
-Deployment.Delete
-Deployment.Update
-Cloud.Machine.PowerOff
-Cloud.Machine.PowerOn
-Cloud.AWS.EC2.Instance.PowerOff
-Cloud.AWS.EC2.Instance.PowerOn
-Cloud.AWS.EC2.Instance.Reboot
-Cloud.Azure.Machine.PowerOff
-Cloud.Azure.Machine.PowerOn
 
-10.	Click Create.
-11.	Click Deployments.
-12.	Click ACTIONS on any of the deployments listed.
- 
-> Have the menu options changed?
-13.	Click one of the Deployments.
+<table class="table">
+    <caption>Table: Module 7 - Exercise 8</caption>
+    <thead>
+        <tr>
+            <th class="left">Item</th>
+            <th class="left">Value</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td class="left">Name</td>
+            <td class="left">Project Level Day 2 Actions</td>
+        </tr>
+        <tr>
+            <td class="left">Scope</td>
+            <td class="left">Project </td>
+        </tr>
+        <tr>
+            <td class="left">Enforcement Type</td>
+            <td class="left">Hard</td>
+        </tr>
+        <tr>
+            <td class="left">Role</td>
+            <td class="left">Member</td>
+        </tr>
+        <tr>
+            <td class="left">Actions</td>
+            <td class="left">
+            Deployment.PowerOn<br />
+            Deployment.PowerOff<br />
+            Deployment.Delete<br />
+            Deployment.Update<br />
+            Cloud.Machine.PowerOff<br />
+            Cloud.Machine.PowerOn<br />
+            Cloud.AWS.EC2.Instance.PowerOff<br />
+            Cloud.AWS.EC2.Instance.PowerOn<br />
+            Cloud.AWS.EC2.Instance.Reboot<br />
+            Cloud.Azure.Machine.PowerOff<br />
+            Cloud.Azure.Machine.PowerOn
+        </td>
+        </tr>
+    </tbody>
+</table>
+
+10.	Click **CREATE**.
+11.	Click **Deployments**.
+12.	Click **ACTIONS** on any of the deployments listed.
+
+> **Question:** Have the menu options changed?
+
+13.	Click one of the deployments.
 14.	Click on one of the machines in the deployment and click Action.
 
-> _**Note:** the number of actions may differ between AWS and Azure machines because of the Day 2 Action policy we created._
+> _**Note:**_ \
+_The number of actions may differ between AWS and Azure machines because of the Day 2 Action policy we created._
+
 15.	Click **CLOSE**.
 16.	Using what you have learned previously, Delete all of the deployments.
 
 ## Summary
 
-n this exercise you learned how to import Cloud Templates from Cloud Assembly into Service Broker. You also learned to how to share those Cloud Templates making them available in the Service Broker catalog. You learned how to create a custom form to make consumption of the Cloud Template through the Service Broker catalog easier for the common user.  Finally, you learned about how the different Policies in Service Broker affect the way you can consume and manage the services and resources. 
+In this exercise you learned how to import Cloud Templates from Cloud Assembly into Service Broker. You also learned to how to share those Cloud Templates making them available in the Service Broker catalog. You learned how to create a custom form to make consumption of the Cloud Template through the Service Broker catalog easier for the common user.  Finally, you learned about how the different Policies in Service Broker affect the way you can consume and manage the services and resources. 
