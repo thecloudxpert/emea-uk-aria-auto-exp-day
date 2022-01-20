@@ -81,7 +81,7 @@ In this exercise we are going to create two new Flavor Mappings.
 > _**Note:** The names of Flavor Mapping are case sensitive within a Cloud Template._
 
 4. Under **Configuration**, click on the **Account/Region** field and select **Trading AWS / us-west-1**.
-5. At the **Value** field, type `t2.xlarge` and select **t3.xlarge** from the list.
+5. At the **Value** field, type `t2.xlarge` and select **t2.xlarge** from the list.
 6. Select **t3.xlarge** from the list.
 7. Click **+** to add a new Configuration.
 8. Repeat **Step 4** to **Step 6** to add another configuration for the **Trading Azure / East US** Account/Region using the **Standard_B4ms** resource type.
