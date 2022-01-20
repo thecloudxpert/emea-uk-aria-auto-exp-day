@@ -217,7 +217,7 @@ The Cloud Template code for **Module 3 - Exercise 4** can be found [here](/modul
 
 ---
 
-### Exercise 6 - Creating a Single Machine AWS Cloud Template
+### (Optional) Exercise 6 - Creating a Single Machine AWS Cloud Template
 
 Using what you have learned within this module, create a new VMware Cloud Template to deploy a single AWS machine.
 
@@ -225,7 +225,7 @@ Using what you have learned within this module, create a new VMware Cloud Templa
 
 ---
 
-### Exercise 7 - Creating a Single Machine Azure Cloud Template
+### (Optional) Exercise 7 - Creating a Single Machine Azure Cloud Template
 
 Using what you have learned within this module, create a new VMware Cloud Template to deploy a single Azure machine.
 
