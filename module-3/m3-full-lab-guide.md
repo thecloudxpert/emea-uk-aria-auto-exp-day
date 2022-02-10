@@ -101,7 +101,7 @@ In this section we will deploy a single machine Cloud Template to one of the clo
 _The **Name** can be anything you like!_
 
 6. At the **New Cloud Template** dialog, select the only available project from the **Project** search list.
-7. ENsure that the **Share only with this project** option is selected.
+7. Ensure that the **Share only with this project** option is selected.
 8. Click **CREATE**.
 
 Welcome to the Cloud Template Canvas!
