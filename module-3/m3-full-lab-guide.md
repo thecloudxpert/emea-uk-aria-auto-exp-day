@@ -210,7 +210,7 @@ When you have finished exploring continue with the instructions.
 8. Using what you have learned so far in this module, delete the deployment.
 
 > **SPOILER ALERT**: \
-The Cloud Template code for **Module 3 - Exercise 4** can be found [here](/module-3/exercise-4/blueprint.yaml).
+The Cloud Template code for **Module 3 - Exercise 5** can be found [here](/module-3/exercise-5/blueprint.yaml).
 
 
 [Back to Top](#)
