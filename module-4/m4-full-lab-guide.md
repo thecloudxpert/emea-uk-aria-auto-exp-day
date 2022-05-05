@@ -79,7 +79,7 @@ If you copy and paste the code, make sure the code is formatted correctly._
 
 Now that we have defined our `input` we need to modify our **Constraints Tag** on the Cloud Machine so that it will read the value selected at request time for the deployment.
 
-2. Within the **Code** pane, on replace the current value (`env:azure`) of the Constraints Tag for `Cloud_Machine_1` (line 10) with `${input.SelectCloud1}`.
+2. Within the **Code** pane, on replace the current value (`env:azure`) of the Constraints Tag for `Cloud_Machine_1` (line 10) with `${input.selectCloud1}`.
 
 > **SPOILER ALERT**: \
 The Cloud Template code for **Module 4 - Exercise 2** can be found [here](/module-4/exercise-2/blueprint.yaml).
