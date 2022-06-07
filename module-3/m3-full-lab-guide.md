@@ -8,14 +8,19 @@ Multi-Cloud Cloud Templates are capable of deploying to multiple environments le
 
 ## Lab Overview
 
-* [Exercise 1 - Configuring Tag Policies for Placement in Cloud Accounts](#exercise-1-\--configuring-tag-policies-for-placement-in-cloud-accounts)
-* [Exercise 2 - Configuring Tag Policies for Placement in Network Profiles](#exercise-2-\--configuring-tag-policies-for-placement-in-network-profiles)
-* [Exercise 3 - Creating a Single Machine Cloud Template](#exercise-3-\--creating-a-single-machine-cloud-template)
-* [Exercise 4 - Deploying a Single Machine Cloud Template](#exercise-4-\--deploying-a-single-machine-cloud-template)
-* [Exercise 5 - Updating the Single Machine Cloud Template](#exercise-5-\--updating-the-single-machine-cloud-template)
-* [Exercise 6 - Creating a Single Machine AWS Cloud Template](#exercise-6-\--creating-a-single-machine-aws-cloud-template) (OPTIONAL)
-* [Exercise 7 - Creating a Single Machine Azure Cloud Template](#exercise-7-\--creating-a-single-machine-azure-cloud-template) (OPTIONAL)
-* [Additional Resources](#additional-resources)
+- [Module 3 - Deploying to Multiple Clouds](#module-3---deploying-to-multiple-clouds)
+  - [Introduction](#introduction)
+  - [Lab Overview](#lab-overview)
+  - [Exercises](#exercises)
+    - [Exercise 1 - Configuring Tag Policies for Placement in Cloud Accounts](#exercise-1---configuring-tag-policies-for-placement-in-cloud-accounts)
+    - [Exercise 2 - Configuring Tag Policies for Placement in Network Profiles](#exercise-2---configuring-tag-policies-for-placement-in-network-profiles)
+    - [Exercise 3 - Creating a Single Machine Cloud Template](#exercise-3---creating-a-single-machine-cloud-template)
+    - [Exercise 4 - Deploying a Single Machine Cloud Template](#exercise-4---deploying-a-single-machine-cloud-template)
+    - [Exercise 5 - Updating the Single Machine Cloud Template](#exercise-5---updating-the-single-machine-cloud-template)
+    - [Exercise 6 - Creating a Single Machine AWS Cloud Template](#exercise-6---creating-a-single-machine-aws-cloud-template)
+    - [Exercise 7 - Creating a Single Machine Azure Cloud Template](#exercise-7---creating-a-single-machine-azure-cloud-template)
+    - [Additional Resources](#additional-resources)
+    - [Summary](#summary)
 
 ## Exercises
 
@@ -131,7 +136,7 @@ resources:
 > _**Note:**_ \
 _If the options are not being presented, you may have missed adding the Cloud Zones to your Project._
 
-Now that we have our basic machine blueprint, we now need to contrain the deployment to a particular cloud. We do this by using the tags that we assigned in the previous steps.
+Now that we have our basic machine blueprint, we now need to constrain the deployment to a particular cloud. We do this by using the tags that we assigned in the previous steps.
 
 12. Click on **Cloud_Machine_1** resource in the canvas.
 13. Click on the **Properties** pane.
