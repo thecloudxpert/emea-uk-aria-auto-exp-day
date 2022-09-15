@@ -1,35 +1,26 @@
-# Module 7 - Curating Content using Service Broker
+# Module 99 - API and Programmatic Access
 
 ## Introduction
 
-In this portion of the training we will shift our focus to consuming Cloud Templates created in Cloud Assembly. We will use the multi-cloud Cloud Template that we created in previous sections and make it easily consumable through Service Broker using a Custom Form. At the completion of this section you should have knowledge on how to publish content into Service Broker and the basics for using custom forms to make decisions for consumers and to add metadata to a deployment.
+In this module, we will be looking at how we can use the API to complete different tasks within vRealize Automation.
 
 **Expected Time:** 20 minutes
 
 ## Lab Overview
 
-- [Module 7 - Curating Content using Service Broker](#module-7---curating-content-using-service-broker)
-  - [Introduction](#introduction)
-  - [Lab Overview](#lab-overview)
-  - [Exercises](#exercises)
-    - [Exercise 1 - Releasing a Cloud Template to the Service Catalog](#exercise-1---releasing-a-cloud-template-to-the-service-catalog)
-    - [Exercise 2 - Add a new Content Source to Service Broker](#exercise-2---add-a-new-content-source-to-service-broker)
-    - [Exercise 3 - Configuring a Service Broker Content Sharing Policy](#exercise-3---configuring-a-service-broker-content-sharing-policy)
-    - [Exercise 4 - Requesting a Catalog Item through the Service Catalog](#exercise-4---requesting-a-catalog-item-through-the-service-catalog)
-    - [Exercise 5 - Customizing a Catalog Item in Service Broker](#exercise-5---customizing-a-catalog-item-in-service-broker)
-    - [Exercise 6 - Consuming the Cloud Template Through Service Broker Catalog](#exercise-6---consuming-the-cloud-template-through-service-broker-catalog)
-    - [Exercise 7 - Configuring Service Broker Lease Policies](#exercise-7---configuring-service-broker-lease-policies)
-    - [Exercise 8 - Configuring Service Broker Approval Policies](#exercise-8---configuring-service-broker-approval-policies)
-  - [Exercise 9 - Configuring Service Broker Day 2 Action Policies](#exercise-9---configuring-service-broker-day-2-action-policies)
-  - [Summary](#summary)
+* [Exercise 1 - Obtaining an API Token from the Cloud Service Console]()
+* [Exercise 2 - Importing the Postman Collection and Environment]()
+* [Exercise 3 - Logging into vRealize Automation using th API]()
+* [Exercise 4 - Deploying a Cloud Template using the API]()
+
 
 ---
 
 ## Exercises
 
-### Exercise 1 - Releasing a Cloud Template to the Service Catalog
+### Exercise 1 - Obtaining an API Token from the Cloud Service Console
 
-To start having users consume Cloud Templates from Cloud Assembly you first need to release a version of a Cloud Template for consumption.
+The first step of using the API is to gain an API token from the Cloud Service Portal/Console.
 
 1. Navigate to **Cloud Assembly**.
 2. Click the **Design** tab.
@@ -52,46 +43,32 @@ You will see a tick by the version to indicate it was released.
 
 ---
 
-### Exercise 2 - Add a new Content Source to Service Broker
+### Exercise 2 - Importing Content into Service Broker
 
-VMware Service Broker is the Self-Service Portal that you will use to enable your users to request services.
-In this section we will learn how to import our Cloud Templates into Service Broker from Cloud Assembly.
+In this section we will learn how to import our Cloud Templates into Service Broker from Cloud Assembly.  VMware Service Broker is the Self-Service Portal that you will use to enable your users to request services.
 
 1. Navigate to **Service Broker** by clicking on the 9 dots in the top righthand side and selecting **VMware Service Broker**.
-2. Click **Content Sources**
-3. Click **+ NEW**.
-4. On the **Content Sources** page, click **VMware Cloud Templates**.
-5. On the **New Content Source** page, at the **Name** field, type `<Project Name> Templates`.
-6. On the **New Content Source** page, at the **Source Project** field, select your **\<Project Name>**.
-7. Click **VALIDATE**.
-8. Click **CREATE & IMPORT**.
+2. Click the **Content & Policies** tab.
+3. Click **Content Sources**
+4. Click **+ NEW**.
+5. On the **Content Sources** page, click **VMware Cloud Template**.
+6. On the **New Content Source** page, at the **Name** field, type `<Project Name> Templates`.
+7. On the **New Content Source** page, at the **Source Project** field, select your **\<Project Name>**.
+6. Click **VALIDATE**.
+7. Click **CREATE & IMPORT**.
+8. Click **Content Sharing**.
+9. On the **Content Sharing** page, at the **Project** field, select your \<Project Name> from the list.
+10. Click **+ ADD ITEMS**.
+10. Check the checkbox next to the **\<Project Name> Templates**.
+11. Click **SAVE**.
+
+The Cloud Template is now available for consumption through the Service Catalog, but it needs to be made easier to consume by the end user. We will do this in the next Exercise using a custom form.
 
 [Back to Top](#)
 
 ---
 
-### Exercise 3 - Configuring a Service Broker Content Sharing Policy
-
-In this section we will learn how to import our Cloud Templates into Service Broker from Cloud Assembly using a **Content Sharing Policy**.  
-
-1. Under **Policies**, click **Definitions**.
-2. Click **+ NEW POLICY**.
-3. Click **Content Sharing Policy**.
-4. On the **New Policy** page, at the **Name** field, type `<Project Name> Templates for ALL users`.
-5. On the **New Policy** page, at the **Scope** field, select your **\<Project Name>**.
-6. On the **New Policy** page, at the **Content Sharing** section, clock **+ ADD ITEMS**.
-7. On the **Share Items with \<Project Name>**, check the **\<Project Name> Templates** checkbox.
-8. On the **Share Items with \<Project Name>**, click **SAVE**.
-9. On the **New Policy** page, check the **Share (content) with all users/groups in the project** checkbox.
-10. Click **CREATE**.
-
-The Cloud Template is now available for consumption through the Service Catalog, but it needs to be made easier to consume by the end user. We will do this in one of the following exercises using a Custom Form.
-
-[Back to Top](#)
-
----
-
-### Exercise 4 - Requesting a Catalog Item through the Service Catalog
+### Exercise 3 - Requesting a Catalog Item through the Service Catalog
 
 1. From within **VMware Service Broker**, click on the **Catalog** tab.
   
@@ -100,14 +77,14 @@ You should now have a single Catalog Item listed within the Service Broker Catal
 2. On the **Catalog** screen, locate your Cloud Template and click **Request**.
 3. At the **New Request** screen, fill out the request providing the following:
 
-  * Deployment Name
-  * Project
-  * Admin Account Password
-  * Password
-  * Machine 1 hostname
-  * Machine 2 hostname
-  * Select Cloud 1
-  * Select Cloud 2
+    * Deployment Name
+    * Project
+    * Admin Account Password
+    * Password
+    * Machine 1 hostname
+    * Machine 2 hostname
+    * Select Cloud 1
+    * Select Cloud 2
 
 You should notice that the Request form was not in any logical order and certainly not something that would be easy for a user to fill out.  Have no fear, we will resolve that in the next Exercise!
 
@@ -121,7 +98,7 @@ You will notice this is an identical Deployments screen to the one we have used 
 
 ---
 
-### Exercise 5 - Customizing a Catalog Item in Service Broker
+### Exercise 4 - Customizing a Catalog Item in Service Broker
 
 In this Exercise we are going to customize the Catalog Item that was previously created and then add a custom form to it so that it is easier to consume for the average requestor.
 For this deployment scenario we want to abstract the cloud the user requests. We only want the consumer to select whether the workload should be deployed to production or to test. This gives the infrastructure and / or cloud teams the ability to put workloads where they will run with the best performance, most efficiency, and cost effectiveness without the possibility of cloud bias from the consumer.
@@ -196,7 +173,7 @@ We are now going to change the values in the drop down to be more end user frien
 
 ---
 
-### Exercise 6 - Consuming the Cloud Template Through Service Broker Catalog
+### Exercise 5 - Consuming the Cloud Template Through Service Broker Catalog
 
 Now that we have changed the catalog item icon and customized the form for easier consumption, let's go back and use the catalog in Service Broker to deploy the Cloud Template and check our work.
 
@@ -217,7 +194,7 @@ The consumer now only sees Production and Test and deployment options instead of
 
 ---
 
-### Exercise 7 - Configuring Service Broker Lease Policies
+### Exercise 6 - Configuring Service Broker Lease Policies
 
 1. In **VMware Service Broker**, click the **Content & Policies** tab.
 2. Click **Policies** > **Definitions**.
@@ -279,7 +256,7 @@ The consumer now only sees Production and Test and deployment options instead of
 
 ---
 
-### Exercise 8 - Configuring Service Broker Approval Policies
+### Exercise 7 - Configuring Service Broker Approval Policies
 
 1. In **VMware Service Broker**, click the **Content & Policies** tab.
 2. Click **Policies** > **Definitions**.
@@ -358,7 +335,7 @@ _If you are using your email address, you should have also received two email no
 
 ---
 
-## Exercise 9 - Configuring Service Broker Day 2 Action Policies
+## Exercise 8 - Configuring Service Broker Day 2 Action Policies
 
 1. In Service Broker, go to the Deployment tab.
 2. Locate one of your deployments and click on the Actions menu.
