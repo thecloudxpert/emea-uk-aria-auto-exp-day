@@ -1,23 +1,28 @@
-# Module 2 - Infrastructure Configuration in a vRealize Automation Organization (Cloud Assembly)
+# Module 2 - Completing Infrastructure Configuration in Aria Automation (Aria Automation Assembler)
 
 ## Introduction
 
-Each new vRealize Automation Organization will require a number of Day 0/Day 1 infrastructure configurations to be completed to enable end users to consume the different cloud resources.  Whilst the majority of the configurations have been completed, in the following exercises we will complete some of final configuration steps.
+Each new Aria Automation Organization will require a number of Day 0/Day 1 infrastructure configurations to be completed to enable end users to consume the different cloud resources.  Whilst the majority of the configurations have been completed, in the following exercises we will complete some of final configuration steps.
 
 > _**Note:** The necessary Cloud Accounts for AWS and Azure and their corresponding Cloud Zones have been pre-configured for your environment._
 
 ## Lab Overview
 
-* [Exercise 1 - Creating Projects](#exercise-1-\--creating-projects)
-* [Exercise 2 - Creating Flavor Mappings](#exercise-2-\--creating-flavor-mappings)
-* [Exercise 3 - Creating Image Mappings](#exercise-3-\--creating-image-mappings)
-* [Exercise 4 - Updating Network Profiles](#exercise-4-\--updating-network-profiles)
+- [Module 2 - Completing Infrastructure Configuration in Aria Automation (Aria Automation Assembler)](#module-2---completing-infrastructure-configuration-in-aria-automation-aria-automation-assembler)
+  - [Introduction](#introduction)
+  - [Lab Overview](#lab-overview)
+  - [Exercises](#exercises)
+    - [Exercise 1 - Creating Projects](#exercise-1---creating-projects)
+    - [Exercise 2 - Creating Flavor Mappings](#exercise-2---creating-flavor-mappings)
+    - [Exercise 3 - Creating Image Mappings](#exercise-3---creating-image-mappings)
+    - [Exercise 4 - Updating Network Profiles](#exercise-4---updating-network-profiles)
+  - [Summary](#summary)
 
 ## Exercises
 
 ### Exercise 1 - Creating Projects
 
-In this exercise we are going to create a new **Project**.  A Project is one of the base constructs that enables vRealize Automation users to provision resources to different clouds (Cloud Zones).
+In this exercise we are going to create a new **Project**.  A Project is one of the base constructs that enables Aria Automation users to provision resources to different clouds (Cloud Zones).
 
 1. Click the **VMware Cloud Assembly** service.
 2. Select the **Infrastructure** tab.
@@ -35,7 +40,7 @@ _The **Project Name** can be anything you like but you need to remember it as yo
 10. Click **ADD**.
 
 > _**Note:**_ \
-_When logged into an account that has been given both Organization Owner and Cloud Assembly Administrator Service roles, we have alot more privileges and access than most end users would be given.  With this level of rights, we don't actually need to be a Project Administrator or Member to deploy resources.  For more information check out [Organization and service user roles in vRealize Automation](https://docs.vmware.com/en/vRealize-Automation/8.6/Using-and-Managing-Cloud-Assembly/GUID-F5813D09-297F-4C10-9AC6-538B57F675A0.html)_
+_When logged into an account that has been given both Organization Owner and Cloud Assembly Administrator Service roles, we have alot more privileges and access than most end users would be given.  With this level of rights, we don't actually need to be a Project Administrator or Member to deploy resources.  For more information check out [Organization and service user roles in Aria Automation](https://docs.vmware.com/en/vRealize-Automation/8.6/Using-and-Managing-Cloud-Assembly/GUID-F5813D09-297F-4C10-9AC6-538B57F675A0.html)_
 
 > _**Note:**_ \
 _If the Cloud Service Portal for you Organization had been integrated with an Enterprise Directory (such as Active Directory), we would be able to specify both AD users and Groups when creating a project._
@@ -64,7 +69,7 @@ _If the only available AWS Cloud Zone is **Trading Azure / West US**, then pleas
 > _**Note:**_ \
 _Using a basic custom naming template provides some consistency around the naming policy of deployment resources._
 
-19. Click **CREATE**.
+19. Click **SAVE**.
 
 [Back to Top](#)
 
@@ -190,6 +195,6 @@ _Where XX is a number, such as vNET45-Public-SPC._
 
 ## Summary
 
-In Lab Module 2 we have covered some basic configurations that will need to occur within a vRealize Automation Organization/Tenant.
+In Lab Module 2 we have covered some basic configurations that will need to occur within an Aria Automation Organization/Tenant.
 
 [Back to Top](#)
