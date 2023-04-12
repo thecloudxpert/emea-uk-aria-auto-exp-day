@@ -188,9 +188,10 @@ In this is exercise we are going configure a user to be generated as part of the
     </tbody>
 </table>
 
+> _**Note:** When creating the password input field through code (rather than UI) the additional single quote marks will be required so that the value is treated as a string, i.e. '[a-z0-9A-Z@#$]+'._
 > _**Note:** You will notice that for the password field, we have created a secure text field with complexity requirements. We will use the password input in the next step. Now we need to add a last section in the `cloudConfig` to allow the user to log in using a password. (By default, cloud images only allow for login using SSH key.)_
 
-6. Add the following code section to the cloudConfig section of **each** machine.
+1. Add the following code section to the cloudConfig section of **each** machine.
 
 ```yaml
   runcmd:
