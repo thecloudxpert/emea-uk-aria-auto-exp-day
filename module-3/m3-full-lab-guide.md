@@ -1,4 +1,4 @@
-# Module 3 - Deploying to Multiple Clouds
+# Module 3 - Deploying to Multiple Clouds with Aria Automation
 
 ## Introduction
 

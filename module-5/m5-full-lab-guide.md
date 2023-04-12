@@ -16,9 +16,14 @@ Some examples of things that cloud-init can be used to customize are:
 
 ## Lab Overview
 
-* [Exercise 1 - Configuring a Custom Hostname using CloudConfig](#exercise-1-\--configuring-a-custom-hostname-using-cloudconfig)
-* [Exercise 2 - Adding Users to the Multi-Cloud Cloud Template](#exercise-2-\--adding-users-to-the-multi\-cloud-cloud-template)
-* [Exercise 3 - Installing Packages and Other Modifications into the Multi-Cloud Cloud Template](#exercise-3-\--installing-packages-and-other-modifications-into-the-multi\-cloud-cloud-template)
+- [Module 5 - Customising with cloudConfig](#module-5---customising-with-cloudconfig)
+  - [Introduction](#introduction)
+  - [Lab Overview](#lab-overview)
+  - [Exercises](#exercises)
+    - [Exercise 1 - Configuring a Custom Hostname using CloudConfig](#exercise-1---configuring-a-custom-hostname-using-cloudconfig)
+    - [Exercise 2 - Adding Users to the Multi-Cloud Cloud Template](#exercise-2---adding-users-to-the-multi-cloud-cloud-template)
+    - [Exercise 3 - Installing Packages and Other Modifications into the Multi-Cloud Cloud Template](#exercise-3---installing-packages-and-other-modifications-into-the-multi-cloud-cloud-template)
+    - [Summary](#summary)
 
 ## Exercises
 
@@ -77,7 +82,7 @@ We should notice some new code has been added to the `inputs:` section of our YA
 ```
 
 13. Using what you have learned in previous Modules, create a new version of this Cloud Template.
-14. Using what you have learned in this Module, update the Cloud Template so that the requestor can deinfe a hostname for `Cloud_Machine_2`.
+14. Using what you have learned in this Module, update the Cloud Template so that the requestor can define a hostname for `Cloud_Machine_2`.
 
 > **HINT:** You should use a different input name for the other hostname.
 
