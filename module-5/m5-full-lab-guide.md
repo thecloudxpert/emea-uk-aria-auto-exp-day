@@ -67,7 +67,7 @@ As you can see you have included a variable in your YAML that is expecting an as
 
 11. Click **CREATE**.
 
-We will see that an additional input has been created within the Inputs panel. 
+We will see that an additional input has been created within the Inputs panel.
   
 Let us now take a look at what code has been generated for it.
 
