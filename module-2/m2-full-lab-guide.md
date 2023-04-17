@@ -40,7 +40,7 @@ _The **Project Name** can be anything you like but you need to remember it as yo
 10. Click **ADD**.
 
 > _**Note:**_ \
-_When logged into an account that has been given both Organization Owner and Cloud Assembly Administrator Service roles, we have alot more privileges and access than most end users would be given.  With this level of rights, we don't actually need to be a Project Administrator or Member to deploy resources.  For more information check out [Organization and service user roles in Aria Automation](https://docs.vmware.com/en/vRealize-Automation/8.6/Using-and-Managing-Cloud-Assembly/GUID-F5813D09-297F-4C10-9AC6-538B57F675A0.html)_
+_When logged into an account that has been given both Organization Owner and Cloud Assembly Administrator Service roles, we have a lot more privileges and access than most end users would be given.  With this level of rights, we don't actually need to be a Project Administrator or Member to deploy resources.  For more information check out [Organization and service user roles in Aria Automation](https://docs.vmware.com/en/vRealize-Automation/8.6/Using-and-Managing-Cloud-Assembly/GUID-F5813D09-297F-4C10-9AC6-538B57F675A0.html)_
 
 > _**Note:**_ \
 _If the Cloud Service Portal for you Organization had been integrated with an Enterprise Directory (such as Active Directory), we would be able to specify both AD users and Groups when creating a project._
