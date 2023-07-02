@@ -1,6 +1,7 @@
 # Module 2 - Completing Initial Infrastructure Configuration in VMware Aria Automation using VMware Aria Automation Assembler
 
 ## Lab Overview
+
 - [Module 2 - Completing Initial Infrastructure Configuration in VMware Aria Automation using VMware Aria Automation Assembler](#module-2---completing-initial-infrastructure-configuration-in-vmware-aria-automation-using-vmware-aria-automation-assembler)
   - [Lab Overview](#lab-overview)
   - [Introduction](#introduction)
@@ -9,7 +10,7 @@
     - [Exercise 2 - Creating Flavor Mappings](#exercise-2---creating-flavor-mappings)
     - [Exercise 3 - Creating Image Mappings](#exercise-3---creating-image-mappings)
     - [Exercise 4 - Updating Network Profiles](#exercise-4---updating-network-profiles)
-    - [Exercise 5 - Creating a Custom Naming Template](#exercise-5---creating-a-custom-naming-template)
+    - [Exercise 5 - Creating Custom Naming Templates](#exercise-5---creating-custom-naming-templates)
   - [Summary](#summary)
 
 ## Introduction
@@ -18,6 +19,8 @@ Each new Organization with Aria Automation  will require a number of Day 0/Day 1
 
 > _**Note:** The necessary Cloud Accounts for AWS and Azure and their corresponding Cloud Zones have been pre-configured for your environment._
 > _**Note:** VMware Aria Automation SaaS **does not** support multi-organizational tenancy and this should be a consideration when choosing the SaaS deployment model over the on-premises deployment model._
+
+Expected Completion Time: **20 minutes**
 
 ## Exercises
 
@@ -203,9 +206,9 @@ _Where XX is a number, such as vNET45-Public-SPC._
 
 [Back to Top](#)
 
----
+-----
 
-### Exercise 5 - Creating a Custom Naming Template
+### Exercise 5 - Creating Custom Naming Templates
 
 In this Exercise we are going to create a custom naming template so that resource we provision are named appropriately. We are going to create a Project naming policy, but you can also create an Organisation-wide naming policy.
 

@@ -237,13 +237,13 @@ In this exercise we will add extra items to cloudConfig to install Apache and ru
     ```
     * Run the following command after the ssh service has restarted:
     ```yaml
-        - echo "This file was created by cloud-init in environment ${input.selectCloud1} >> /tmp/environment.txt
+        - echo "This file was created by cloud-init in environment ${input.selectCloud1}" >> /tmp/environment.txt
     ```
 2. Using what you have learned, add the following to `Cloud_Machine_2`'s `cloudConfig` section:
     * Install the `ngnix` package.
     * Run the following command after the ssh service has restarted:
     ```yaml
-        - echo "This file was created by cloud-init in environment ${input.selectCloud2} >> /tmp/environment.txt
+        - echo "This file was created by cloud-init in environment ${input.selectCloud2}" >> /tmp/environment.txt
     ```
 
 3. Once all updates have been completed, deploy the latest version of the CLoud Template.
