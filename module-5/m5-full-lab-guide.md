@@ -1,5 +1,17 @@
 # Module 5 - Customising with cloudConfig
 
+## Lab Overview
+
+- [Module 5 - Customising with cloudConfig](#module-5---customising-with-cloudconfig)
+  - [Lab Overview](#lab-overview)
+  - [Introduction](#introduction)
+  - [Exercises](#exercises)
+    - [Exercise 1 - Configuring a Custom Hostname using CloudConfig](#exercise-1---configuring-a-custom-hostname-using-cloudconfig)
+    - [Exercise 2 - Adding Users to the Multi-Cloud Cloud Template](#exercise-2---adding-users-to-the-multi-cloud-cloud-template)
+    - [Exercise 3 - Installing Packages and Other Modifications into the Multi-Cloud Cloud Template](#exercise-3---installing-packages-and-other-modifications-into-the-multi-cloud-cloud-template)
+    - [Summary](#summary)
+
+
 ## Introduction
 
 cloudConfig is VMware's way of supporting the implementation of the opensource projects for cloud-init (Linux) or cloudbase-init (Windows). Cloud-init is an industry standard opensource platform for deploying customizations to cloud images. It gained quite a bit of popularity in openstack and has since spread to be included in most AWS AMI's as well as many Azure and GCP images. In Private Cloud, it's an easy to install the binary via APT and YUM or via the installer for Windows. We leverage the cloudConfig property within Cloud Assembly to push "user data" (cloudConfig specifications) into the deployment for execution.
@@ -13,17 +25,6 @@ Some examples of things that cloud-init can be used to customize are:
 * Power State settings after completion
 
 **Expected Time:** 25 minutes
-
-## Lab Overview
-
-- [Module 5 - Customising with cloudConfig](#module-5---customising-with-cloudconfig)
-  - [Introduction](#introduction)
-  - [Lab Overview](#lab-overview)
-  - [Exercises](#exercises)
-    - [Exercise 1 - Configuring a Custom Hostname using CloudConfig](#exercise-1---configuring-a-custom-hostname-using-cloudconfig)
-    - [Exercise 2 - Adding Users to the Multi-Cloud Cloud Template](#exercise-2---adding-users-to-the-multi-cloud-cloud-template)
-    - [Exercise 3 - Installing Packages and Other Modifications into the Multi-Cloud Cloud Template](#exercise-3---installing-packages-and-other-modifications-into-the-multi-cloud-cloud-template)
-    - [Summary](#summary)
 
 ## Exercises
 
@@ -95,7 +96,7 @@ We should notice some new code has been added to the `inputs:` section of our YA
 > **SPOILER ALERT**: \
 The Cloud Template code for **Module 5 - Exercise 1** can be found [here](/module-5/exercise-1/blueprint.yaml).
 
-[Back to Top](#)
+[Back to Top](#module-5---customising-with-cloudconfig)
 
 ---
 
@@ -221,7 +222,7 @@ If you are able to SSH in using the username you entered during the deployment, 
 > **SPOILER ALERT**: \
 The Cloud Template code for **Module 5 - Exercise 2** can be found [here](/module-5/exercise-2/blueprint.yaml).
 
-[Back to Top](#)
+[Back to Top](#module-5---customising-with-cloudconfig)
 
 ---
 
@@ -256,7 +257,7 @@ In this exercise we will add extra items to cloudConfig to install Apache and ru
 > **SPOILER ALERT**: \
  The Cloud Template code for **Module 5 - Exercise 3** can be found [here](/module-5/exercise-3/blueprint.yaml).
 
-[Back to Top](#)
+[Back to Top](#module-5---customising-with-cloudconfig)
 
 ---
 
