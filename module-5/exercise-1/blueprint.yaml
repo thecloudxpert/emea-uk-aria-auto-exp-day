@@ -23,6 +23,8 @@ inputs:
 resources:
   Cloud_Machine_2:
     type: Cloud.Machine
+    dependsOn:
+      - Cloud_Machine_1
     properties:
       image: ubuntu
       flavor: small

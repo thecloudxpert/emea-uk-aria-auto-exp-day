@@ -77,7 +77,7 @@ _Whilst the `env:aws` tag existed, the `env:azure` tag does not and will be crea
 > _**Note:**_ \
 _It is a common use case for customers to separate clusters within an environment based on use case. An abstract version of this concept exists in public cloud as well (people may use different regions/zones for different use cases). We might tag a cluster designed for Oracle workloads to leverage the `app:oracle` tag, allowing us to place these workloads on this cluster via the placement engine. Another use case is for compliance reasons - users may tag clusters based on compliance capabilities on specific environments to ensure workloads land in an environment that will help them pass audits._
 
-[Back to Top](#)
+[Back to Top](module-3---deploying-to-multiple-clouds-with-aria-automation)
 
 ---
 
@@ -107,9 +107,9 @@ _It is a common use case for customers to separate clusters within an environmen
     </tbody>
 </table>
 
-[Back to Top](#)
+[Back to Top](module-3---deploying-to-multiple-clouds-with-aria-automation)
 
------
+---
 
 ### Exercise 3 - Creating Your First Agnostic Cloud Template
 
@@ -168,9 +168,9 @@ resources:
       flavor: 'small'
 ```
 
-[Back to Top](#)
+[Back to Top](module-3---deploying-to-multiple-clouds-with-aria-automation)
 
------
+---
 
 ### Exercise 4 - Deploying Your First Agnostic Cloud Template
 
@@ -197,9 +197,9 @@ Now that we have our basic machine blueprint, we now need to constrain the deplo
 6. At the **Deployments** screen, locate your deployment, click on the **Actions** menu (vertical ellipsis).
 7. Click **Delete** from the the list of available deployment-level day 2 actions to remove the deployment.
 
-[Back to Top](#)
+[Back to Top](module-3---deploying-to-multiple-clouds-with-aria-automation)
 
------
+---
 
 ### Exercise 5 - Updating Your First Agnostic Cloud Template
 
@@ -247,13 +247,13 @@ The Cloud Template code for **Module 3 - Exercise 5** can be found at either:
 
 10. Using what you learned so far in this module, deploy the updated Cloud Template.
 
-**Question: Did your deployment land on the same cloud as before or a different one?**
+> **Question:** Did your deployment land on the same cloud as before or did it land on a different one?
 
 11. Using what you have learned so far, delete your new deployment.
 
-[Back to Top](#)
+[Back to Top](module-3---deploying-to-multiple-clouds-with-aria-automation)
 
------
+---
 
 ### Exercise 6 - Updating Your First Agnostic Cloud Template (again)
 
@@ -275,9 +275,9 @@ The Cloud Template code for **Module 3 - Exercise 6** is the same as **Module 3 
 * [AWS](/module-3/exercise-5/blueprint-aws.yaml)
 * [Azure](/module-3/exercise-5/blueprint-azure.yaml)
 
-[Back to Top](#)
+[Back to Top](module-3---deploying-to-multiple-clouds-with-aria-automation)
 
------
+---
 
 ### Exercise 7 - Reviewing the Placement Decisions for a Deployment
 
@@ -306,35 +306,35 @@ _You will see that in fact both available Regions could satisfy the Flavor and I
 7. Click **CLOSE**.
 8. Using what you learned so far in this module, delete your deployment.
 
-[Back to Top](#)
+[Back to Top](module-3---deploying-to-multiple-clouds-with-aria-automation)
 
------
+---
 
 ### Exercise 8 - Creating a Single Machine AWS Cloud Template (OPTIONAL)
 
 Using what you have learned within this module, create a new VMware Cloud Template to deploy a single AWS machine.
 
-[Back to Top](#)
+[Back to Top](module-3---deploying-to-multiple-clouds-with-aria-automation)
 
------
+---
 
 ### Exercise 9 - Creating a Single Machine Azure Cloud Template (OPTIONAL)
 
 Using what you have learned within this module, create a new VMware Cloud Template to deploy a single Azure machine.
 
-[Back to Top](#)
+[Back to Top](module-3---deploying-to-multiple-clouds-with-aria-automation)
 
------
+---
 
 ## Additional Resources
 
 * [vRealize Automation 8.11 Cloud Assembly expression syntax](https://docs.vmware.com/en/vRealize-Automation/8.11/Using-and-Managing-Cloud-Assembly/GUID-12F0BC64-6391-4E5F-AA48-C5959024F3EB.html)
 * [vRealize Automation 8.x Cloud Template Schema](https://vdc-download.vmware.com/vmwb-repository/dcr-public/5b7b4a20-eea3-4fbf-954f-defad0f6c17f/b96a570e-6e96-48e7-b721-0f5db8108c66/vra85-resource-type-schema-open-api.json)
     
------
+---
 
 ## Summary
 
 In this section we walked through the process of creating a cloud template that is deployable to multiple clouds that have been setup in your VMware Aria Automation Assembler environment. We tagged our cloud zones and used tag-based placement to achieve building machines in the cloud zone of our choice. In the next module "Iterative Development" we will build on this cloud template by adding selectable options during deployment and versioning of our cloud template through its development lifecycle.
 
-[Back to Top](#)
+[Back to Top](module-3---deploying-to-multiple-clouds-with-aria-automation)

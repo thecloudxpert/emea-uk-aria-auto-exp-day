@@ -77,9 +77,9 @@ _You will notice that **Virtual Private Zone (VPZ)** is no longer a selectable o
 >_**Note:**_ \
 _If you have already created a project and have come back to amend it, the option will be **SAVE** not **CREATE**._
 
-[Back to Top](#)
+[Back to Top](#module-2---completing-initial-infrastructure-configuration-in-vmware-aria-automation-using-vmware-aria-automation-assembler)
 
------
+---
 
 ### Exercise 2 - Creating Flavor Mappings
 
@@ -126,9 +126,9 @@ _If, at anytime during this exercise, the exact name suggested does not exist, t
 </table>
 
 
-[Back to Top](#)
+[Back to Top](#module-2---completing-initial-infrastructure-configuration-in-vmware-aria-automation-using-vmware-aria-automation-assembler)
 
------
+---
 
 ### Exercise 3 - Creating Image Mappings
 
@@ -175,9 +175,9 @@ _If, at anytime during this exercise, the exact name suggested does not exist, t
     </tbody>
 </table>
 
-[Back to Top](#)
+[Back to Top](#module-2---completing-initial-infrastructure-configuration-in-vmware-aria-automation-using-vmware-aria-automation-assembler)
 
------
+---
 
 ### Exercise 4 - Updating Network Profiles
 
@@ -204,9 +204,9 @@ _Where XX is a number, such as vNET45-Public-SPC._
 15. Click **ADD**.
 16. Click **SAVE**.
 
-[Back to Top](#)
+[Back to Top](#module-2---completing-initial-infrastructure-configuration-in-vmware-aria-automation-using-vmware-aria-automation-assembler)
 
------
+---
 
 ### Exercise 5 - Creating Custom Naming Templates
 
@@ -261,4 +261,4 @@ _The **\<project name\>** is the name of your project created in **Exercise 1**.
 
 In Lab Module 2 exercises, we have covered some basic configurations in VMware Aria Automation that will serve as a basis for all other Lab Exercises modules for the rest of the lab exercises.
 
-[Back to Top](#)
+[Back to Top](#module-2---completing-initial-infrastructure-configuration-in-vmware-aria-automation-using-vmware-aria-automation-assembler)

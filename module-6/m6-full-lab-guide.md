@@ -1,42 +1,70 @@
 # Module 6 - Using Extensibility
 
-## Introduction
-
-In any deployment, extensibility is a crucial part of customization to make the Cloud Template and any deployment from the Cloud Template a usable workload in an production environment. You now have a Cloud Template that is able to deploy a workload into two separate public cloud environments. Great, but you need to be able to do certain tasks such as name the workloads with a specific name so it will be easily identifiable.
-
-In this Module, we will walk through using the built-in extensibility features of vRealize Automation by creating an ABX action written in Python to rename the workload as a part of the deployment.
-
-> _**Note:**_ \
-_Unfortunately, due to the limitations of the lab environment we are unable to include Lab Exercises that use VMware vRealize Orchestrator (vRO) Workflows.  However, essentially the principles are the same whether using ABX or vRO Workflows._
-
 ## Lab Overview
 
-* [Exercise 1 - Modifying the Cloud Template](#exercise-1-\--modifying-the-cloud-template)
-* [Exercise 2 - Creating an ABX Action](#exercise-2-\--creating-an-abx-action)
-* [Exercise 3 - Creating A Subscription for the Rename VM Action](#exercise-3-\--cresting-a-subsciption-for-the-rename-vm-action)
-* [Exercise 4 - Updating the Subscription](#exercise-4-\--updating-the-subscription)
-* [Exercise 5 - Testing the Action and Subscription](#exercise-5-\--testing-the-action-and-subscription)
+- [Module 6 - Using Extensibility](#module-6---using-extensibility)
+  - [Lab Overview](#lab-overview)
+  - [Introduction](#introduction)
+  - [Exercises](#exercises)
+    - [Exercise 1 - Modifying the Cloud Template using Custom Properties](#exercise-1---modifying-the-cloud-template-using-custom-properties)
+    - [Exercise 2 - Creating an ABX Action](#exercise-2---creating-an-abx-action)
+    - [Exercise 3 - Creating A Subscription for the Rename VM Action](#exercise-3---creating-a-subscription-for-the-rename-vm-action)
+    - [Exercise 4 - Updating the Subscription](#exercise-4---updating-the-subscription)
+    - [Exercise 5 - Testing the Action and Subscription](#exercise-5---testing-the-action-and-subscription)
+  - [Summary](#summary)
+
+## Introduction
+
+In any deployment, extensibility is a crucial part of customization to make the Cloud Template and any deployment from the Cloud Template a usable workload in an production environment. We now have a Cloud Template that is able to deploy a workload into two separate public cloud environments. Great, but you need to be able to do certain tasks such as name the workloads with a specific name so it will be easily identifiable.
+
+In this Module, we will walk through using the built-in extensibility features of VMware Aria Automation by creating a simple ABX action written in Python to rename the workload as a part of the deployment.
+
+> _**Note:**_ \
+_Unfortunately, due to the limitations of the lab environment we are unable to include Lab Exercises that use VMware Aria Automation Orchestrator Workflows.  However, essentially the principles of extensibility are the same whether using ABX or Orchestrator Workflows._
 
 ## Exercises
 
-### Exercise 1 - Modifying the Cloud Template
+### Exercise 1 - Modifying the Cloud Template using Custom Properties
 
-1. Navigate to **Cloud Assembly**.
-2. Click **Design**.
-3. Click **Cloud Templates**.
-4. Click on the Cloud Template you have been working on during the previous modules to open it in the Cloud Template Design Canvas.
-5. Click on `Cloud_Machine_1` resource in the topology view to focus the Code panel and then add a new property to the Cloud Template called `newName` with a value of `'${input.hostname1}'`.
-6. Click on `Cloud_Machine_2` resource in the topology view to focus the Code panel and then add a new property to the Cloud Template called `newName` with a value of `'${input.hostname2}'`.
-7. Click **CLOSE**.
+In this exercise we are going to make the changes to the cloud template to include a custom property that we will subsequently use in our extensibility exercise.
 
-What we did...
+1. Click the **Design** tab.
+    * If you are back on the Cloud Template Design Canvas then continue to **Step 2**.
+    * If you were brought back to the **Cloud Templates** screen, click on your Cloud Template to get to the design canvas.
+2. Using what you have learned previously, add a custom property to both the `Cloud_Machine_1` and `Cloud_Machine_2`resources using the information from the **Table: Module 6 - Exercise 1** table.
 
-By using the variables `${input.hostnameX}` we are telling vRealize Automation to use the same user input parameter from the Cloud Template inputs for both the machine name and the user-friendly name that will show up in the associated cloud provider for the cloud machine.
+<table class="table">
+    <caption>Table: Module 6 - Exercise 1</caption>
+    <thead>
+        <tr>
+            <th class="left">Resource Name</th>
+            <th class="left">Custom Property Name</th>
+            <th class="left">Custom Property Value</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td class="left">Cloud_Machine_1</td>
+            <td class="left">newName</td>
+            <td class="left">${input.hostname1}</td>
+        </tr>
+        <tr>
+            <td class="left">Cloud_Machine_2</td>
+            <td class="left">newName</td>
+            <td class="left">${input.hostname2}</td>
+        </tr>
+    </tbody>
+</table>
+
+> _**Note:**_ \
+_By using the variables `${input.hostnameX}` we are telling VMware Aria  Automation to use the same user input parameter from the Cloud Template inputs for both the machine name and the user-friendly name that will show up in the associated cloud provider for the cloud machine._
 
 > **SPOILER ALERT**: \
     The Cloud Template code for **Module 6 - Exercise 1** can be found [here](/module-6/exercise-1/blueprint.yaml).
 
-[Back to Top](#)
+3. Using what you have learned previously, create a new version of the Cloud Template.
+
+[Back to Top](#module-6---using-extensibility)
 
 ---
 
@@ -78,7 +106,7 @@ _This new code reads in the value of the `newName` property from each resource i
 > **SPOILER ALERT**: \
     The Python code for **Module 6 - Exercise 2** ABX Action can be found [here](/module-6/exercise-2/action.py).
 
-[Back to Top](#)
+[Back to Top](#module-6---using-extensibility)
 
 ---
 
@@ -101,7 +129,7 @@ _There a large number (63) of Event Topics available to the Event Broker during 
 10. Click **SELECT**.
 11. Click **SAVE**.
 
-[Back to Top](#)
+[Back to Top](#module-6---using-extensibility)
 
 ---
 
@@ -131,7 +159,7 @@ Now let us go back to the subscription to make sure it only runs when that bluep
 9. Within the **Condition** textfield, type `event.data.blueprintId == '<Cloud Template ID>'`
 10. Click **SAVE**.
 
-[Back to Top](#)
+[Back to Top](#module-6---using-extensibility)
 
 ---
 
@@ -151,7 +179,7 @@ Once the deployment has started, you may continue the exercise.
 
 You should see the two runs that have completed successfully.
 
-[Back to Top](#)
+[Back to Top](#module-6---using-extensibility)
 
 ---
 
