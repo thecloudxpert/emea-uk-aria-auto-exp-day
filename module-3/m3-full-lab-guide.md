@@ -304,6 +304,7 @@ _You will see there is a **green** path and at least one **red** path for the av
 _You will see that in fact both available Regions could satisfy the Flavor and Image allocation BUT because of the constraint we applied in the cloud template, one Cloud Zone was selected over the other. In the green path, you should notice that either the `env:aws` or `env:azure` tag is highlighted (depending on the Cloud Zone)._
 
 7. Click **CLOSE**.
+8. Using what you learned so far in this module, delete your deployment.
 
 [Back to Top](#)
 
